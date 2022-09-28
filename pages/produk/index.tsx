@@ -40,7 +40,7 @@ const Tentang: NextPage = () => {
           <div className="basis-full lg:basis-3/4">
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10">
               {[1, 2, 3, 4, 5].map((val, i) => (
-                <CardProduct data={{ title: 'Femmy Look Slim' }} />
+                <CardProduct key={i} data={{ title: 'Femmy Look Slim' }} />
               ))}
             </div>
           </div>
