@@ -1,0 +1,6 @@
+// <div className='flex h-16 bg-regal-blue p-4'>
+//   <p className='text-white'>Header</p>
+//   {authState?'true':'false'}
+
+//   <button onClick={()=> dispatch(setAuthState(!authState))} className='border-t-neutral-300 bg-red-600 p-1'>Test</button>
+// </div>
