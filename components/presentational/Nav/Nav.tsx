@@ -9,8 +9,8 @@ export interface INav {
 }
 const Nav: React.FC<INav> = ({ page, position }) => (
   <nav
-    className={`py-8 px-8 ${
-      position == 'header' ? 'lg:px-12' : 'lg:px-0'
+    className={`py-8  ${
+      position == 'header' ? 'px-8 lg:px-12' : 'px-0 lg:px-0'
     } top-0 left-0 ${page == 'home' ? 'absolute' : 'relative'} w-full`}
   >
     <div className="flex flex-wrap items-center justify-between mx-auto">
@@ -18,7 +18,7 @@ const Nav: React.FC<INav> = ({ page, position }) => (
         <a className="flex items-center">
           <img
             src={'/images/logo-femmy.png'}
-            className="lg:mr-3 h-6 sm:h-10 lg:h-[45px] object-contain"
+            className="lg:mr-3 sm:h-10 h-[40px] lg:h-[45px] object-contain"
             alt="Flowbite Logo"
           />
         </a>

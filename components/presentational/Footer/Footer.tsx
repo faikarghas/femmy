@@ -12,7 +12,7 @@ const Footer = () => (
         <Nav position="footer" page="" />
         <div className="pb-4">
           <ul className="list-none list flex items-center gap-2 justify-end">
-            <li className="inline-block font-sans text-[#8B8B8B] text-[12px] mr-2">
+            <li className="font-sans text-[#8B8B8B] text-[12px] mr-2 hidden xl:inline-block">
               Bergabung bersama kami
             </li>
             <li className="inline-block">
@@ -50,7 +50,7 @@ const Footer = () => (
         <span className="font-sans text-femmy-pdark text-[14px] font-medium">
           &copy; 2022 femmy all rights reserved
         </span>
-        <div>
+        <div className='hidden xl:block'>
           <ul className="list-none list flex items-center gap-2 justify-end">
             <li className="inline-block font-sans text-femmy-pdark text-[14px] font-medium mr-2">
               <Link href="#">

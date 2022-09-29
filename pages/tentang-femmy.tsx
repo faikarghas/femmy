@@ -11,8 +11,8 @@ const Tentang: NextPage = () => {
   return (
     <Layout page="tentang-kami">
       <main>
-        <section className="flex flex-row relative bg-femmy-plight py-8 px-8 lg:px-16">
-          <div className="basis-2/5">
+        <section className="flex flex-col lg:flex-row relative bg-femmy-plight pt-0 lg:pt-4 pb-12 px-8 lg:px-16">
+          <div className="basis-full lg:basis-2/5 order-last lg:order-first">
             <div className="lg:w-[450px] lg:pt-14">
               <h2 className="font-head text-femmy-pdark text-[30px] mb-6 font-semibold">
                 Selalu ada Femmy
@@ -37,8 +37,8 @@ const Tentang: NextPage = () => {
               </p>
             </div>
           </div>
-          <div className="basis-3/5 ">
-            <picture className="flex justify-end">
+          <div className="basis-full lg:basis-3/5 order-first lg:order-last">
+            <picture className="flex justify-end p-0 lg:p-4 xl:p-0">
               <source
                 media="(min-width:750px)"
                 srcSet="/images/tentang-img.png"
@@ -51,9 +51,9 @@ const Tentang: NextPage = () => {
           </div>
         </section>
 
-        <section className="flex flex-wrap flex-row bg-[#FEF7F8] relative">
-          <img className="w-full" src="/images/tentang2-img.jpg" />
-          <div className="absolute w-[300px] top-[50%] left-16 translate-y-[-50%]">
+        <section className="flex flex-wrap flex-row bg-[#FEF7F8] relative ">
+          <img className="w-full  object-cover" src="/images/tentang2-img.jpg" />
+          <div className="relative lg:absolute w-full lg:w-[400px] top-[50%] lg:left-16 lg:translate-y-[-50%] px-8 py-10 bg-[#F6C2C6] xl:bg-[#F6C2C6]/[0]">
             <h2 className="font-head text-femmy-pdark text-[30px] mb-4 leading-tight font-semibold">
               Bergabung menjadi Femmy Reseller sekarang!
             </h2>
@@ -62,7 +62,7 @@ const Tentang: NextPage = () => {
               banyak keuntungan seperti poin reward, uang tunai, e-wallet, masih
               banyak hadiah lain yang bisa kamu dapatkan!
             </p>
-            <a className="block bg-femmy-pdark rounded-[56px] text-femmy-white text-[13px] py-[12px] px-6 leading-[10px] w-[210px] text-center">
+            <a className="block bg-femmy-pdark rounded-[56px] text-femmy-white text-[13px] py-[12px] px-6 leading-[10px] w-full lg:w-[210px] text-center">
               Bergabung sekarang
             </a>
           </div>

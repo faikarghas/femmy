@@ -22,16 +22,16 @@ const Tentang: NextPage = () => {
     return (
         <Layout page="tentang-kami">
         <main>
-            <section className="flex flex-wrap flex-row pb-8 pt:10 lg:pt-10 px-8 lg:px-16 bg-[#FEF7F8]">
+            <section className="flex flex-wrap flex-row pb-8 pt-10 lg:pt-10 px-8 lg:px-16 bg-[#FEF7F8]">
                 <div className='basis-full'>
                     <Breadcrumb page='produk' detail='Femmy Look Slim'/>
                 </div>
-                <div className="basis-1/4 mb-12">
+                <div className="basis-full xl:basis-1/4 mb-12">
                     <h4 className="font-head text-femmy-pdark text-[35px] font-semibold">
                     Produk Femmy
                     </h4>
                 </div>
-                <div className="basis-3/4 mb-12 flex items-center w-full">
+                <div className="basis-full xl:basis-3/4 mb-12 flex items-center w-full">
                     <SearchProduct />
                 </div>
 

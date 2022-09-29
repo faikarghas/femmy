@@ -33,7 +33,7 @@ const Header: React.FC<IHeader> = ({ page }) => {
           <h1 className="font-head text-femmy-pdark text-[50px] lg:text-[45px] text-center leading-[50px] pb-4 font-semibold">
             Cantik Ternutrisi
           </h1>
-          <p className="mb-16 font-sans text-femmy-pdark text-[18px] lg:text-[14px] text-center font-medium leading-[20px]">
+          <p className="mb-16 font-sans text-femmy-pdark text-[14px] lg:text-[14px] text-center font-medium leading-[20px]">
             Femmy hadir sebagai solusi komprehensif bagi perempuan
             <br />
             modern untuk senantiasa menjaga kesehatan tubuh sekaligus

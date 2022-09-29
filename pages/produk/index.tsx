@@ -14,17 +14,17 @@ const Tentang: NextPage = () => {
   return (
     <Layout page="tentang-kami">
       <main>
-        <section className="flex flex-wrap flex-row pb-8 pt:10 lg:pt-16 px-8 lg:px-16 bg-[#FEF7F8]">
-          <div className="basis-1/4 mb-12">
+        <section className="flex flex-wrap flex-row pb-8 pt-10 lg:pt-16 px-8 lg:px-16 bg-[#FEF7F8]">
+          <div className="basis-full xl:basis-1/4 mb-12">
             <h4 className="font-head text-femmy-pdark text-[35px] font-semibold">
               Produk Femmy
             </h4>
           </div>
-          <div className="basis-3/4 mb-12 flex items-center w-full">
+          <div className="basis-full xl:basis-3/4 mb-12 flex items-center w-full">
             <SearchProduct />
           </div>
 
-          <div className="basis-1/4 pr-8">
+          <div className="basis-full lg:basis-1/4 pr-0 xl:pr-8">
             <FilterDropdown
               text="Kategori"
               data={[
