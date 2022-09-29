@@ -11,7 +11,7 @@ const Nav: React.FC<INav> = ({ page, position }) => (
   <nav
     className={`py-8  ${
       position == 'header' ? 'px-8 lg:px-12' : 'px-0 lg:px-0'
-    } top-0 left-0 ${page == 'home' ? 'absolute' : 'relative'} w-full`}
+    } top-0 left-0 ${page == 'home' ? 'absolute' : 'relative bg-white'} w-full`}
   >
     <div className="flex flex-wrap items-center justify-between mx-auto">
       <Link href="/">
