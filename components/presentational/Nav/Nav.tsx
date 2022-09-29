@@ -38,7 +38,9 @@ const Nav: React.FC<INav> = ({ page, position }) => (
           {listNav.map((txt, i) => {
             return (
               <li className="flex items-center" key={i}>
-                <Link href={txt.replace(/[^\w\s]/gi, 'dan').split(' ').join('-')}>
+                <Link 
+                  href={`/${txt.replace(/[^\w\s]/gi, 'dan').split(' ').join('-')}`} 
+                  replace={true}>
                   <a
                     className="font-sans font-semibold md:text-[9px] xl:text-[15px] block py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0 text-femmy-pdark"
                     aria-current="page"

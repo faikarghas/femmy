@@ -34,7 +34,7 @@ const CardNews: React.FC<ICardN> = ({ data, type, paragraph, height }) => (
           volutpat.
         </p>
       )}
-      <Link href="#">
+      <Link href={`/tips-dan-trick/contoh`}>
         <a
           className={`${
             type == 'big' ? 'w-[60%]' : 'w-[100%]'

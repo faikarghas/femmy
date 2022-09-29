@@ -7,6 +7,7 @@ import Layout from '../../components/layouts/index';
 import FilterDropdown from '../../components/presentational/FilterDropdown/FilterDropdown';
 import CardProduct from '../../components/presentational/CardProduct/CardProduct';
 import SearchProduct from '../../components/presentational/SearchProduct/SearchProduct';
+import Breadcrumb from '../../components/presentational/Breadcrumb/Breadcrumb';
 
 // import hoc
 import { withAUth } from '../../hoc/withAuth';
@@ -21,7 +22,10 @@ const Tentang: NextPage = () => {
     return (
         <Layout page="tentang-kami">
         <main>
-            <section className="flex flex-wrap flex-row pb-8 pt:10 lg:pt-16 px-8 lg:px-16 bg-[#FEF7F8]">
+            <section className="flex flex-wrap flex-row pb-8 pt:10 lg:pt-10 px-8 lg:px-16 bg-[#FEF7F8]">
+                <div className='basis-full'>
+                    <Breadcrumb page='produk' detail='Femmy Look Slim'/>
+                </div>
                 <div className="basis-1/4 mb-12">
                     <h4 className="font-head text-femmy-pdark text-[35px] font-semibold">
                     Produk Femmy
@@ -44,11 +48,11 @@ const Tentang: NextPage = () => {
                             <li onClick={() => onShow(1)} className={`${tabId == 1 ? 'border-b-2 border-femmy-pdark':'opacity-50'} py-2 inline-block  font-sans font-bold cursor-pointer w-[120px] text-center`}>Detail</li>
                             <li onClick={() => onShow(2)} className={`${tabId == 2 ? 'border-b-2 border-femmy-pdark':'opacity-50'} py-2 inline-block text-femmy-pdark font-sans font-bold cursor-pointer w-[120px] text-center`}>Info Penting</li>
                         </ul>
-                        <span className="inline-block text-black font-sans font-semibold">Bagikan</span>
+                        <span className="inline-block text-black font-sans font-semibold flex"><img src='/images/share.png' className='mr-[13px] w-[17px] object-contain'/>Bagikan</span>
                     </div>
                     <div>
                         <div className={`${tabId == 1 ? 'flex' : 'hidden'} py-6`}>
-                            <div className="basis-3/5">a</div>
+                            <div className="basis-3/5">Detail</div>
                             <div className="basis-2/5 flex justify-end">
                                 <div className="bg-femmy-pdark py-6 pl-8 pr-6 rounded-2xl w-[260px]">
                                     <h6 className="text-white font-sans text-[18px] text-center mb-4 leading-tight">Pembelian dari<br/>Official Store kami</h6>
@@ -58,7 +62,7 @@ const Tentang: NextPage = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className={`${tabId == 2 ? 'flex' : 'hidden'} py-6`}>2</div>
+                        <div className={`${tabId == 2 ? 'flex' : 'hidden'} py-6`}>Info</div>
                     </div>
                 </div>
             </section>
