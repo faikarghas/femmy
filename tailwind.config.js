@@ -22,7 +22,7 @@ module.exports = {
         textNav: ['16px'],
       },
       fontFamily: {
-        head: ['NewYork'],
+        head: ['Regatto'],
         sans: ['WorkSans-Regular'],
       },
     },
