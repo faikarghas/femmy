@@ -39,7 +39,7 @@ const Tentang: NextPage = () => {
                 </div>
                 <div className="basis-full lg:basis-[70%]">
                     <h5 className="font-head text-femmy-pdark text-[30px] mb-3 font-semibold text-center md:text-left">Femmy Vitamin D3</h5>
-                    <span className="font-sans text-femmy-white md:text-black text-[20px] font-semibold text-center md:text-left p-2 md:p-0 mb-6 md:mb-0 mt-8 md:mt-0 block bg-femmy-pdark md:bg-femmy-pdark rounded-full"><span className='block md:hidder font-sans text-white text-[12px] font-normal'>Beli Sekarang</span>RP 22.000.-</span>
+                    <span className="font-sans text-femmy-white md:text-black text-[20px] font-semibold text-center md:text-left p-2 md:pl-0 md:pb-4 mb-6 md:mb-0 mt-8 md:mt-0 block bg-femmy-pdark md:bg-transparent rounded-full"><span className='block md:hidden font-sans text-white text-[12px] font-normal'>Beli Sekarang</span>RP 22.000.-</span>
                     <div className="md:border-t-[1px] border-b-[1px] border-femmy-pmedium flex justify-between items-center">
                         <ul className="list-none flex gap-6 w-full">
                             <li onClick={() => onShow(1)} className={`${tabId == 1 ? 'border-b-2 border-femmy-pdark':'opacity-50'} py-2 inline-block  font-sans font-bold cursor-pointer w-full md:w-[120px] text-center`}>Detail</li>
