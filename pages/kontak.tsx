@@ -11,7 +11,6 @@ import { withAUth } from '../hoc/withAuth';
 const Kontak: NextPage = () => {
   return (
     <Layout page="tentang-kami">
-      <main>
         <section className="bg-[#FBEEE5]/[0.5]">
             <div className='mb-16'>
                 <img src='/images/banner-kontak-femmy.jpg' className='mb-12 object-cover h-[300px] lg:h-[427px] w-full'/>
@@ -36,7 +35,6 @@ const Kontak: NextPage = () => {
                 </div>
             </div>
         </section>
-      </main>
     </Layout>
   );
 };

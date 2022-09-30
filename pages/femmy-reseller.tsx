@@ -11,7 +11,6 @@ import { withAUth } from '../hoc/withAuth';
 const Reseller: NextPage = () => {
   return (
     <Layout page="tentang-kami">
-      <main>
         <section className="bg-[#F9EFE6] py-16 px-8 md:px-60">
             <div className="flex justify-center items-center flex-col mb-12">
                 <h1 className='text-femmy-pdark font-head text-[40px] font-semibold leading-tight'>Femmy Reseller</h1>
@@ -48,7 +47,6 @@ const Reseller: NextPage = () => {
                 </div>
             </div>
         </section>
-      </main>
     </Layout>
   );
 };

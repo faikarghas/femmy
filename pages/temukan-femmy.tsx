@@ -10,7 +10,6 @@ import { withAUth } from '../hoc/withAuth';
 const Temukan: NextPage = () => {
   return (
     <Layout page="tentang-kami">
-      <main>
         <section className="flex flex-row relative bg-femmy-plight">
             <div className="">
                 <picture>
@@ -51,7 +50,6 @@ const Temukan: NextPage = () => {
                 </Link>
             </div>
         </section>
-      </main>
     </Layout>
   );
 };

@@ -15,7 +15,6 @@ import { withAUth } from '../hoc/withAuth';
 const Home: NextPage = () => {
   return (
     <Layout page="home">
-      <main>
         <section className="flex flex-row relative lg:h-screen">
           <div className="hidden lg:block object-contain basis-2/4">
             <img
@@ -134,7 +133,6 @@ const Home: NextPage = () => {
             </div>
           </div>
         </section>
-      </main>
     </Layout>
   );
 };

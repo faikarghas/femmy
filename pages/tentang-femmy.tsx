@@ -10,7 +10,6 @@ import { withAUth } from '../hoc/withAuth';
 const Tentang: NextPage = () => {
   return (
     <Layout page="tentang-kami">
-      <main>
         <section className="flex flex-col lg:flex-row relative bg-femmy-plight pt-0 lg:pt-4 pb-12 px-8 lg:px-16">
           <div className="basis-full lg:basis-2/5 order-last lg:order-first">
             <div className="lg:w-[450px] lg:pt-14">
@@ -50,7 +49,6 @@ const Tentang: NextPage = () => {
             </picture>
           </div>
         </section>
-
         <section className="flex flex-wrap flex-row bg-[#FEF7F8] relative ">
           <img className="w-full  object-cover" src="/images/tentang2-img.jpg" />
           <div className="relative lg:absolute w-full lg:w-[400px] top-[50%] lg:left-16 lg:translate-y-[-50%] px-8 py-10 bg-[#F6C2C6] xl:bg-[#F6C2C6]/[0]">
@@ -67,7 +65,6 @@ const Tentang: NextPage = () => {
             </a>
           </div>
         </section>
-      </main>
     </Layout>
   );
 };

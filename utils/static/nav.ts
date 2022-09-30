@@ -1,7 +1,7 @@
 export const listNav = [
   'tentang femmy',
   'produk',
-  'tips & trick',
+  'tips & trik',
   'temukan femmy',
   'femmy reseller',
   'kontak',

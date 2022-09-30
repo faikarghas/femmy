@@ -11,7 +11,6 @@ import { withAUth } from '../../hoc/withAuth';
 const Tips: NextPage = () => {
   return (
     <Layout page="tentang-kami">
-      <main>
         <section className="relative bg-femmy-plight py-8 px-8 lg:px-16">
           <h2 className="font-head text-femmy-pdark text-[40px] mb-10 font-semibold">Tips & Trik</h2>
 
@@ -68,9 +67,6 @@ const Tips: NextPage = () => {
               </div>
             </div>
         </section>
-
-      
-      </main>
     </Layout>
   );
 };

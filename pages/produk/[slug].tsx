@@ -21,7 +21,6 @@ const Tentang: NextPage = () => {
 
     return (
         <Layout page="tentang-kami">
-        <main>
             <section className="flex flex-wrap flex-row pb-8 pt-10 lg:pt-10 px-8 lg:px-16 bg-[#FEF7F8]">
                 <div className='basis-full'>
                     <Breadcrumb page='produk' detail='Femmy Look Slim'/>
@@ -66,9 +65,7 @@ const Tentang: NextPage = () => {
                     </div>
                 </div>
             </section>
-            
             <div className="border-b-[1px] border-femmy-pdark mx-8 lg:mx-16"></div>
-
             <section className="pb-12 pt-8 px-8 lg:px-16 bg-[#FEF7F8]">
                 <h4 className="font-head text-femmy-pdark text-[35px] mb-6 font-semibold">
                     Produk Lainnya
@@ -88,7 +85,6 @@ const Tentang: NextPage = () => {
                     </div>
                 </div>
             </section>
-        </main>
         </Layout>
     );
 };
