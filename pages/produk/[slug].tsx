@@ -43,7 +43,7 @@ const ProdukDetail: NextPage = () => {
     const [tabId,setTabId] = useState(1)
     const [data, setData] = useState<DataTypes[]>([]);
 
-    const {asPath,query} = useRouter()
+    const {query} = useRouter()
     const router = useRouter();
 
     const produkSlider = useRef<any>(null);
@@ -61,16 +61,10 @@ const ProdukDetail: NextPage = () => {
     }
 
     useEffect(() => {
-        if (asPath) {
-            console.log(asPath.split('/')[2]);
-
-            let fl = produk.filter((val)=>{
-                return val.slug == router.query.slug
-            })
-
-            setData(fl)
-        }
-
+        let fl = produk.filter((val)=>{
+            return val.slug == router.query.slug
+        })
+        setData(fl)
 
     }, [router.isReady])
 
