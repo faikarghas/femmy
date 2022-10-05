@@ -28,9 +28,9 @@ const Reseller: NextPage = () => {
                     ></img>
                 </picture>
                 {/* <img src='/images/femmy-reseller.png' className='mb-12'/> */}
-              <h3 className='text-femmy-pdark font-head text-[30px] font-semibold leading-tight text-center mb-6'>Bergabung bersama<br/>Keluarga Femmy</h3>
+              <h3 className='text-femmy-pdark font-head text-[30px] font-semibold leading-tight text-center mb-6'>Jadilah bagian dari<br/>Keluarga Femmy</h3>
               <p className='font=sans text-[16px] text-femmy-pdark text-center mb-4'>Bersama kamu, Femmy ingin menciptakan wadah bagi setiap orang yang ingin meningkatkan potensi dalam dirinya melalui berbagai program kesehatan, kecantikan, dan program unggulan Femmy Reseller.</p>
-              <p className='font=sans text-[16px] text-femmy-pdark text-center'>Dengan melangkah bersama Femmy Reseller, kamu bisa mendapatkan banyak keuntungan seperti poin reward, uang tunai, e-wallet, masih banyak hadiah lain yang bisa kamu dapatkan!</p>
+              <p className='font=sans text-[16px] text-femmy-pdark text-center'>Jadi bagian dari Femmy Reseller dan kamu bisa mendapatkan banyak keuntungan seperti poin reward, potongan harga, dan masih banyak lagi!</p>
             </div>
             <div className="flex flex-row flex-wrap">
                 <div className='basis-full'>

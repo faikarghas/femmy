@@ -145,3 +145,7 @@ input::placeholder {
 .slick-slide {
   padding: 0 10px;
 }
+
+textarea::-webkit-input-placeholder {
+  color: #9C1B66;
+}

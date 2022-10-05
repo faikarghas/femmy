@@ -82,7 +82,7 @@ const ProdukDetail: NextPage = () => {
                     <SearchProduct />
                 </div>
 
-                <div className="basis-full lg:basis-[30%] pr-0 md:pr-8 mb-8">
+                <div className="basis-full lg:basis-[30%] pr-0 md:pr-8 mb-8 pt-10 lg:pt-0">
                     <div className="bg-femmy-white h-[300px] w-full md:w-[300px] rounded-xl flex justify-center items-center">
                         <img src={data[0]?.imageDetail} className="object-contain w-full md:w-[200px]"/>
                     </div>
