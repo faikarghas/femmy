@@ -15,7 +15,7 @@ const Header: React.FC<IHeader> = ({ page }) => {
 
   if (page == 'home') {
     return (
-      <header className="relative">
+      <header className="relative h-screen bg-[#F4AFC2]">
         <Nav position="header" page={page} />
 
         <picture>
