@@ -35,6 +35,7 @@ const settings = {
         }
     }]
 };
+
 type DataTypes = {
     judul: string, slug: string, harga: number, rating: number, image: string, imageDetail: string,content:string
 }

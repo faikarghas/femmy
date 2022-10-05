@@ -1,3 +1,4 @@
+import {useState,useEffect} from 'react'
 import type { NextPage } from 'next';
 import Link from 'next/link';
 
@@ -15,8 +16,29 @@ import { withAUth } from '../hoc/withAuth';
 // import utils
 import { produk } from '../utils/data';
 
+type DataTypes = {
+  judul: string, slug: string, harga: number, rating: number, image: string, imageDetail: string,content:string
+}
 
 const Home: NextPage = () => {
+  const [data, setData] = useState<DataTypes[]>(produk);
+  const [sort, setSort] = useState('asc');
+
+  const descOrder = () => {
+    let pr = produk.sort((a, b) => b.harga - a.harga)
+    setData(pr)
+    setSort('desc')
+  }
+
+  const ascOrder = () => {
+    let pr = produk.sort((a, b) => a.harga - b.harga)
+    setData(pr)
+    setSort('asc')
+  }
+
+  useEffect(() => {
+  }, [sort])
+
   return (
     <Layout page="home">
         <section className="flex flex-row relative lg:h-screen">
@@ -66,11 +88,8 @@ const Home: NextPage = () => {
           <div className="basis-full xl:basis-1/4 pr-0 xl:pr-8">
             <FilterDropdown
               text="Kategori"
-              data={[
-                'Tampilkan semua produk',
-                'Harga Tertinggi',
-                'Harga Terendah',
-              ]}
+              sortdesc={descOrder}
+              sortasc={ascOrder}
             />
             <br />
           </div>

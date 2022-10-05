@@ -26,7 +26,7 @@ const CardProduct: React.FC<ICardP> = ({ data }) => (
         {data.judul}
       </span>
       <span className="font-sans text-black font-semibold tracking-wide text-[11px] lg:text-[14px] mb-2.5">
-        RP {data.harga},-
+        RP {data.harga.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')},-
       </span>
       <div className="flex items-center">
         <Rating count={data.rating} />
