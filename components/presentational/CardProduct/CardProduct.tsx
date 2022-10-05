@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export interface ICardP {
   data: any;
@@ -8,15 +9,18 @@ export interface ICardP {
 const CardProduct: React.FC<ICardP> = ({ data }) => (
   <div className="">
     <div className="h-[300px] lg:h-[340px] bg-femmy-white rounded-t-2xl rounded-r-2xl flex flex-col justify-center items-center">
-      <img
-        src="/images/femmy-look-slim.png"
-        className="object-contain w-[200px]"
+      <Image
+          src={data.image}
+          alt="Picture of the author"
+          className="object-contain w-[200px]"
+          width={200}
+          height={200}
       />
       <span className="font-sans text-[#8F2A64] font-semibold tracking-wide text-[12px] lg:text-[16px] mb-1">
-        Femmy Look Slim
+        {data.judul}
       </span>
       <span className="font-sans text-black font-semibold tracking-wide text-[11px] lg:text-[14px] mb-2.5">
-        RP 22.000,-
+        RP {data.harga},-
       </span>
       <div className="flex items-center">
         <svg

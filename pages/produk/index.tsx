@@ -10,6 +10,10 @@ import SearchProduct from '../../components/presentational/SearchProduct/SearchP
 // import hoc
 import { withAUth } from '../../hoc/withAuth';
 
+// import utils
+
+import { produk } from '../../utils/data';
+
 const Tentang: NextPage = () => {
   return (
     <Layout page="tentang-kami">
@@ -38,8 +42,8 @@ const Tentang: NextPage = () => {
           </div>
           <div className="basis-full lg:basis-3/4">
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10">
-              {[1, 2, 3, 4, 5].map((val, i) => (
-                <CardProduct key={i} data={{ title: 'Femmy Look Slim' }} />
+              {produk.map((val, i) => (
+                <CardProduct key={i} data={{ judul: val.judul, harga: val.harga, rating: 4, image: '' }} />
               ))}
             </div>
           </div>

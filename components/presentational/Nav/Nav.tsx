@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Link from 'next/link';
 
-import { listNav } from '../../../utils/static/nav';
+import { listNav } from '../../../utils/data';
 
 export interface INav {
   page: string;
