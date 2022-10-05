@@ -22,13 +22,51 @@ const Kontak: NextPage = () => {
                     <img src='/images/cs.png' className='h-[55px] mb-6'/>
                     <span className='text-femmy-pdark font-sans font-semibold'>Customer Service/<br/>WA Business</span>
                 </div>
-                <div className='basis-full lg:basis-[32%] border-[1px] border-femmy-pdark rounded-2xl h-[200px] flex flex-col text-center items-center py-10'>
+                <Link href={'/temukan-femmy'}>
+                <a className='basis-full lg:basis-[32%] border-[1px] border-femmy-pdark rounded-2xl h-[200px] flex flex-col text-center items-center py-10'>
                     <img src='/images/marketplc.png' className='h-[55px] mb-6'/>
                     <span className='text-femmy-pdark font-sans font-semibold'>Marketplace</span>
-                </div>
-                <div className='basis-full lg:basis-[32%] border-[1px] border-femmy-pdark rounded-2xl h-[200px] flex flex-col text-center items-center py-10'>
+                </a>
+                </Link>
+                <div className='relative group basis-full lg:basis-[32%] border-[1px] border-femmy-pdark rounded-2xl h-[200px] flex flex-col text-center items-center py-10'>
                     <img src='/images/sosmed.png' className='h-[55px] mb-6'/>
                     <span className='text-femmy-pdark font-sans font-semibold'>Sosial Media</span>
+                    <div className='absolute top-0 left-0 w-full h-full rounded-2xl'>
+                        <ul className="group-hover:flex hidden transition-all list-none list rounded-2xl gap-y-2 flex-col justify-center items-center h-full bg-white p-4">
+                            <li className="w-[120px]">
+                            <Link href="#">
+                                <a className='flex items-center'>
+                                <img className="w-[30px]" src="/images/logo-wa.png" />
+                                <span className='ml-4 text-[16px] font-sans text-femmy-pdark'>Whatsapp</span>
+                                </a>
+                            </Link>
+                            </li>
+                            <li className="w-[120px]">
+                            <Link href="#">
+                                <a className='flex items-center'>
+                                <img className="w-[30px]" src="/images/logo-ig.png" />
+                                <span className='ml-4 text-[16px] font-sans text-femmy-pdark'>Instagram</span>
+                                </a>
+                            </Link>
+                            </li>
+                            <li className="w-[120px]">
+                            <Link href="#">
+                                <a className='flex items-center'>
+                                <img className="w-[30px]" src="/images/logo-fb.png" />
+                                <span className='ml-4 text-[16px] font-sans text-femmy-pdark'>Facebook</span>
+                                </a>
+                            </Link>
+                            </li>
+                            <li className="w-[120px]">
+                            <Link href="#">
+                                <a className='flex items-center'>
+                                <img className="w-[30px]" src="/images/logo-yt.png" />
+                                <span className='ml-4 text-[16px] font-sans text-femmy-pdark'>Youtube</span>
+                                </a>
+                            </Link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div className='basis-full border-[1px] border-femmy-pdark rounded-2xl h-[80px] mt-2 flex justify-center items-center font-semibold'>
                     <span className='text-femmy-pdark font-sans'>Ingin Ajukan Pertanyaan?</span>
