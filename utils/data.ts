@@ -36,7 +36,7 @@ export const produk = [
     'judul'   : 'Femmy Vitamin D3 1000 IU',
     'harga'   : '20.000',
     'rating'  : 4,
-    'image'   : '/images/produk/femmy-bright.png'
+    'image'   : '/images/produk/femmy-vitamin.png'
   },
   {
     'judul'   : 'Femmy Trimune',
@@ -54,12 +54,12 @@ export const produk = [
     'judul'   : 'Paket Cantiku 2',
     'harga'   : '800.000',
     'rating'  : 4,
-    'image'   : '/image/produk/paket-cantiku-2.png'
+    'image'   : '/images/produk/paket-cantiku-2.png'
   },
   {
     'judul'   : 'Paket Cantiku 3',
     'harga'   : '1.200.000',
     'rating'  : 4,
-    'image'   : '/image/produk/paket-cantiku-3.png'
+    'image'   : '/images/produk/paket-cantiku-3.png'
   },
 ]
