@@ -31,21 +31,27 @@ const Temukan: NextPage = () => {
             </div>
             <div className='flex flex-col lg:flex-row justify-center gap-6 px-8'>
                 <Link href='/'>
-                    <a className='bg-femmy-white w-[100%] lg:w-[250px] h-[150px] rounded-2xl p-4 flex flex-col justify-center items-center shadow-[7px_10px_18px_rgba(0,0,0,0.25)]'>
-                        <img className='w-[60px] h-[59px] object-contain mb-3' src="/images/tokped-logo.png"/>
-                        <span className='font-sans text-femmy-pdark'>Tokopedia</span>
+                    <a className='bg-femmy-white w-[100%] lg:w-[250px] h-[100px] lg:h-[150px] rounded-2xl p-4 flex flex-row lg:flex-col justify-center items-center shadow-[7px_10px_18px_rgba(0,0,0,0.25)]'>
+                        <div className='w-[180px] flex flex-row lg:flex-col justify-left items-center'>
+                            <img className='w-[60px] h-[59px] object-contain mb-3 mr-4 lg:mr-4' src="/images/tokped-logo.png"/>
+                            <span className='font-sans text-femmy-pdark'>Tokopedia</span>
+                        </div>
                     </a>
                 </Link>
                 <Link href='/'>
-                    <a className='bg-femmy-white w-[100%] lg:w-[250px] h-[150px] rounded-2xl p-4 flex flex-col justify-center items-center shadow-[7px_10px_18px_rgba(0,0,0,0.25)]'>
-                        <img className='w-[60px] h-[59px] object-contain mb-3' src="/images/blibli-logo.png"/>
-                        <span className='font-sans text-femmy-pdark'>Blibli</span>
+                    <a className='bg-femmy-white w-[100%] lg:w-[250px] h-[100px] lg:h-[150px] rounded-2xl p-4 flex flex-row lg:flex-col justify-center items-center shadow-[7px_10px_18px_rgba(0,0,0,0.25)]'>
+                        <div className='w-[180px] flex flex-row lg:flex-col justify-left items-center'>
+                            <img className='w-[60px] h-[59px] object-contain mb-3 mr-4 lg:mr-4' src="/images/blibli-logo.png"/>
+                            <span className='font-sans text-femmy-pdark'>Blibli</span>
+                        </div>
                     </a>
                 </Link>
                 <Link href='/'>
-                    <a className='bg-femmy-white w-[100%] lg:w-[250px] h-[150px] rounded-2xl p-4 flex flex-col justify-center items-center shadow-[7px_10px_18px_rgba(0,0,0,0.25)]'>
-                        <img className='w-[60px] h-[59px] object-contain mb-3' src="/images/shopee-logo.png"/>
-                        <span className='font-sans text-femmy-pdark'>Shopee</span>
+                    <a className='bg-femmy-white w-[100%] lg:w-[250px] h-[100px] lg:h-[150px] rounded-2xl p-4 flex flex-row lg:flex-col justify-center items-center shadow-[7px_10px_18px_rgba(0,0,0,0.25)]'>
+                        <div className='w-[180px] flex flex-row lg:flex-col justify-left items-center'>
+                            <img className='w-[60px] h-[59px] object-contain mb-3 mr-4 lg:mr-4' src="/images/shopee-logo.png"/>
+                            <span className='font-sans text-femmy-pdark'>Shopee</span>
+                        </div>
                     </a>
                 </Link>
             </div>
