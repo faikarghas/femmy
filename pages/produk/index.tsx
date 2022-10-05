@@ -43,7 +43,7 @@ const Tentang: NextPage = () => {
           <div className="basis-full lg:basis-3/4">
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10">
               {produk.map((val, i) => (
-                <CardProduct key={i} data={{ judul: val.judul, harga: val.harga, rating: 4, image: '' }} />
+                <CardProduct key={i} data={{ judul: val.judul, harga: val.harga, rating: 4, image: val.image }} />
               ))}
             </div>
           </div>
