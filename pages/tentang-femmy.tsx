@@ -17,22 +17,11 @@ const Tentang: NextPage = () => {
                 Selalu ada Femmy
               </h2>
               <p className="fonst-sans text-femmy-pdark text-[14px]">
-                Femmy hadir sebagai solusi komprehensif bagi para perempuan
-                modern Indonesia untuk senantiasa menjaga kesehatan tubuh dan
-                merawat kecantikan dari dalam. Bersama Femmy, PT Bintang Toedjoe
-                (a Kalbe Company) mempersembahkan rangkaian produk suplemen
-                dengan kandungan beragam ekstrak alami berkualitas yang dapat
-                menunjang kebutuhan kesehatan perempuan.{' '}
+              Femmy hadir sebagai solusi komprehensif bagi para perempuan modern Indonesia untuk senantiasa menjaga kesehatan tubuh dan merawat kecantikan dari dalam. Bersama Femmy, PT Bintang Toedjoe (a Kalbe Company) mempersembahkan rangkaian produk suplemen dengan kandungan beragam ekstrak alami berkualitas yang dapat menunjang kebutuhan kesehatan perempuan.
               </p>
               <br />
               <p className="fonst-sans text-femmy-pdark text-[14px]">
-                Kami senantiasa berusaha untuk mendengar setiap aspirasi yang
-                diutarakan banyak orang, terutama kaum perempuan, untuk
-                mengutamakan kesehatan serta kecantikannya. Oleh karena itu,
-                kami berdiri bersama untuk memperjuangkan hak serta impian para
-                perempuan negeri dalam mengoptimalkan potensi setiap individu
-                untuk terus menginspirasi satu sama lain melalui kecantikan dari
-                dalam.{' '}
+              Kami senantiasa mendengar setiap aspirasi yang diutarakan kaum perempuan, untuk mengutamakan kesehatan serta kecantikannya. Oleh karena itu, kami berdiri bersama untuk memperjuangkan impian para perempuan negeri dalam mengoptimalkan potensi setiap individu untuk terus menginspirasi satu sama lain melalui kecantikan dari dalam. 
               </p>
             </div>
           </div>
@@ -56,9 +45,7 @@ const Tentang: NextPage = () => {
               Bergabung menjadi Femmy Reseller sekarang!
             </h2>
             <p className="fonst-sans text-femmy-pdark text-[14px] mb-10">
-              Dengan melangkah bersama Femmy Reseller, kamu bisa mendapatkan
-              banyak keuntungan seperti poin reward, uang tunai, e-wallet, masih
-              banyak hadiah lain yang bisa kamu dapatkan!
+            Jadi sempurna bersama Femmy Reseller dan kamu bisa mendapatkan banyak keuntungan seperti poin reward, uang tunai, e-wallet dan banyak hadiah lain yang bisa kamu dapatkan!
             </p>
             <a className="block bg-femmy-pdark rounded-[56px] text-femmy-white text-[13px] py-[12px] px-6 leading-[10px] w-full lg:w-[210px] text-center">
               Bergabung sekarang

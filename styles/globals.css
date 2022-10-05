@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
 html,
 body {
   padding: 0;
@@ -137,4 +140,8 @@ input::placeholder {
   width: 0%;
   left: 50%;
   display: none;
+}
+
+.slick-slide {
+  padding: 0 10px;
 }

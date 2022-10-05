@@ -68,10 +68,8 @@ const Home: NextPage = () => {
               text="Kategori"
               data={[
                 'Tampilkan semua produk',
-                'Paket Femmy Consultant',
-                'Vitamin',
-                'Suplemen Nutrisi',
-                'Lainnya',
+                'Harga Tertinggi',
+                'Harga Terendah',
               ]}
             />
             <br />

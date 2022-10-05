@@ -11,10 +11,9 @@ import SearchProduct from '../../components/presentational/SearchProduct/SearchP
 import { withAUth } from '../../hoc/withAuth';
 
 // import utils
-
 import { produk } from '../../utils/data';
 
-const Tentang: NextPage = () => {
+const Produk: NextPage = () => {
   return (
     <Layout page="tentang-kami">
         <section className="flex flex-wrap flex-row pb-8 pt-10 lg:pt-16 px-8 lg:px-16 bg-[#FEF7F8]">
@@ -32,10 +31,8 @@ const Tentang: NextPage = () => {
               text="Kategori"
               data={[
                 'Tampilkan semua produk',
-                'Paket Femmy Consultant',
-                'Vitamin',
-                'Suplemen Nutrisi',
-                'Lainnya',
+                'Harga Tertinggi',
+                'Harga Terendah',
               ]}
             />
             <br />
@@ -52,4 +49,4 @@ const Tentang: NextPage = () => {
   );
 };
 
-export default Tentang;
+export default Produk;

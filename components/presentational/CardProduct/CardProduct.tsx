@@ -2,7 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
+// import component
 import Rating from '../Rating/Rating';
+
+// import utils
+import { toSlug } from '../../../utils/slug';
 
 export interface ICardP {
   data: any;
@@ -29,7 +33,7 @@ const CardProduct: React.FC<ICardP> = ({ data }) => (
       </div>
     </div>
     <div className="h-[70px] bg-[#CC3F80] rounded-b-2xl rounded-br-2xl flex justify-center items-center">
-      <Link href="/produk/contoh">
+      <Link href={`/produk/${toSlug(data.judul)}`} >
         <a className="text-white font-sans">Beli Sekarang</a>
       </Link>
     </div>
