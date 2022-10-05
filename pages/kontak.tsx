@@ -32,7 +32,7 @@ const Kontak: NextPage = () => {
                     <img src='/images/sosmed.png' className='h-[55px] mb-6'/>
                     <span className='text-femmy-pdark font-sans font-semibold'>Sosial Media</span>
                     <div className='absolute top-0 left-0 w-full h-full rounded-2xl'>
-                        <ul className="group-hover:flex hidden transition-all list-none list rounded-2xl gap-y-2 flex-col justify-center items-center h-full bg-white p-4">
+                        <ul className="group-hover:flex hidden transition-all list-none list rounded-2xl gap-y-2 flex-col justify-center items-center h-full bg-[#FBEEE5]/[0.5] p-4">
                             <li className="w-[120px]">
                             <Link href="#">
                                 <a className='flex items-center'>
