@@ -21,15 +21,15 @@ const Header: React.FC<IHeader> = ({ page }) => {
         <picture>
           <source
             media="(min-width:750px)"
-            srcSet="/images/banner-femmy-1.jpg"
+            srcSet="/images/femmy_banner_banner1.jpg"
           />
           <img
-            src="/images/banner-femmy-1-m.jpg"
+            src="/images/femmy_banner_mobile2.jpg"
             className="w-full object-contain"
           ></img>
         </picture>
 
-        <div className="flex flex-col items-center xl:w-[450px] absolute top-[70%] left-[50%] translate-x-[-50%] translate-y-[-50%] lg:transform-none md:left-unset text-banner md:right-[8%] lg:top-[30%] text-center">
+        {/* <div className="flex flex-col items-center xl:w-[450px] absolute top-[70%] left-[50%] translate-x-[-50%] translate-y-[-50%] lg:transform-none md:left-unset text-banner md:right-[8%] lg:top-[30%] text-center">
           <h1 className="font-head text-femmy-pdark text-[50px] lg:text-[45px] text-center leading-[50px] pb-4 font-semibold">
             Cantik Ternutrisi
           </h1>
@@ -45,7 +45,7 @@ const Header: React.FC<IHeader> = ({ page }) => {
               cerita kami
             </a>
           </Link>
-        </div>
+        </div> */}
       </header>
     );
   } else {
