@@ -106,15 +106,15 @@ const Nav: React.FC<INav> = ({ page, position }) => {
                 <li className="flex items-center group relative cursor-pointer">
                   <div className="rounded-[56px] md:w-[130px] lg:w-[210px] text-center bg-femmy-pdark text-femmy-white md:py-1.5 lg:py-2.5 md:px-2 lg:px-4 flex items-center justify-center">
                     {/* <img
-                    className="md:w-[12px] lg:w-[18px] object-contain"
-                    src="/images/mag.png"
-                  />
-                  <span className="px-2">|</span> */}
+                      className="md:w-[12px] lg:w-[18px] object-contain"
+                      src="/images/mag.png"
+                    />
+                    <span className="px-2">|</span> */}
                     <span className="font-sans font-semibold block leading-[10px] md:tracking-normal lg:tracking-[2px] md:text-[9px] xl:text-[13px] ">
                       media sosial kami
                     </span>
                   </div>
-                  <div className="group-hover:block hidden transition-all  absolute top-full w-full pt-6">
+                  <div className="group-hover:block hidden transition-all  absolute top-full w-full pt-0">
                     <ul className="list-none list rounded-2xl gap-y-2 flex flex-col justify-end bg-white p-4">
                       <li className="">
                         <Link href="https://www.tiktok.com/@femmy.daily">
