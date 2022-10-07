@@ -80,7 +80,9 @@ const ProdukDetail: NextPage = () => {
       return val.slug == router.query.slug;
     });
     setData(fl);
-  }, [router.isReady]);
+    console.log('call');
+    
+  }, [router.isReady,router.query.slug]);
 
   return (
     <Layout page="tentang-kami">
