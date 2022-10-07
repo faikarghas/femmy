@@ -27,8 +27,8 @@ export const produk = [
     content: `<span classname="block text-femmy-pdark text-[16px] text-sans font-bold">Detail Isi:</span><p classname="block text-femmy-pdark text-[16px] text-sans mb-4">Isi 12 stickpack @7gr</p><p classname="block text-femmy-pdark text-[16px] text-sans mb-4">Suplemen Kesehatan Tulang dan Sendi rasa Yoghurt dengan kandungan tinggi kalsium (500mg) , Glucosamine (250mg) dan Vitamin D3 yang lengkap untuk membantu memelihara kesehatan tulang dan sendi.</p><span classname="block text-femmy-pdark text-[16px] text-sans font-bold">Komposisi:</span><ol classname="list-decimal pl-4"><li classname="text-femmy-pdark text-[16px] text-sans mb-4">Tinggi Kalsium (500mg) untuk meningkatkan kekuatan dan kepadatan Tulang</li><li classname="text-femmy-pdark text-[16px] text-sans mb-4">Glucosamine (250gr) untuk menjaga kesehatan sendi dan mengurangi peradangan pada sendi</li><li classname="text-femmy-pdark text-[16px] text-sans mb-4">Vitamin D3 bekerja untuk membantu penyerapan kalsium</li></ol><span classname="block text-femmy-pdark text-[16px] text-sans font-bold">Petunjuk Penggunaan:</span><p classname="block text-femmy-pdark text-[16px] text-sans mb-4">Larutkan 1 stickpack dgn 300ml air dingin, aduk hingga rata</p><span classname="block text-femmy-pdark text-[16px] text-sans font-bold">Aturan Pakai:</span><p classname="block text-femmy-pdark text-[16px] text-sans mb-4">Dewasa 1x sehari 1 stickpack</p><span classname="block text-femmy-pdark text-[16px] text-sans font-bold">Note:</span><p classname="block text-femmy-pdark text-[16px] text-sans mb-4">Aman dikonsumsi penderita diabetes, kolestrol, darah tinggi dan lambung. Tidak boleh dikonsumsi oleh Ibu Hamil & menyusui.</p>`,
   },
   {
-    judul: 'Femmy Fiber',
-    slug: 'femmy-fiber',
+    judul: 'Femmy Fyber',
+    slug: 'femmy-fyber',
     harga: 100000,
     rating: 4,
     image: '/images/produk/estrocal 2.png',

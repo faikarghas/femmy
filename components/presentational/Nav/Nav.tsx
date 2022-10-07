@@ -124,7 +124,7 @@ const Nav: React.FC<INav> = ({ page, position }) => {
                               src="/images/tiktok.png"
                             />
                             <span className="ml-4 text-[16px] font-sans text-femmy-pdark">
-                              Tiktok
+                              Tik Tok
                             </span>
                           </a>
                         </Link>
