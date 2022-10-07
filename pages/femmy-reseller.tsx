@@ -13,10 +13,10 @@ const Reseller: NextPage = () => {
     <Layout page="tentang-kami">
       <section className="bg-[#F9EFE6] py-16 px-8 md:px-60">
         <div className="flex justify-center items-center flex-col mb-12">
-          <h1 className="text-femmy-pdark font-head text-[40px] font-semibold leading-tight mb-4">
+          <h1 className="text-femmy-pdark font-head text-[35px] lg:text-[40px] text-center font-semibold leading-tight mb-4">
             Femmy Reseller
           </h1>
-          <span className="text-[#EA92A7] text-[22px] lg:text-[25px] text-center block lg:text-left font-head leading-tight">
+          <span className="text-[#EA92A7] text-[20px] lg:text-[25px] text-center block lg:text-left font-head leading-tight">
             Mari bersama Menginspirasi
           </span>
         </div>
