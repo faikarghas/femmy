@@ -33,7 +33,7 @@ const Nav: React.FC<INav> = ({ page, position }) => {
       ${
         page == 'home'
           ? `${offset > 100 ?  `${menu ? 'bg-[#601146]': 'bg-white'}` : 'bg-transparent'}`
-          : ``
+          : `bg-white`
       }
       ${position == 'header' ? 'fixed z-20' : ''}
       w-full top-0 left-0 py-4 transition-all h-[85px]`}
@@ -49,7 +49,7 @@ const Nav: React.FC<INav> = ({ page, position }) => {
                 }`}
                 className={`${
                   position == 'header' ? 'h-[50px] z-10' : 'h-[50px]'
-                }  lg:h-[45px] lg:mr-3 sm:h-10 object-contain `}
+                }  lg:h-[55px] lg:mr-3 sm:h-10 object-contain `}
                 alt="Flowbite Logo"
               />
             </a>
@@ -201,7 +201,6 @@ const Nav: React.FC<INav> = ({ page, position }) => {
               );
             })}
           </ul>
-          
 
           <ul className='pl-0'>
             <li className='inline-block mr-2'><Link href='/'><a><img className='w-[40px]' src='/images/tiktok.png'/></a></Link></li>
