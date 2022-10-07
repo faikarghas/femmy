@@ -25,7 +25,7 @@ const Kontak: NextPage = () => {
         </picture>
         </div>
         <div className="basis-full h-100 lg:basis-2/4 lg:bg-femmy-pdark p-0">
-          <div className="flex items-center mb-14 lg:mb-0 pt-8 px-8 lg:px-10 relative lg:absolute lg:top-[50%] right-[0] lg:right-[calc(0%+48px)] lg:translate-x-[0%] lg:translate-y-[-50%] bg-[#FBEEE5]/[0.5] lg:bg-femmy-plight h-full lg:h-[calc(100%-96px-35px)] w-[100%] lg:w-[64%] rounded-2xl shadow-[16px_17px_16px_rgba(0, 0, 0, 0.17)]">
+          <div className="flex items-center mb-14 lg:mb-0 pt-8 px-8 lg:px-10 relative lg:absolute lg:top-[50%] right-[0] lg:right-[calc(0%+48px)] lg:translate-x-[0%] lg:translate-y-[-50%] bg-[#FCF4EE] lg:bg-femmy-plight h-full lg:h-[calc(100%-96px-35px)] w-[100%] lg:w-[64%] rounded-2xl shadow-[16px_17px_16px_rgba(0, 0, 0, 0.17)]">
             <div className='w-full'>
               <div className="mb-4 pb-2 xl:pb-2 border-b-[1px] text-center lg:text-left lg:border-femmy-pdark">
                 <h2 className="text-femmy-pdark text-[35px] xl:text-[40px] font-head font-semibold">
@@ -53,7 +53,7 @@ const Kontak: NextPage = () => {
         </div>
       </section>
       <div className="block lg:hidden mx-10 border-femmy-pdark border-b-[2px]"></div>
-      <section className="bg-[#FBEEE5]/[0.5]">
+      <section className="bg-[#FCF4EE]">
         <div className="flex justify-center pt-12 pb-16">
           <p className="text-femmy-pdark font-sans font-semibold px-8 lg:px-[30rem] text-center">
             Hubungi WhatsApp kami untuk konsultasi online atau temukan kami di
