@@ -61,7 +61,7 @@ const Tentang: NextPage = () => {
               className="w-full  object-cover"
             ></img>
         </picture>
-        <div className="relative lg:absolute w-full lg:w-[450px] top-[50%] lg:left-16 lg:translate-y-[-50%] px-8 py-10 bg-[#F6C2C6] xl:bg-[#F6C2C6]/[0]">
+        <div className="relative lg:absolute w-full lg:w-[450px] top-[50%] lg:left-16 lg:translate-y-[-50%] px-0 py-10 bg-[#F6C2C6] xl:bg-[#F6C2C6]/[0]">
           <h2 className="font-head text-femmy-pdark text-[28px] lg:text-[32px] mb-6 font-semibold leading-[40px]">
             Bergabung bersama Femmy untuk saling menginpirasi.
           </h2>
