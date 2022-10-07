@@ -16,8 +16,8 @@ const Tips: NextPage = () => {
           Tips & Trik
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 mb-8 gap-0 lg:gap-10 bg-white rounded-tr-2xl rounded-tl-2xl">
-          <div className="lg:col-span-1 lg:shadow-[0_0_30px_rgba(0,0,0,0.25)]  lg:rounded-2xl">
+        <div className="grid grid-cols-1 lg:grid-cols-3 mb-8 gap-0 lg:gap-10 bg-white lg:bg-transparent rounded-tr-2xl rounded-tl-2xl">
+          <div className="lg:col-span-1 lg:rounded-2xl">
             <img src="/images/news1.jpg" className="rounded-tr-2xl rounded-tl-2xl lg:rounded-2xl" />
           </div>
           <div className="col-span-2 px-8 lg:px-6 pt-4 pb-12">
