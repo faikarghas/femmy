@@ -118,7 +118,7 @@ const Nav: React.FC<INav> = ({ page, position }) => {
                     <ul className="list-none list rounded-2xl gap-y-2 flex flex-col justify-end bg-white p-4">
                       <li className="">
                         <Link href="https://www.tiktok.com/@femmy.daily">
-                          <a className="flex items-center">
+                          <a className="flex items-center" target="_blank" rel='noopener'>
                             <img
                               className="w-[30px]"
                               src="/images/tiktok.png"
@@ -131,7 +131,7 @@ const Nav: React.FC<INav> = ({ page, position }) => {
                       </li>
                       <li className="">
                         <Link href="https://www.Instagram.com/femmy.daily">
-                          <a className="flex items-center">
+                          <a className="flex items-center" target="_blank" rel='noopener'>
                             <img
                               className="w-[30px]"
                               src="/images/logo-ig.png"
@@ -144,7 +144,7 @@ const Nav: React.FC<INav> = ({ page, position }) => {
                       </li>
                       <li className="">
                         <Link href="https://www.youtube.com/channel/UC7Sg8HkaWJItuMLbvNdKvWQ">
-                          <a className="flex items-center">
+                          <a className="flex items-center" target="_blank" rel='noopener'>
                             <img
                               className="w-[30px]"
                               src="/images/logo-yt.png"
@@ -195,9 +195,9 @@ const Nav: React.FC<INav> = ({ page, position }) => {
           </ul>
 
           <ul className='pl-0'>
-            <li className='inline-block mr-2'><Link href='https://www.tiktok.com/@femmy.daily'><a><img className='w-[40px]' src='/images/tiktok.png'/></a></Link></li>
-            <li className='inline-block mr-2'><Link href='https://www.Instagram.com/femmy.daily'><a><img className='w-[40px]' src='/images/logo-ig.png'/></a></Link></li>
-            <li className='inline-block mr-2'><Link href='https://www.youtube.com/channel/UC7Sg8HkaWJItuMLbvNdKvWQ'><a><img className='w-[40px]' src='/images/logo-yt.png'/></a></Link></li>
+            <li className='inline-block mr-2'><Link href='https://www.tiktok.com/@femmy.daily'><a target="_blank" rel='noopener'><img className='w-[40px]' src='/images/tiktok.png'/></a></Link></li>
+            <li className='inline-block mr-2'><Link href='https://www.Instagram.com/femmy.daily'><a target="_blank" rel='noopener'><img className='w-[40px]' src='/images/logo-ig.png'/></a></Link></li>
+            <li className='inline-block mr-2'><Link href='https://www.youtube.com/channel/UC7Sg8HkaWJItuMLbvNdKvWQ'><a target="_blank" rel='noopener'><img className='w-[40px]' src='/images/logo-yt.png'/></a></Link></li>
           </ul>
         </div>
       ) : (
