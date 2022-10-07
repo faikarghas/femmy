@@ -8,7 +8,7 @@ export interface IBread {
 
 const Breadcrumb: React.FC<IBread> = ({ page, detail }) => (
   <nav className="flex mb-14" aria-label="Breadcrumb">
-    <ol className="inline-flex items-center space-x-1">
+    <ul className="inline-flex items-center space-x-1">
       <li className="inline-flex items-center">
         <Link href="">
           <a className="inline-flex items-center text-sm font-sans text-femmy-pdark ">
@@ -57,7 +57,7 @@ const Breadcrumb: React.FC<IBread> = ({ page, detail }) => (
           </span>
         </div>
       </li>
-    </ol>
+    </ul>
   </nav>
 );
 
