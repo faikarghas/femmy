@@ -20,24 +20,26 @@ const Tips: NextPage = () => {
           <div className="lg:col-span-1 lg:rounded-2xl">
             <img src="/images/news1.jpg" className="rounded-tr-2xl rounded-tl-2xl lg:rounded-2xl" />
           </div>
-          <div className="col-span-2 px-8 lg:px-6 pt-4 pb-12">
-            <span className="font-sans text-[#8B8B8B] text-[13px] mb-2 lg:mb-1.5 block">
-              23 Juli 2022
-            </span>
-            <h5 className="leading-tight font-head text-femmy-pdark mb-4 text-[24px] font-semibold">
-              Lorem ipsum dolor sit amet siana motel.
-            </h5>
-            <p className="font-sans text-femmy-pdark leading-4 font-medium text-[15px] mb-10 xl:mb-20 line-clamp-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at
-              porttitor massa. Proin pretium, quam ac venenatis convallis, leo
-              ligula porta arcu, euismod rhoncus tortor nibh eu lacus. Aliquam
-              erat volutpat.
-            </p>
-            <Link href="#">
-              <a className="py-2.5 px-12 text-white text-center bg-femmy-pdark font-sans rounded-2xl">
-                baca selengkapnya
-              </a>
-            </Link>
+          <div className="col-span-2 px-8 lg:px-6 pt-4 pb-12 flex items-center">
+            <div className='w-full'>
+              <span className="font-sans text-[#8B8B8B] text-[13px] mb-2 lg:mb-1.5 block">
+                23 Juli 2022
+              </span>
+              <h5 className="leading-tight font-head text-femmy-pdark mb-4 text-[24px] font-semibold">
+                Lorem ipsum dolor sit amet siana motel.
+              </h5>
+              <p className="font-sans text-femmy-pdark leading-4 font-medium text-[15px] mb-10 xl:mb-10 line-clamp-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at
+                porttitor massa. Proin pretium, quam ac venenatis convallis, leo
+                ligula porta arcu, euismod rhoncus tortor nibh eu lacus. Aliquam
+                erat volutpat.
+              </p>
+              <Link href="#">
+                <a className="py-2.5 px-12 text-white text-center bg-femmy-pdark font-sans rounded-2xl">
+                  baca selengkapnya
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
 
