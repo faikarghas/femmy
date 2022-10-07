@@ -25,26 +25,28 @@ const Kontak: NextPage = () => {
         </picture>
         </div>
         <div className="basis-full h-100 lg:basis-2/4 lg:bg-femmy-pdark p-0">
-          <div className="mb-14 lg:mb-0 pt-8 px-8 lg:px-10 relative lg:absolute lg:top-[50%] right-[0] lg:right-[calc(0%+48px)] lg:translate-x-[0%] lg:translate-y-[-50%] bg-[#FBEEE5]/[0.5] lg:bg-femmy-plight h-full lg:h-[calc(100%-96px-35px)] w-[100%] lg:w-[64%] rounded-2xl shadow-[16px_17px_16px_rgba(0, 0, 0, 0.17)]">
-            <div className="mb-4 pb-2 xl:pb-2 border-b-[1px] text-center lg:text-left lg:border-femmy-pdark">
-              <h2 className="text-femmy-pdark text-[35px] xl:text-[40px] font-head font-semibold">
-                Tanya Kami
-              </h2>
-            </div>
-            <p className="hidden lg:block mb-6 text-femmy-pdark text-[15px] xl:text-[16px] leading-[15px] xl:leading-[20px] font-sans font-semibold pr-0 lg:pr-[9rem]">
-              Pakar Femmy siap menjawab pertanyaan kamu baik seputar masalah
-              kesehatan tubuh maupun produk-produk suplemen terkait.
-            </p>
-            <p className="block lg:hidden text-center mb-12 text-femmy-pdark text-[15px] xl:text-[16px] leading-[15px] xl:leading-[15px] font-sans font-semibold">
-              Kami siap menjawab semua
-              pertanyaan kamu, ajukan pertanyaan kamu sekarang
-            </p>
-            <p className="block lg:hidden text-center mb-6 text-femmy-pdark text-[15px] xl:text-[16px] leading-[15px] xl:leading-[15px] font-sans font-semibold">
-              Ingin Ajukan Pertanyaan?
-            </p>
-            <div className="flex flex-row">
-              <div className="basis-full">
-                <FormKontak />
+          <div className="flex items-center mb-14 lg:mb-0 pt-8 px-8 lg:px-10 relative lg:absolute lg:top-[50%] right-[0] lg:right-[calc(0%+48px)] lg:translate-x-[0%] lg:translate-y-[-50%] bg-[#FBEEE5]/[0.5] lg:bg-femmy-plight h-full lg:h-[calc(100%-96px-35px)] w-[100%] lg:w-[64%] rounded-2xl shadow-[16px_17px_16px_rgba(0, 0, 0, 0.17)]">
+            <div className='w-full'>
+              <div className="mb-4 pb-2 xl:pb-2 border-b-[1px] text-center lg:text-left lg:border-femmy-pdark">
+                <h2 className="text-femmy-pdark text-[35px] xl:text-[40px] font-head font-semibold">
+                  Tanya Kami
+                </h2>
+              </div>
+              <p className="hidden lg:block mb-6 text-femmy-pdark text-[15px] xl:text-[16px] leading-[15px] xl:leading-[20px] font-sans font-semibold pr-0 lg:pr-[9rem]">
+                Pakar Femmy siap menjawab pertanyaan kamu baik seputar masalah
+                kesehatan tubuh maupun produk-produk suplemen terkait.
+              </p>
+              <p className="block lg:hidden text-center mb-12 text-femmy-pdark text-[15px] xl:text-[16px] leading-[15px] xl:leading-[15px] font-sans font-semibold">
+                Kami siap menjawab semua
+                pertanyaan kamu, ajukan pertanyaan kamu sekarang
+              </p>
+              <p className="block lg:hidden text-center mb-6 text-femmy-pdark text-[15px] xl:text-[16px] leading-[15px] xl:leading-[15px] font-sans font-semibold">
+                Ingin Ajukan Pertanyaan?
+              </p>
+              <div className="flex flex-row">
+                <div className="basis-full">
+                  <FormKontak />
+                </div>
               </div>
             </div>
           </div>
