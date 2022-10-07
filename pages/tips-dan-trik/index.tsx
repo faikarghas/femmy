@@ -35,7 +35,7 @@ const Tips: NextPage = () => {
                 erat volutpat.
               </p>
               <Link href="/tips-dan-trik/contoh">
-                <a className="py-2.5 px-12 text-white text-center bg-femmy-pdark font-sans rounded-2xl">
+                <a className="py-2.5 px-8 text-white text-center bg-femmy-pdark font-sans rounded-2xl">
                   baca selengkapnya
                 </a>
               </Link>
