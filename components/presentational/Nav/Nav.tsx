@@ -117,7 +117,7 @@ const Nav: React.FC<INav> = ({ page, position }) => {
                   <div className="group-hover:block hidden transition-all  absolute top-full w-full pt-6">
                     <ul className="list-none list rounded-2xl gap-y-2 flex flex-col justify-end bg-white p-4">
                       <li className="">
-                        <Link href="#">
+                        <Link href="https://www.tiktok.com/@femmy.daily">
                           <a className="flex items-center">
                             <img
                               className="w-[30px]"
@@ -130,7 +130,7 @@ const Nav: React.FC<INav> = ({ page, position }) => {
                         </Link>
                       </li>
                       <li className="">
-                        <Link href="#">
+                        <Link href="https://www.Instagram.com/femmy.daily">
                           <a className="flex items-center">
                             <img
                               className="w-[30px]"
@@ -142,16 +142,8 @@ const Nav: React.FC<INav> = ({ page, position }) => {
                           </a>
                         </Link>
                       </li>
-                      {/* <li className="">
-                      <Link href="#">
-                        <a className='flex items-center'>
-                          <img className="w-[30px]" src="/images/logo-fb.png" />
-                          <span className='ml-4 text-[16px] font-sans text-femmy-pdark'>Facebook</span>
-                        </a>
-                      </Link>
-                    </li> */}
                       <li className="">
-                        <Link href="#">
+                        <Link href="https://www.youtube.com/channel/UC7Sg8HkaWJItuMLbvNdKvWQ">
                           <a className="flex items-center">
                             <img
                               className="w-[30px]"
@@ -203,9 +195,9 @@ const Nav: React.FC<INav> = ({ page, position }) => {
           </ul>
 
           <ul className='pl-0'>
-            <li className='inline-block mr-2'><Link href='/'><a><img className='w-[40px]' src='/images/tiktok.png'/></a></Link></li>
-            <li className='inline-block mr-2'><Link href='/'><a><img className='w-[40px]' src='/images/logo-ig.png'/></a></Link></li>
-            <li className='inline-block mr-2'><Link href='/'><a><img className='w-[40px]' src='/images/logo-yt.png'/></a></Link></li>
+            <li className='inline-block mr-2'><Link href='https://www.tiktok.com/@femmy.daily'><a><img className='w-[40px]' src='/images/tiktok.png'/></a></Link></li>
+            <li className='inline-block mr-2'><Link href='https://www.Instagram.com/femmy.daily'><a><img className='w-[40px]' src='/images/logo-ig.png'/></a></Link></li>
+            <li className='inline-block mr-2'><Link href='https://www.youtube.com/channel/UC7Sg8HkaWJItuMLbvNdKvWQ'><a><img className='w-[40px]' src='/images/logo-yt.png'/></a></Link></li>
           </ul>
         </div>
       ) : (

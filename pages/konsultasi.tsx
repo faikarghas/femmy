@@ -26,7 +26,7 @@ const Kontak: NextPage = () => {
         </div>
         <div className="basis-full h-100 lg:basis-2/4 lg:bg-femmy-pdark p-0">
           <div className="mb-14 lg:mb-0 pt-8 px-8 lg:px-10 relative lg:absolute lg:top-[50%] right-[0] lg:right-[calc(0%+48px)] lg:translate-x-[0%] lg:translate-y-[-50%] bg-[#FBEEE5]/[0.5] lg:bg-femmy-plight h-full lg:h-[calc(100%-96px-35px)] w-[100%] lg:w-[64%] rounded-2xl shadow-[16px_17px_16px_rgba(0, 0, 0, 0.17)]">
-            <div className="pb-2 xl:pb-2 border-b-[1px] text-center lg:text-left lg:border-femmy-pdark">
+            <div className="mb-4 pb-2 xl:pb-2 border-b-[1px] text-center lg:text-left lg:border-femmy-pdark">
               <h2 className="text-femmy-pdark text-[35px] xl:text-[40px] font-head font-semibold">
                 Tanya Kami
               </h2>

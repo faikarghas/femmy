@@ -51,7 +51,16 @@ const Tentang: NextPage = () => {
         </div>
       </section>
       <section className="flex flex-wrap flex-row bg-[#FEF7F8] relative ">
-        <img className="w-full  object-cover" src="/images/tentang2-img2.png" />
+        <picture className="flex justify-end p-0 lg:p-4 xl:p-0">
+            <source
+              media="(min-width:750px)"
+              srcSet="/images/tentang2-img2.png"
+            />
+            <img
+              src="/images/tentang-kami-m.jpg"
+              className="w-full  object-cover"
+            ></img>
+        </picture>
         <div className="relative lg:absolute w-full lg:w-[450px] top-[50%] lg:left-16 lg:translate-y-[-50%] px-8 py-10 bg-[#F6C2C6] xl:bg-[#F6C2C6]/[0]">
           <h2 className="font-head text-femmy-pdark text-[28px] lg:text-[32px] mb-6 font-semibold leading-[40px]">
             Bergabung bersama Femmy untuk saling menginpirasi.
