@@ -34,7 +34,7 @@ const Tips: NextPage = () => {
                 ligula porta arcu, euismod rhoncus tortor nibh eu lacus. Aliquam
                 erat volutpat.
               </p>
-              <Link href="#">
+              <Link href="/tips-dan-trik/contoh">
                 <a className="py-2.5 px-12 text-white text-center bg-femmy-pdark font-sans rounded-2xl">
                   baca selengkapnya
                 </a>
