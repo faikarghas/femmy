@@ -21,11 +21,11 @@ const Header: React.FC<IHeader> = ({ page }) => {
         <picture>
           <source
             media="(min-width:750px)"
-            srcSet="/images/femmy_banner_banner1.jpg"
+            srcSet="/images/femmy_banner_banner1(1).jpg"
           />
           <img
-            src="/images/femmy_banner_mobile2.jpg"
-            className="w-full object-contain"
+            src="/images/femmy_banner_mobile2m.jpg"
+            className="w-full h-full object-cover"
           ></img>
         </picture>
 

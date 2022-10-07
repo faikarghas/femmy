@@ -14,27 +14,25 @@ export interface ICardP {
 
 const CardProduct: React.FC<ICardP> = ({ data }) => (
   <div className="">
-    <div className="h-[300px] lg:h-[340px] bg-femmy-white rounded-t-2xl rounded-r-2xl flex flex-col justify-center items-center">
-      <Image
-          src={data.image}
-          alt="Picture of the author"
-          className="object-contain w-[200px]"
-          width={200}
-          height={200}
+    <div className="h-[430px] lg:h-[340px] bg-femmy-white rounded-t-2xl rounded-r-2xl flex flex-col justify-center items-center">
+      <img
+        src={data.image}
+        alt="Picture of the author"
+        className="object-contain w-[300px] lg:w-[200px] h-[300px] lg:h-[200px]"
       />
-      <span className="font-sans text-[#8F2A64] font-semibold tracking-wide text-[12px] lg:text-[16px] mb-1">
+      <span className="font-sans text-[#8F2A64] font-semibold text-[20px] lg:text-[16px] mb-1 tracking-[2px]">
         {data.judul}
       </span>
-      <span className="font-sans text-black font-semibold tracking-wide text-[11px] lg:text-[14px] mb-2.5">
+      <span className="font-sans text-black font-semibold tracking-wide text-[16px] lg:text-[14px] mb-2.5 tracking-harga">
         RP {data.harga.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')},-
       </span>
       <div className="flex items-center">
         <Rating count={data.rating} />
       </div>
     </div>
-    <div className="h-[70px] bg-[#CC3F80] rounded-b-2xl rounded-br-2xl flex justify-center items-center">
-      <Link href={`/produk/${toSlug(data.judul)}`} >
-        <a className="text-white font-sans">Beli Sekarang</a>
+    <div className="h-[60px] bg-[#CC3F80] rounded-b-2xl rounded-br-2xl flex justify-center items-center">
+      <Link href={`/produk/${toSlug(data.judul)}`}>
+        <a className="text-white font-sans tracking-[2px]">Beli Sekarang</a>
       </Link>
     </div>
   </div>

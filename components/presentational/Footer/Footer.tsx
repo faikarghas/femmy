@@ -16,29 +16,29 @@ const Footer = () => (
               Bergabung bersama kami
             </li>
             <li className="inline-block">
-              <Link href="#">
-                <a>
-                  <img className="w-[30px]" src="/images/logo-wa.png" />
+              <Link href="https://www.tiktok.com/@femmy.daily">
+                <a target="_blank" rel="noopener">
+                  <img className="w-[30px]" src="/images/tiktok.png" />
                 </a>
               </Link>
             </li>
             <li className="inline-block">
-              <Link href="#">
-                <a>
+              <Link href="https://www.Instagram.com/femmy.daily">
+                <a target="_blank" rel="noopener">
                   <img className="w-[30px]" src="/images/logo-ig.png" />
                 </a>
               </Link>
             </li>
-            <li className="inline-block">
+            {/* <li className="inline-block">
               <Link href="#">
-                <a>
+                <a target='_blank' rel='noopener'>
                   <img className="w-[30px]" src="/images/logo-fb.png" />
                 </a>
               </Link>
-            </li>
+            </li> */}
             <li className="inline-block">
-              <Link href="#">
-                <a>
+              <Link href="https://www.youtube.com/channel/UC7Sg8HkaWJItuMLbvNdKvWQ">
+                <a target="_blank" rel="noopener">
                   <img className="w-[30px]" src="/images/logo-yt.png" />
                 </a>
               </Link>
@@ -50,7 +50,7 @@ const Footer = () => (
         <span className="font-sans text-femmy-pdark text-[14px] font-medium">
           &copy; 2022 femmy all rights reserved
         </span>
-        <div className='hidden xl:block'>
+        <div className="hidden xl:block">
           <ul className="list-none list flex items-center gap-2 justify-end">
             <li className="inline-block font-sans text-femmy-pdark text-[14px] font-medium mr-2">
               <Link href="#">

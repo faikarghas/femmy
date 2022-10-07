@@ -10,7 +10,9 @@ const Layout: React.FC<ILayout> = ({ children, page }) => {
   return (
     <>
       <Header page={page} />
-      <main className={`${page !== 'home' ? 'mt-[104px]' : ''}`}>{children}</main>
+      <main className={`${page !== 'home' ? 'mt-[85px]' : ''}`}>
+        {children}
+      </main>
       <Footer />
     </>
   );
