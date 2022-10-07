@@ -26,7 +26,7 @@ const Temukan: NextPage = () => {
       </section>
       <section className="bg-[#FEC8CE] pt-8 pb-16 lg:pb-24">
         <div className="mb-12 px-8">
-          <h1 className="text-femmy-pdark font-head text-center text-[35px] font-medium lg:mb-2.5">
+          <h1 className="text-femmy-pdark font-head text-center text-[30px] lg:text-[35px] font-medium lg:mb-2.5s">
             Temukan Femmy
           </h1>
           <span className="text-femmy-pdark font-sans text-center text-[14px] font-medium block">

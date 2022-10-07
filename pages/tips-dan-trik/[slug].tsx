@@ -33,7 +33,7 @@ const TipsDetail: NextPage = () => {
               <h5 className="leading-tight font-head text-femmy-pdark mb-8 text-[24px] font-semibold">
                 Bila sehat adalah sebuah hak untuk semua Wanita
               </h5>
-              <p className="font-sans text-femmy-pdark leading-4 font-medium text-[15px] mb-20">
+              <p className="font-sans text-femmy-pdark font-medium text-[15px] mb-20 leading-normal">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at
                 porttitor massa. Proin pretium, quam ac venenatis convallis, leo
                 ligula porta arcu, euismod rhoncus tortor nibh eu lacus. Aliquam
