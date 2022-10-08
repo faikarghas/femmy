@@ -115,7 +115,7 @@ const Home: NextPage = () => {
           {tips.map((val,i)=>{
             if (i === 0 ) {
               return ( 
-              <div className="col-span-4 lg:row-span-2 lg:col-span-2">
+              <div key={i} className="col-span-4 lg:row-span-2 lg:col-span-2">
                 <CardNews
                   type="big"
                   height="h-[280px] lg:h-[210px]"
@@ -126,7 +126,7 @@ const Home: NextPage = () => {
               )
             }
             return (
-              <div className="col-span-1">
+              <div key={i} className="col-span-1">
                 <CardNews
                   type="small"
                   height="h-[150px]"
