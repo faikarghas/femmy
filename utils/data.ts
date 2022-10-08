@@ -63,3 +63,27 @@ export const produk = [
     content: `<span classname="block text-femmy-pdark text-[16px] text-sans font-bold">Detail Isi:</span><p classname="block text-femmy-pdark text-[16px] text-sans mb-4">IsIsi 1 strip @10 tablet salut selaput</p><p classname="block text-femmy-pdark text-[16px] text-sans mb-4">Femmy D3 1.000 IU merupakan Vit D3 dengan dosis tepat untuk dikonsumsi setiap hari, dengan mini tablet yang memberikan banyak manfaat yaitu Meningkatkan imun tubuh, Menjaga kesehatan tulang, mencegah osteoporosis, dan memelihara kesehatan jantung.</p><span classname="block text-femmy-pdark text-[16px] text-sans font-bold">Komposisi:</span><ol classname="list-decimal pl-4"><li classname="text-femmy-pdark text-[16px] text-sans mb-4">Membantu menjaga kesehatan tulang</li><li classname="text-femmy-pdark text-[16px] text-sans mb-4">Membantu menjaga kesehatan tulang</li><li classname="text-femmy-pdark text-[16px] text-sans mb-4">Membantu menjaga kekuatan otot</li><li classname="text-femmy-pdark text-[16px] text-sans mb-4">Membantu saraf membawa pesan antara otak dan tubuh</li></ol><span classname="block text-femmy-pdark text-[16px] text-sans font-bold">Komposisi:</span><p classname="block text-femmy-pdark text-[16px] text-sans mb-4">Vitamin D3 1000 IU.</p><span classname="block text-femmy-pdark text-[16px] text-sans font-bold">Aturan Pakai:</span><p classname="block text-femmy-pdark text-[16px] text-sans mb-4">Dewasa 1x sehari 1 tablet setelah makan pagi.</p><span classname="block text-femmy-pdark text-[16px] text-sans font-bold">Perhatian:</span><p classname="block text-femmy-pdark text-[16px] text-sans mb-4">Aman dikonsumsi penderita diabetes, kolestrol, darah tinggi dan lambung. Aman dikonsumsi oleh ibu Hamil.</p>`,
   },
 ];
+
+export const tips = [
+  {
+    'slug': 'a',
+    'judul':'a',
+    'shortDesc' : 'a',
+    'content':'a',
+    'image':''
+  },
+  {
+    'slug': 'b',
+    'judul':'b',
+    'shortDesc' : 'b',
+    'content':'b',
+    'image':''
+  },
+  {
+    'slug': 'c',
+    'judul':'c',
+    'shortDesc' : 'c',
+    'content':'c',
+    'image':''
+  },
+]

@@ -1,5 +1,8 @@
+import { useState, useRef, useEffect } from 'react';
 import type { NextPage } from 'next';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import parse from 'html-react-parser';
 
 // import component
 import Layout from '../../components/layouts/index';
@@ -8,7 +11,35 @@ import CardNews from '../../components/presentational/CardNews/CardNews';
 // import hoc
 import { withAUth } from '../../hoc/withAuth';
 
+//import utils
+import { tips } from '../../utils/data';
+
+type DataTypes = {
+  slug: string;
+  judul: string;
+  shortDesc: string;
+  content: string;
+  image:string;
+};
+
 const TipsDetail: NextPage = () => {
+  const [data, setData] = useState<DataTypes[]>([]);
+  const router = useRouter();
+
+  const tipsLain = () => {
+    let tl = tips.filter((val) => {
+      return val.slug !== router.query.slug;
+    });
+    return tl;
+  };
+
+  useEffect(() => {
+      let tl = tips.filter((val) => {
+        return val.slug == router.query.slug;
+      });
+      setData(tl);
+  }, [router.isReady,router.query.slug]);
+
   return (
     <Layout page="tentang-kami">
       <section className="relative bg-[#FCF4EE] pt-0 lg:pt-8 lg:pb-8 px-0 md:px-16">
@@ -31,69 +62,29 @@ const TipsDetail: NextPage = () => {
                 23 Juli 2022
               </span>
               <h5 className="leading-tight font-head text-femmy-pdark mb-8 text-[24px] font-semibold">
-                Bila sehat adalah sebuah hak untuk semua Wanita
+                {data[0]?.judul}
               </h5>
-              <p className="font-sans text-femmy-pdark font-medium text-[15px] mb-20 leading-normal">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at
-                porttitor massa. Proin pretium, quam ac venenatis convallis, leo
-                ligula porta arcu, euismod rhoncus tortor nibh eu lacus. Aliquam
-                erat volutpat. Nunc feugiat ligula erat, quis commodo mi
-                dignissim rhoncus. Morbi vel risus risus. Praesent purus orci,
-                volutpat at semper vulputate, sagittis ut nisl. Donec ac nulla
-                ac elit dignissim egestas eget non libero. Curabitur sagittis,
-                quam eu vehicula auctor, ipsum eros tempus felis. Lorem ipsum
-                dolor sit amet, consectetur adipiscing elit. Nunc at porttitor
-                massa. Proin pretium, quam ac venenatis convallis, leo ligula
-                porta arcu, euismod rhoncus tortor nibh eu lacus. Aliquam erat
-                volutpat. Nunc feugiat ligula erat, quis commodo mi dignissim
-                rhoncus. Morbi vel risus risus. Praesent purus orci, volutpat at
-                semper vulputate, sagittis ut nisl. Donec ac nulla ac elit
-                dignissim egestas eget non libero. Nunc feugiat ligula erat,
-                quis commodo mi dignissim rhoncus. Morbi vel risus risus.
-                Praesent purus orci, volutpat at semper vulputate, sagittis ut
-                nisl. Donec ac nulla ac elit dignissim egestas eget non libero.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at
-                porttitor massa. Proin pretium, quam ac venenatis convallis, leo
-                ligula porta arcu, euismod rhoncus tortor nibh eu lacus. Aliquam
-                erat volutpat. Nunc feugiat ligula erat, quis commodo mi
-                dignissim rhoncus. Morbi vel risus risus. Praesent purus orci,
-                volutpat at semper vulputate, sagittis ut nisl. Donec ac nulla
-                ac elit dignissim egestas eget non libero. Curabitur sagittis,
-                quam eu vehicula auctor, ipsum eros tempus felis. Lorem ipsum
-                dolor sit amet, consectetur adipiscing elit. Nunc at porttitor
-                massa. Proin pretium, quam ac venenatis convallis, leo ligula
-                porta arcu, euismod rhoncus tortor nibh eu lacus. Aliquam erat
-                volutpat. Nunc feugiat ligula erat, quis commodo mi dignissim
-                rhoncus. Morbi vel risus risus. Praesent purus orci, volutpat at
-                semper vulputate, sagittis ut nisl. Donec ac nulla ac elit
-                dignissim egestas eget non libero. Nunc feugiat ligula erat,
-                quis commodo mi dignissim rhoncus. Morbi vel risus risus.
-                Praesent purus orci, volutpat at semper vulputate, sagittis ut
-                nisl. Donec ac nulla ac elit dignissim egestas eget non libero.
-              </p>
+              <div className="font-sans text-femmy-pdark font-medium text-[15px] mb-20 leading-normal">
+                {parse(data[0]?.content ? data[0]?.content : '')}
+              </div>
             </div>
             <div className="basis-full lg:basis-1/3 bg-[#F6C2C6] pt-8 lg:pt-0 lg:bg-transparent px-8 lg:px-0">
               <h6 className="font-head text-femmy-pdark text-[20px] pb-4 mb-6 border-femmy-pdark lg:border-b-[1px] text-center lg:text-left">
                 Rekomendasi Artikel
               </h6>
-              <div className="mb-8">
-                <CardNews
-                  type="small"
-                  height="h-[200px] lg:h-[150px]"
-                  paragraph={false}
-                  model={true}
-                  data={{ title: 'lorem', short: 'lorem ipsu olor sit amet' }}
-                />
-              </div>
-              <div className="mb-8">
-                <CardNews
-                  type="small"
-                  height="h-[200px] lg:h-[150px]"
-                  paragraph={false}
-                  model={true}
-                  data={{ title: 'lorem', short: 'lorem ipsu olor sit amet' }}
-                />
-              </div>
+              {tipsLain().map((val,i)=>{
+                return (
+                <div className="mb-8">
+                  <CardNews
+                    type="small"
+                    height="h-[200px] lg:h-[150px]"
+                    paragraph={false}
+                    model={true}
+                    data={{ title: val.judul, short: val.shortDesc,link:val.slug }}
+                  />
+                </div>
+                )
+              })}
             </div>
           </div>
         </div>

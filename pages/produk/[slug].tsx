@@ -81,8 +81,6 @@ const ProdukDetail: NextPage = () => {
       return val.slug == router.query.slug;
     });
     setData(fl);
-    console.log('call');
-    
   }, [router.isReady,router.query.slug]);
 
   return (
