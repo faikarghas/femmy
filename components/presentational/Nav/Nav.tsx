@@ -81,7 +81,7 @@ const Nav: React.FC<INav> = ({ page, position }) => {
             </div>
           )}
           <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
-            <ul className="flex flex-col mt-4 rounded-lg border  md:flex-row md:space-x-4 lg:space-x-8 xl:space-x-9 md:mt-0 md:text-sm md:font-medium md:border-0">
+            <ul className="flex flex-col mt-4 rounded-lg border  md:flex-row md:space-x-4 lg:space-x-7 xl:space-x-9 md:mt-0 md:text-sm md:font-medium md:border-0">
               {listNav.map((txt, i) => {
                 return (
                   <li className="flex items-center" key={i}>
@@ -93,7 +93,7 @@ const Nav: React.FC<INav> = ({ page, position }) => {
                       replace={true}
                     >
                       <a
-                        className="font-sans font-semibold md:text-[9px] xl:text-[13px] block py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0 text-femmy-pdark tracking-[2px]"
+                        className="font-sans font-semibold md:text-[9px] xl:text-[13px] block py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0 text-femmy-pdark xl:tracking-[2px]"
                         aria-current="page"
                       >
                         {txt}
