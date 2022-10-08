@@ -30,14 +30,14 @@ const CardNews: React.FC<ICardN> = ({
             : `${
                 model ? 'rounded-bl-2xl w-[35%] lg:w-full' : 'h-[200px]'
               } lg:h-[192px]`
-        } bg-femmy-white rounded-tl-2xl flex flex-col justify-center items-center overflow-hidden`}
+        } bg-femmy-white rounded-tl-2xl rounded-tr-2xl flex flex-col justify-center items-center overflow-hidden`}
       >
-        <img src="/images/news1.jpg" className="object-cover w-[100%] h-[100%]" />
+        <img src={`/images/news/${data.image}`} className="object-cover w-[100%] h-[100%]" />
       </div>
       <div
         className={`${height} ${
           model && 'w-[65%] lg:w-full'
-        } bg-femmy-white rounded-tr-2xl lg:rounded-tr-0  rounded-b-2xl flex flex-col justify-center px-6 pt-2 pb-5`}
+        } bg-femmy-white rounded-tr-2xl lg:rounded-tr-none  rounded-b-2xl flex flex-col justify-center px-6 pt-2 pb-5`}
       >
         <span className="font-sans text-[#8B8B8B] text-[13px] mb-1.5">
           23 Juli 2022
@@ -51,10 +51,7 @@ const CardNews: React.FC<ICardN> = ({
         </h5>
         {paragraph && (
           <p className="font-sans text-femmy-pdark leading-4 font-medium text-[13px] mb-6 line-clamp-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at
-            porttitor massa. Proin pretium, quam ac venenatis convallis, leo
-            ligula porta arcu, euismod rhoncus tortor nibh eu lacus. Aliquam erat
-            volutpat.
+            {data.shortDesc}
           </p>
         )}
         <Link href={`/tips-dan-trik/${data.link}`}>

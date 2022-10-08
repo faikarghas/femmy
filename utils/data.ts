@@ -67,23 +67,23 @@ export const produk = [
 export const tips = [
   {
     'slug': 'a',
-    'judul':'a',
+    'judul':'Bila sehat adalah sebuah hak untuk semua Wanita',
     'shortDesc' : 'a',
     'content':'a',
-    'image':''
+    'image':'news1.png'
   },
   {
     'slug': 'b',
-    'judul':'b',
+    'judul':'Bila sehat adalah sebuah hak untuk semua Wanita',
     'shortDesc' : 'b',
     'content':'b',
-    'image':''
+    'image':'news4.jpg'
   },
   {
     'slug': 'c',
-    'judul':'c',
+    'judul':'Bila sehat adalah sebuah hak untuk semua Wanita',
     'shortDesc' : 'c',
     'content':'c',
-    'image':''
+    'image':'news3.jpg'
   },
 ]

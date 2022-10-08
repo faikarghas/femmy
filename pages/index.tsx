@@ -14,6 +14,8 @@ import CardNews from '../components/presentational/CardNews/CardNews';
 // import hoc
 import { withAUth } from '../hoc/withAuth';
 
+//import utils
+import { tips } from '../utils/data';
 
 const settings = {
   dots: false,
@@ -110,46 +112,30 @@ const Home: NextPage = () => {
           </Link>
         </div>
         <div className="hidden lg:grid  lg:grid-rows-2 grid-cols-4 grid-flow-col gap-4 w-full">
-          <div className="col-span-4 lg:row-span-2 lg:col-span-2">
-            <CardNews
-              type="big"
-              height="h-[280px] lg:h-[210px]"
-              paragraph={true}
-              data={{ title: 'lorem', short: 'lorem ipsu olor sit amet' }}
-            />
-          </div>
-          <div className="col-span-1">
-            <CardNews
-              type="small"
-              height="h-[150px]"
-              paragraph={false}
-              data={{ title: 'lorem', short: 'lorem ipsu olor sit amet' }}
-            />
-          </div>
-          <div className=" col-span-1">
-            <CardNews
-              type="small"
-              height="h-[150px]"
-              paragraph={false}
-              data={{ title: 'lorem', short: 'lorem ipsu olor sit amet' }}
-            />
-          </div>
-          <div className=" col-span-1">
-            <CardNews
-              type="small"
-              height="h-[150px]"
-              paragraph={false}
-              data={{ title: 'lorem', short: 'lorem ipsu olor sit amet' }}
-            />
-          </div>
-          <div className="hidden lg:block col-span-1">
-            <CardNews
-              type="small"
-              height="h-[150px]"
-              paragraph={false}
-              data={{ title: 'lorem', short: 'lorem ipsu olor sit amet' }}
-            />
-          </div>
+          {tips.map((val,i)=>{
+            if (i === 0 ) {
+              return ( 
+              <div className="col-span-4 lg:row-span-2 lg:col-span-2">
+                <CardNews
+                  type="big"
+                  height="h-[280px] lg:h-[210px]"
+                  paragraph={true}
+                  data={{ title: val.judul, short: val.shortDesc, link:val.slug, image: val.image }}
+                />
+               </div>
+              )
+            }
+            return (
+              <div className="col-span-1">
+                <CardNews
+                  type="small"
+                  height="h-[150px]"
+                  paragraph={false}
+                  data={{ title: val.judul, short: val.shortDesc, link:val.slug, image: val.image }}
+                />
+              </div>
+            )
+          })}
         </div>
 
         <div className="block lg:hidden w-full relative">

@@ -15,7 +15,7 @@ export interface ICardP {
 const CardProduct: React.FC<ICardP> = ({ data }) => (
   <Link href={`/produk/${toSlug(data.judul)}`}>
     <a>
-      <div className="h-[430px] lg:h-[340px] bg-femmy-white rounded-t-2xl rounded-r-2xl flex flex-col justify-center items-center">
+      <span className="h-[430px] lg:h-[340px] bg-femmy-white rounded-t-2xl rounded-r-2xl flex flex-col justify-center items-center">
         <img
           src={data.image}
           alt="Picture of the author"
@@ -30,12 +30,10 @@ const CardProduct: React.FC<ICardP> = ({ data }) => (
         <div className="flex items-center">
           <Rating count={data.rating} />
         </div>
-      </div>
-      <div className="h-[60px] bg-[#CC3F80] rounded-b-2xl rounded-br-2xl flex justify-center items-center">
-        <Link href={`/produk/${toSlug(data.judul)}`}>
-          <a className="text-white font-sans tracking-[2px]">Beli Sekarang</a>
-        </Link>
-      </div>
+      </span>
+      <span className="h-[60px] bg-[#CC3F80] rounded-b-2xl rounded-br-2xl flex justify-center items-center">
+          <span className="text-white font-sans tracking-[2px]">Beli Sekarang</span>
+      </span>
     </a>
   </Link>
 );

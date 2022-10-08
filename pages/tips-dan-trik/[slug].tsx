@@ -50,7 +50,7 @@ const TipsDetail: NextPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:mb-8 gap-0 lg:gap-10">
           <div className="col-span-1 mb-4">
             <div className="lg:shadow-[0_0_30px_rgba(0,0,0,0.25)] md:rounded-2xl">
-              <img src="/images/news1.jpg" className="md:rounded-2xl" />
+              <img src={`/images/news/${data[0]?.image}`} className="md:rounded-2xl" />
             </div>
           </div>
           <div className="col-span-2 lg:pb-12 flex flex-wrap flex-row">
@@ -80,7 +80,7 @@ const TipsDetail: NextPage = () => {
                     height="h-[200px] lg:h-[150px]"
                     paragraph={false}
                     model={true}
-                    data={{ title: val.judul, short: val.shortDesc,link:val.slug }}
+                    data={{ title: val.judul, short: val.shortDesc, link:val.slug, image: val.image }}
                   />
                 </div>
                 )
