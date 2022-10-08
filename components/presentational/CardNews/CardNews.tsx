@@ -36,8 +36,8 @@ const CardNews: React.FC<ICardN> = ({
       </div>
       <div
         className={`${height} ${
-          model && 'w-[65%] lg:w-full'
-        } bg-femmy-white rounded-tr-2xl lg:rounded-tr-none  rounded-b-2xl flex flex-col justify-center px-6 pt-2 pb-5`}
+          model && 'w-[65%] lg:w-full rounded-br-2xl'
+        } bg-femmy-white rounded-tr-2xl lg:rounded-tr-none  lg:rounded-b-2xl flex flex-col justify-center px-6 pt-2 pb-5`}
       >
         <span className="font-sans text-[#8B8B8B] text-[13px] mb-1.5">
           23 Juli 2022
