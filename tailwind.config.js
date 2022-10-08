@@ -25,6 +25,9 @@ module.exports = {
         head: ['Regatto'],
         sans: ['WorkSans-Regular'],
       },
+      screens: {
+        '3xl': '1600px',
+      },
     },
   },
   plugins: [require('flowbite/plugin'), require('@tailwindcss/line-clamp')],

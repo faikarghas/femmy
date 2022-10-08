@@ -32,8 +32,8 @@ const Nav: React.FC<INav> = ({ page, position }) => {
       ${position == 'header' ? 'px-6 lg:px-12' : 'px-0 lg:px-0 mb-2'}
       ${
         page == 'home'
-          ? `${offset > 100 ?  `${menu ? 'bg-[#601146]': 'bg-white'}` : 'bg-transparent'}`
-          : `bg-white`
+          ? `${offset > 100 ?  `${menu ? 'bg-[#601146]': 'bg-white'}` : 'bg-white'}`
+          : `${menu ? 'bg-transparent' : 'bg-white'} `
       }
       ${position == 'header' ? 'fixed z-20' : ''}
       w-full top-0 left-0 py-4 transition-all h-[85px]`}
@@ -167,7 +167,7 @@ const Nav: React.FC<INav> = ({ page, position }) => {
       </nav>
       {position == 'header' ? (
         <div
-          className={`pt-36 pb-12 px-8 flex flex-col justify-between md:hidden fixed w-full h-full bg-[#601146] top-0 left-0 z-10 transition-all translate-x-[100%] ${
+          className={`pt-36 pb-12 px-8 flex flex-col justify-between sm:hidden fixed w-full h-full bg-[#601146] top-0 left-0 z-10 transition-all translate-x-[100%] ${
             menu && 'translate-x-[0%]'
           }`}
         >
