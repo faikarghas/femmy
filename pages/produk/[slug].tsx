@@ -5,6 +5,7 @@ import Slider from 'react-slick';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import parse from 'html-react-parser';
+import {Link as LinkTo} from 'react-scroll'
 
 // import component
 import Layout from '../../components/layouts/index';
@@ -112,9 +113,16 @@ const ProdukDetail: NextPage = () => {
             {data[0]?.judul}
           </h5>
           <span className="font-sans text-femmy-white md:text-black text-[20px] font-semibold text-center md:text-left p-2 md:pl-0 md:pb-4 mb-6 md:mb-0 mt-8 md:mt-0 block bg-femmy-pdark md:bg-transparent rounded-full">
-            <span className="block md:hidden font-sans text-white text-[12px] font-normal">
-              Beli Sekarang
-            </span>
+            <LinkTo
+              to={'pembelian'}
+              smooth={true}
+              duration={500}
+              offset={-85}
+            >
+              <a className="block md:hidden font-sans text-white text-[12px] font-normal">
+                Beli Sekarang
+              </a>
+            </LinkTo>
             RP {data[0]?.harga.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}.-
           </span>
           <div className="md:border-t-[1px] border-b-[1px] border-femmy-pmedium flex justify-between items-center">
@@ -173,7 +181,7 @@ const ProdukDetail: NextPage = () => {
       </section>
       <div className="hidden lg:block border-b-[1px] border-femmy-pdark mx-8 lg:mx-16"></div>
 
-      <div className="w-full flex md:hidden">
+      <div className="w-full flex md:hidden" id="pembelian">
         <div className="w-full bg-femmy-pdark py-6 pl-8 pr-6 ">
           <h6 className="text-white font-sans text-[18px] text-center mb-4 leading-tight">
             Pembelian dari
