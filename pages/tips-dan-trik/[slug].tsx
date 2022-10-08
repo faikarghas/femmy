@@ -74,7 +74,7 @@ const TipsDetail: NextPage = () => {
               </h6>
               {tipsLain().map((val,i)=>{
                 return (
-                <div className="mb-8">
+                <div key={i} className="mb-8">
                   <CardNews
                     type="small"
                     height="h-[200px] lg:h-[150px]"

@@ -150,18 +150,18 @@ const Home: NextPage = () => {
             {...settings}
             ref={(slider) => (produkSlider.current = slider)}
           >
-            <CardNews
-              type="big"
-              height="h-[280px] lg:h-[210px]"
-              paragraph={true}
-              data={{ title: 'lorem', short: 'lorem ipsu olor sit amet' }}
-            />
-            <CardNews
-              type="big"
-              height="h-[280px] lg:h-[210px]"
-              paragraph={true}
-              data={{ title: 'lorem', short: 'lorem ipsu olor sit amet' }}
-            />
+            {tips.map((val,i)=>{
+              return (
+                <div key={i} className="">
+                  <CardNews
+                      type="big"
+                      height="h-[280px] lg:h-[210px]"
+                      paragraph={true}
+                    data={{ title: val.judul, short: val.shortDesc, link:val.slug, image: val.image }}
+                  />
+                </div>
+              )
+            })}
           </Slider>
 
           <button
