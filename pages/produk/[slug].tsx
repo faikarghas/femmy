@@ -47,6 +47,9 @@ type DataTypes = {
   image: string;
   imageDetail: string;
   content: string;
+  tokped: string;
+  shopee: string;
+  tiktokshop: string;
 };
 
 const ProdukDetail: NextPage = () => {
@@ -116,10 +119,8 @@ const ProdukDetail: NextPage = () => {
               smooth={true}
               duration={500}
               offset={-85}
-            >
-              <a className="block md:hidden font-sans text-white text-[12px] font-normal">
+             className="block md:hidden font-sans text-white text-[12px] font-normal">
                 Beli Sekarang
-              </a>
             </LinkTo>
             RP {data[0]?.harga.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}.-
           </span>
@@ -149,23 +150,23 @@ const ProdukDetail: NextPage = () => {
                     <br />
                     Official Store kami
                   </h6>
-                  <Link href="https://www.tokopedia.com/b7official/product?q=femmy&srp_component_id=02.01.00.00&srp_page_id=2611073&srp_page_title=Bintang%20Toedjoe%20Official&navsource=shop">
-                    <a>
+                  <Link href={data[0]?.tokped || ''}>
+                    <a target={"_blank"} rel={"noopener"}>
                       <img src="/images/to-tokped.png" />
                     </a>
                   </Link>
                   <Link href="https://www.lazada.co.id/bintang-toedjoe-official-store/?spm=a2o4j.8553159.0.0.37a86b15OCW3a8&q=All-Products&shop_category_ids=1092591&from=wangpu&sc=KVUG">
-                    <a>
+                    <a target={"_blank"} rel={"noopener"}>
                       <img src="/images/lazada.png" />
                     </a>
                   </Link>
-                  <Link href="https://shopee.co.id/bintangtoedjoe_officialstore?shopCollection=157600359#product_list">
-                    <a>
+                  <Link href={data[0]?.shopee || ''}>
+                    <a target={"_blank"} rel={"noopener"}>
                       <img src="/images/to-shopee.png" />
                     </a>
                   </Link>
-                  <Link href="">
-                    <a>
+                  <Link href={data[0]?.tiktokshop || ''}>
+                    <a target={"_blank"} rel={"noopener"}>
                       <img src="/images/to-tiktok.png" />
                     </a>
                   </Link>
@@ -186,23 +187,23 @@ const ProdukDetail: NextPage = () => {
             <br />
             Official Store kami
           </h6>
-          <Link href="https://www.tokopedia.com/b7official/product?q=femmy&srp_component_id=02.01.00.00&srp_page_id=2611073&srp_page_title=Bintang%20Toedjoe%20Official&navsource=shop">
-            <a>
+          <Link href={data[0]?.tokped || ''}>
+            <a target={"_blank"} rel={"noopener"}>
               <img src="/images/to-tokped.png" />
             </a>
           </Link>
           <Link href="https://www.lazada.co.id/bintang-toedjoe-official-store/?spm=a2o4j.8553159.0.0.37a86b15OCW3a8&q=All-Products&shop_category_ids=1092591&from=wangpu&sc=KVUG">
-            <a>
+            <a target={"_blank"} rel={"noopener"}>
               <img src="/images/lazada.png" />
             </a>
           </Link>
-          <Link href="https://shopee.co.id/bintangtoedjoe_officialstore?shopCollection=157600359#product_list">
-            <a>
+          <Link href={data[0]?.shopee || ''}>
+            <a target={"_blank"} rel={"noopener"}>
               <img src="/images/to-shopee.png" />
             </a>
           </Link>
-          <Link href="">
-            <a>
+          <Link href={data[0]?.tiktokshop || ''}>
+            <a target={"_blank"} rel={"noopener"}>
               <img src="/images/to-tiktok.png" />
             </a>
           </Link>
