@@ -18,8 +18,6 @@ const FormJoin = () => {
       tiktok: '',
     },
     onSubmit: async (val) => {
-      setMessage('Form submitted');
-      setSubmitted(true);
       const data = {
         fullName: val.fullName,
         consultantName: val.consultantName,
