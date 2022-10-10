@@ -1,9 +1,9 @@
 RewriteBase /
 
-RewriteCond %{HTTP_HOST} !^femmy.owlandfoxes.id/
+RewriteCond %{HTTP_HOST} !^femmy.co.id/
 RewriteCond %{REQUEST_URI} !^/
 RewriteRule ^(.*)$ $1 [L]
 
-RewriteCond %{HTTP_HOST} ^femmy.owlandfoxes.id
+RewriteCond %{HTTP_HOST} ^femmy.co.id
 RewriteCond %{REQUEST_URI} !^/
 RewriteRule ^(.*)$  [L]	
