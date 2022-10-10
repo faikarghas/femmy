@@ -85,24 +85,24 @@ export const produk = [
 
 export const tips = [
   {
-    'slug': 'a',
-    'judul':'Bila sehat adalah sebuah hak untuk semua Wanita',
-    'shortDesc' : 'a',
-    'content':'a',
+    'slug': 'konsumsi-sayuran-ini-untuk-merawat-kulitmu-yuk',
+    'judul':'Konsumsi Sayuran Ini untuk Merawat Kulitmu, Yuk!',
+    'shortDesc' : 'Merawat kulit wajah dapat membuat wajah tampak lebih sehat dan cerah yang akan meningkatkan rasa percaya diri.',
+    'content':'<p>Merawat kulit wajah dapat membuat wajah tampak lebih sehat dan cerah yang akan meningkatkan rasa percaya diri. Bagi kebanyakan kaum wanita, merawat kulit wajah sudah seperti keharusan karena manfaatnya yang banyak. Kamu bisa melakukan perawatan wajah dengan mengkonsumsi sayuran. Lalu sayuran apa saja yang bagus untuk merawat kecantikan kulit wajah? Di bawah ini merupakan jenis sayuran yang baik untuk kulitmu.</p><br/><ol className="ml-4"><li className="mb-4">Bayam<br>Bayam bagus untuk menjaga kesehatan kulit karena mengandung vitamin A, B, C, dan E yang dapat meredakan inflamasi, bekas jerawat, dan juga melindungi kulit dari sinar UV.</li><li className="mb-4" >Brokoli<br>Brokoli memiliki banyak kandungan yang baik untuk kulit seperti antioksidan, vitamin A, B kompleks, C, E, K, asam lemak omega 3, folat, dan kalsium. Kandungan-kandungan tersebut dapat meningkatkan elastisitas kulit.</li><li className="mb-4">Timun<br>Timun dapat digunakan untuk perawatan kecantikan kulit dengan kandungan sulfat, potassium, vitamin A dan C yang dapat membantu memperbaiki kondisi kulit yang terkena paparan atau terbakar sinar matahari.</li><li className="mb-4">Tomat<br>Tomat mengandung vitamin C dan likopen yang tinggi. Kandungan-kandungan tersebut dapat membantu untuk merangsang produksi kolagen, serta melindungi kulit dari paparan sinar matahari.</li></ol><br/><p>Nah, itulah beberapa jenis sayuran yang dapat digunakan untuk merawat kulit wajah dengan cara alami.</p>',
     'image':'news1.png'
   },
   {
-    'slug': 'b',
-    'judul':'Bila sehat adalah sebuah hak untuk semua Wanita',
-    'shortDesc' : 'b',
-    'content':'b',
-    'image':'news4.jpg'
+    'slug': 'bragam-bahan-alami-alam-suplemen-untuk-menjaga-imun',
+    'judul':'Ragam Bahan Alami dalam Suplemen untuk Menjaga Imun',
+    'shortDesc' : 'Kurangnya asupan bergizi dan tidak cukupnya istirahat akibat aktivitas harian yang padat bisa memengaruhi ketahanan tubuh. Jika imunitas menurun, tubuh lebih berisiko terserang penyakit.',
+    'content':'<p>Kurangnya asupan bergizi dan tidak cukupnya istirahat akibat aktivitas harian yang padat bisa memengaruhi ketahanan tubuh. Jika imunitas menurun, tubuh lebih berisiko terserang penyakit. Untuk menjaga daya tahan tubuh tetap kuat, Anda bisa rutin mengonsumsi beberapa bahan herbal. Apa saja jenisnya?</p><br><p>Berikut ini adalah beberapa tanaman herbal yang mampu memperkuat sistem imun.</p><br><ol className="ml-4"><li classname="mb-4">Ginseng Sejak lama ginseng dikenal sebagai tanaman herbal yang bermanfaat menjaga kekebalan tubuh. Tanaman ini mengandung berbagai senyawa aktif yang bisa memberikan efek pemulihan bagi tubuh. Ginseng pun membantu mengurangi senyawa sitokin yang memicu peradangan tubuh. Jadi, tidak heran bila ginseng cocok sebagai obat herbal untuk memperkuat daya tahan tubuh.</li><li classname="mb-4">Bawang putih Bawang putih tidak hanya digunakan dalam masakan tetapi juga bermanfaat sebagai obat herbal untuk daya tahan tubuh. Bawang putih mengandung senyawa yang membantu sistem kekebalan tubuh melawan kuman penyebab penyakit.</li><li classname="mb-4">Kunyit Kunyit mengandung senyawa kurkumin (curcumin). Selain memberikan warna kuning khas pada kunyit, senyawa ini punya potensi manfaat menjaga kekebalan tubuh. Kurkumin dapat meningkatkan kadar antibodi, tepatnya imunoglobulin G dan imunoglobulin M. Keduanya berperan penting untuk melawan infeksi bakteri dan virus.</li><li classname="mb-4">Echinacea Echinacea sudah terkenal sebagai herbal untuk daya tahan tubuh sejak lama. Tanaman yang dikenal dengan nama lain coneflower ini bersifat imunostimulan atau mampu meningkatkan cara kerja sistem imun. Khasiat echinacea bisa kamu dapatkan di Femmy Trimune.</li></ol><br><p>Konsumsi suplemen mempermudah kamu mendapatkan khasiat dari bahan herbal yang sulit ditemukan di Indonesia, seperti gingseng dan echinacea. Pastikan kamu membeli suplemen herbal yang terdaftar di BPOM, ya.</p>',
+    'image':'news2.png'
   },
   {
-    'slug': 'c',
-    'judul':'Bila sehat adalah sebuah hak untuk semua Wanita',
-    'shortDesc' : 'c',
-    'content':'c',
-    'image':'news3.jpg'
+    'slug': 'pentingnya-serat-untuk-kesehatan-tubuhmu',
+    'judul':'Pentingnya Serat untuk Kesehatan Tubuhmu',
+    'shortDesc' : 'Ada banyak manfaat serat untuk kesehatan, mulai dari mencegah konstipasi hingga mencegah diabetes. Nutrisi ini dapat kamu temukan dalam berbagai macam makanan nabati, seperti sayuran, buah-buahan, kacang-kacangan, biji-bijian, oatmeal, dan sereal.',
+    'content':'<p>Ada banyak manfaat serat untuk kesehatan, mulai dari mencegah konstipasi hingga mencegah diabetes. Nutrisi ini dapat kamu temukan dalam berbagai macam makanan nabati, seperti sayuran, buah-buahan, kacang-kacangan, biji-bijian, oatmeal, dan sereal.</p><p>Serat adalah jenis karbohidrat kompleks yang tidak dapat dipecah menjadi molekul gula oleh tubuh. Manfaat serat untuk kesehatan bisa kamu dapatkan secara maksimal dengan mengonsumsi setidaknya 25–35 gram serat per harinya.</p><br><p>Berikut ini adalah beragam manfaat serat untuk kesehatan tubuh yang membuatnya penting untuk dikonsumsi dalam jumlah yang cukup:</p><br><ul classname="ml-4 list-disc"><li classname="mb-4">Mencegah konstipasi Serat dapat memperlancar proses pencernaan dengan cara menyerap air ke dalam usus besar. Dengan begitu, tinja yang dihasilkan akan lebih lembut dan besar, sehingga buang air besar akan lebih lancar dan teratur.</li><li classname="mb-4">Memaksimalkan penyerapan nutrisi dari makanan Serat dapat memaksimalkan penyerapan nutrisi lainnya dari makanan, terutama nutrisi yang jumlahnya sedikit.</li><li classname="mb-4">Menjaga daya tahan tubuh Selain dapat membantu proses pencernaan makanan, mikroba ini juga akan memecah serat menjadi asam yang dapat merangsang aktivitas sel-sel imun. Dengan begitu, daya tahan tubuh akan lebih kuat untuk melawan beragam penyakit.</li><li classname="mb-4">Menjaga berat badan ideal Serat mampu mengembangkan dan menggumpalkan makanan di dalam lambung, sehingga kamu akan merasa cepat kenyang dan rasa kenyang tersebut akan bertahan lebih lama. Hal ini bisa mencegahmu untuk makan secara berlebihan.</li></ul><p>Agar lebih praktis, kamu bisa mendapatkan asupan serat yang cukup setiap hari dengan Femmy Fyber. Karena penyajiannya mudah dan cepat, Femmy bisa menjadi pilihan yang tepat untuk dikonsumsi saat sarapan atau di sela-sela waktu kerja yang padat.</p>',
+    'image':'news3.png'
   },
 ]

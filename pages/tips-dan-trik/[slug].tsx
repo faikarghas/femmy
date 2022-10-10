@@ -77,7 +77,7 @@ const TipsDetail: NextPage = () => {
                 <div key={i} className="mb-8">
                   <CardNews
                     type="small"
-                    height="h-[200px] lg:h-[150px]"
+                    height="h-[200px] lg:h-[180px]"
                     paragraph={false}
                     model={true}
                     data={{ title: val.judul, short: val.shortDesc, link:val.slug, image: val.image }}

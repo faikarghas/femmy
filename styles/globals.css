@@ -157,6 +157,10 @@ ol {
   list-style: decimal;
 }
 
+ul{
+  list-style: disc;
+}
+
 .produk_lainnya .slick-slide {
     padding: 0 10px;
 }
