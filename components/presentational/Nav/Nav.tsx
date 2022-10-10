@@ -23,7 +23,6 @@ const Nav: React.FC<INav> = ({ page, position }) => {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-  // ${menu ? 'bg-[#601146]' : 'bg-white'}
 
   return (
     <>
@@ -32,7 +31,7 @@ const Nav: React.FC<INav> = ({ page, position }) => {
       ${position == 'header' ? 'px-6 lg:px-12' : 'px-0 lg:px-0 mb-2'}
       ${
         page == 'home'
-          ? `${offset > 100 ?  `${menu ? 'bg-[#601146]': 'bg-white'}` : 'bg-white'}`
+          ? `${offset > 100 ?  `${menu ? 'bg-[#601146]': 'bg-white'}` : 'bg-transparent'}`
           : `${menu ? 'bg-transparent' : 'bg-white'} `
       }
       ${position == 'header' ? 'fixed z-20' : ''}
