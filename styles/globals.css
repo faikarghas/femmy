@@ -157,8 +157,12 @@ ol {
   list-style: decimal;
 }
 
-ul{
+.tips ul{
   list-style: disc;
+}
+
+.filter ul{
+  list-style: none;
 }
 
 .produk_lainnya .slick-slide {

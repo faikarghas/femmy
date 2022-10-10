@@ -32,7 +32,7 @@ const FilterDropdown: React.FC<IFilterDropdown> = ({
           open ? 'open max-h-[250px]' : 'close max-h-0'
         } overflow-hidden transition-all`}
       >
-        <ul className="pl-4 py-4">
+        <ul className="pl-4 py-4 filter">
           <li
             className={`cursor-pointer mb-2 px-6 py-[2px] rounded-xl hover:bg-[#CC3F80]/[0.08] text-femmy-pdark font-medium text-[12px] tracking-[2px]`}
             onClick={sortdesc}
