@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import Slider from 'react-slick';
@@ -23,7 +23,7 @@ const settings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
-  arrows:false,
+  arrows: false,
 
   responsive: [
     {
@@ -52,13 +52,14 @@ const Home: NextPage = () => {
       <section className="flex flex-row relative lg:h-screen">
         <div className="hidden lg:block object-contain basis-2/4">
           <img
+            alt="image-femmy"
             src="/images/jadi_home.jpg"
             className="h-full w-full object-cover"
           />
         </div>
         <div className="basis-full lg:basis-2/4 bg-femmy-pdark p-8 lg:p-0">
           <div className="flex items-center py-6 px-6 lg:px-8 relative lg:absolute lg:top-[50%] right-[0] lg:right-[calc(0%+48px)] lg:translate-x-[0%] lg:translate-y-[-50%] bg-femmy-plight h-full lg:h-[calc(100%-96px-35px)] w-[100%] lg:w-[64%] rounded-2xl shadow-[16px_17px_16px_rgba(0, 0, 0, 0.17)]">
-            <div className='w-full'>  
+            <div className="w-full">
               <div className="pb-4 xl:pb-2 mb-4 border-b-[1px] border-femmy-pdark">
                 <h2 className="text-femmy-pdark text-[35px] xl:text-[40px] font-head font-semibold leading-tight">
                   Jadi Utuh Bersama
@@ -75,6 +76,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className="hidden md:flex basis-2/5 items-center justify-center">
                   <img
+                    alt="image-femmy"
                     src="/images/draft.png"
                     className="object-contain w-[245px]"
                   />
@@ -112,18 +114,23 @@ const Home: NextPage = () => {
           </Link>
         </div>
         <div className="hidden lg:grid  lg:grid-rows-2 grid-cols-4 grid-flow-col gap-4 w-full">
-          {tips.map((val,i)=>{
-            if (i === 0 ) {
-              return ( 
-              <div key={i} className="col-span-4 lg:row-span-2 lg:col-span-2">
-                <CardNews
-                  type="big"
-                  height="h-[280px] lg:h-[250px]"
-                  paragraph={true}
-                  data={{ title: val.judul, short: val.shortDesc, link:val.slug, image: val.image }}
-                />
-               </div>
-              )
+          {tips.map((val, i) => {
+            if (i === 0) {
+              return (
+                <div key={i} className="col-span-4 lg:row-span-2 lg:col-span-2">
+                  <CardNews
+                    type="big"
+                    height="h-[280px] lg:h-[250px]"
+                    paragraph={true}
+                    data={{
+                      title: val.judul,
+                      short: val.shortDesc,
+                      link: val.slug,
+                      image: val.image,
+                    }}
+                  />
+                </div>
+              );
             }
             return (
               <div key={i} className="col-span-1">
@@ -131,10 +138,15 @@ const Home: NextPage = () => {
                   type="small"
                   height="h-[170px]"
                   paragraph={false}
-                  data={{ title: val.judul, short: val.shortDesc, link:val.slug, image: val.image }}
+                  data={{
+                    title: val.judul,
+                    short: val.shortDesc,
+                    link: val.slug,
+                    image: val.image,
+                  }}
                 />
               </div>
-            )
+            );
           })}
         </div>
 
@@ -150,17 +162,22 @@ const Home: NextPage = () => {
             {...settings}
             ref={(slider) => (produkSlider.current = slider)}
           >
-            {tips.map((val,i)=>{
+            {tips.map((val, i) => {
               return (
                 <div key={i} className="">
                   <CardNews
-                      type="big"
-                      height="h-[280px] lg:h-[210px]"
-                      paragraph={true}
-                    data={{ title: val.judul, short: val.shortDesc, link:val.slug, image: val.image }}
+                    type="big"
+                    height="h-[280px] lg:h-[210px]"
+                    paragraph={true}
+                    data={{
+                      title: val.judul,
+                      short: val.shortDesc,
+                      link: val.slug,
+                      image: val.image,
+                    }}
                   />
                 </div>
-              )
+              );
             })}
           </Slider>
 

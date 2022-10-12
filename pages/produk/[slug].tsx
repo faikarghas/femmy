@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import parse from 'html-react-parser';
-import {Link as LinkTo} from 'react-scroll'
+import { Link as LinkTo } from 'react-scroll';
 
 // import component
 import Layout from '../../components/layouts/index';
@@ -84,7 +84,7 @@ const ProdukDetail: NextPage = () => {
       return val.slug == router.query.slug;
     });
     setData(fl);
-  }, [router.isReady,router.query.slug]);
+  }, [router.isReady, router.query.slug]);
 
   return (
     <Layout page="tentang-kami">
@@ -119,8 +119,9 @@ const ProdukDetail: NextPage = () => {
               smooth={true}
               duration={500}
               offset={-85}
-             className="block md:hidden font-sans text-white text-[12px] font-normal">
-                Beli Sekarang
+              className="block md:hidden font-sans text-white text-[12px] font-normal"
+            >
+              Beli Sekarang
             </LinkTo>
             RP {data[0]?.harga.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}.-
           </span>
@@ -151,22 +152,22 @@ const ProdukDetail: NextPage = () => {
                     Official Store kami
                   </h6>
                   <Link href={data[0]?.tokped || ''}>
-                    <a target={"_blank"} rel={"noopener"}>
+                    <a target={'_blank'} rel={'noopener'}>
                       <img src="/images/to-tokped.png" />
                     </a>
                   </Link>
                   <Link href="https://www.lazada.co.id/bintang-toedjoe-official-store/?spm=a2o4j.8553159.0.0.37a86b15OCW3a8&q=All-Products&shop_category_ids=1092591&from=wangpu&sc=KVUG">
-                    <a target={"_blank"} rel={"noopener"}>
+                    <a target={'_blank'} rel={'noopener'}>
                       <img src="/images/lazada.png" />
                     </a>
                   </Link>
                   <Link href={data[0]?.shopee || ''}>
-                    <a target={"_blank"} rel={"noopener"}>
+                    <a target={'_blank'} rel={'noopener'}>
                       <img src="/images/to-shopee.png" />
                     </a>
                   </Link>
                   <Link href={data[0]?.tiktokshop || ''}>
-                    <a target={"_blank"} rel={"noopener"}>
+                    <a target={'_blank'} rel={'noopener'}>
                       <img src="/images/to-tiktok.png" />
                     </a>
                   </Link>
@@ -188,22 +189,22 @@ const ProdukDetail: NextPage = () => {
             Official Store kami
           </h6>
           <Link href={data[0]?.tokped || ''}>
-            <a target={"_blank"} rel={"noopener"}>
+            <a target={'_blank'} rel={'noopener'}>
               <img src="/images/to-tokped.png" />
             </a>
           </Link>
           <Link href="https://www.lazada.co.id/bintang-toedjoe-official-store/?spm=a2o4j.8553159.0.0.37a86b15OCW3a8&q=All-Products&shop_category_ids=1092591&from=wangpu&sc=KVUG">
-            <a target={"_blank"} rel={"noopener"}>
+            <a target={'_blank'} rel={'noopener'}>
               <img src="/images/lazada.png" />
             </a>
           </Link>
           <Link href={data[0]?.shopee || ''}>
-            <a target={"_blank"} rel={"noopener"}>
+            <a target={'_blank'} rel={'noopener'}>
               <img src="/images/to-shopee.png" />
             </a>
           </Link>
           <Link href={data[0]?.tiktokshop || ''}>
-            <a target={"_blank"} rel={"noopener"}>
+            <a target={'_blank'} rel={'noopener'}>
               <img src="/images/to-tiktok.png" />
             </a>
           </Link>

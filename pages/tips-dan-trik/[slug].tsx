@@ -19,7 +19,7 @@ type DataTypes = {
   judul: string;
   shortDesc: string;
   content: string;
-  image:string;
+  image: string;
 };
 
 const TipsDetail: NextPage = () => {
@@ -34,11 +34,11 @@ const TipsDetail: NextPage = () => {
   };
 
   useEffect(() => {
-      let tl = tips.filter((val) => {
-        return val.slug == router.query.slug;
-      });
-      setData(tl);
-  }, [router.isReady,router.query.slug]);
+    let tl = tips.filter((val) => {
+      return val.slug == router.query.slug;
+    });
+    setData(tl);
+  }, [router.isReady, router.query.slug]);
 
   return (
     <Layout page="tentang-kami">
@@ -50,7 +50,10 @@ const TipsDetail: NextPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:mb-8 gap-0 lg:gap-10">
           <div className="col-span-1 mb-4">
             <div className="lg:shadow-[0_0_30px_rgba(0,0,0,0.25)] md:rounded-2xl">
-              <img src={`/images/news/${data[0]?.image}`} className="md:rounded-2xl" />
+              <img
+                src={`/images/news/${data[0]?.image}`}
+                className="md:rounded-2xl"
+              />
             </div>
           </div>
           <div className="col-span-2 lg:pb-12 flex flex-wrap flex-row">
@@ -72,18 +75,23 @@ const TipsDetail: NextPage = () => {
               <h6 className="font-head text-femmy-pdark text-[20px] pb-4 mb-6 border-femmy-pdark lg:border-b-[1px] text-center lg:text-left">
                 Rekomendasi Artikel
               </h6>
-              {tipsLain().map((val,i)=>{
+              {tipsLain().map((val, i) => {
                 return (
-                <div key={i} className="mb-8">
-                  <CardNews
-                    type="small"
-                    height="h-[200px] lg:h-[180px]"
-                    paragraph={false}
-                    model={true}
-                    data={{ title: val.judul, short: val.shortDesc, link:val.slug, image: val.image }}
-                  />
-                </div>
-                )
+                  <div key={i} className="mb-8">
+                    <CardNews
+                      type="small"
+                      height="h-[200px] lg:h-[180px]"
+                      paragraph={false}
+                      model={true}
+                      data={{
+                        title: val.judul,
+                        short: val.shortDesc,
+                        link: val.slug,
+                        image: val.image,
+                      }}
+                    />
+                  </div>
+                );
               })}
             </div>
           </div>
