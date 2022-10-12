@@ -1,5 +1,5 @@
 export const listNav = [
-  'tentang femmyy',
+  'tentang femmy',
   'produk',
   'tips & trik',
   'temukan femmy',
