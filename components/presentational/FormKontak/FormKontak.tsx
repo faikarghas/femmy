@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { useFormik  } from 'formik';
+import React, { useState } from 'react';
+import { useFormik } from 'formik';
 import * as yup from 'yup';
 
 export interface IFormKontak {}
@@ -13,7 +13,7 @@ const FormKontak: React.FC<IFormKontak> = () => {
       fullName: '',
       phone: '',
       email: '',
-      question: ''
+      question: '',
     },
     onSubmit: async (val) => {
       const data = {
@@ -21,19 +21,19 @@ const FormKontak: React.FC<IFormKontak> = () => {
         phone: val.phone,
         email: val.email,
         question: val.question,
-      }
+      };
 
-      const JSONdata = JSON.stringify(data)
-      const endpoint = 'https://api-femmy.owlandfoxes.id/question'
+      const JSONdata = JSON.stringify(data);
+      const endpoint = 'https://api-femmy.owlandfoxes.id/question';
       const options = {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSONdata,
-      }
-      const response = await fetch(endpoint, options)
-      const result = await response.json()
+      };
+      const response = await fetch(endpoint, options);
+      const result = await response.json();
       if (result.status == 200) {
         setMessage('Terkirim');
         setTimeout(() => {
@@ -41,7 +41,6 @@ const FormKontak: React.FC<IFormKontak> = () => {
         }, 3000);
         setSubmitted(true);
       }
-
     },
     validationSchema: yup.object({
       fullName: yup.string().trim().required('Name is required'),
@@ -58,7 +57,7 @@ const FormKontak: React.FC<IFormKontak> = () => {
         <input
           className="bg-[#F5E8DF] lg:bg-transparent w-full rounded-2xl lg:rounded-lg placeholder:femmy-pdark placeholder:femmy-pdark placeholder:text-[13px] placeholder:font-sans placeholder:font-semibold placeholder:tracking-[2px] pt-1 pb-2 pl-6 border-[1px] text-femmy-pdark border-femmy-pdark"
           placeholder="nama"
-          name='fullName'
+          name="fullName"
           value={formik.values.fullName}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
@@ -68,7 +67,7 @@ const FormKontak: React.FC<IFormKontak> = () => {
         <input
           className="bg-[#F5E8DF] lg:bg-transparent w-full rounded-2xl lg:rounded-lg placeholder:femmy-pdark placeholder:femmy-pdark placeholder:text-[13px] placeholder:font-sans placeholder:font-semibold placeholder:tracking-[2px] pt-1 pb-2 pl-6 border-[1px] text-femmy-pdark border-femmy-pdark"
           placeholder="email"
-          name='email'
+          name="email"
           value={formik.values.email}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
@@ -78,7 +77,7 @@ const FormKontak: React.FC<IFormKontak> = () => {
         <input
           className="bg-[#F5E8DF] lg:bg-transparent w-full rounded-2xl lg:rounded-lg placeholder:femmy-pdark placeholder:femmy-pdark placeholder:text-[13px] placeholder:font-sans placeholder:font-semibold placeholder:tracking-[2px] pt-1 pb-2 pl-6 border-[1px] text-femmy-pdark border-femmy-pdark"
           placeholder="no. handphone"
-          name='phone'
+          name="phone"
           value={formik.values.phone}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
@@ -89,7 +88,7 @@ const FormKontak: React.FC<IFormKontak> = () => {
           className="bg-[#F5E8DF] lg:bg-transparent w-full rounded-2xl lg:rounded-lg placeholder:femmy-pdark placeholder:femmy-pdark placeholder:text-[13px] placeholder:font-sans placeholder:font-semibold placeholder:tracking-[2px] pt-1 pb-2 pl-6 border-[1px] text-femmy-pdark border-femmy-pdark"
           placeholder="tulis pertanyaan kamu di sini..."
           rows={5}
-          name='question'
+          name="question"
           value={formik.values.question}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
@@ -102,7 +101,7 @@ const FormKontak: React.FC<IFormKontak> = () => {
         {message}
       </button>
     </form>
-  )
-}
+  );
+};
 
 export default FormKontak;

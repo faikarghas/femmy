@@ -18,6 +18,7 @@ const Temukan: NextPage = () => {
               srcSet="/images/temukan-femmy-os.jpg"
             />
             <img
+              alt="image-femmy"
               src="/images/temukan-femmy-os.jpg"
               className="object-cover h-[300px] lg:h-[100%] w-full"
             ></img>
@@ -42,6 +43,7 @@ const Temukan: NextPage = () => {
             <a className="bg-femmy-white w-[100%] lg:w-[250px] h-[100px] lg:h-[150px] rounded-full lg:rounded-2xl p-4 flex flex-row lg:flex-col justify-center items-center shadow-[7px_10px_18px_rgba(0,0,0,0.25)]">
               <div className="w-[180px] flex flex-row lg:flex-col justify-left items-center">
                 <img
+                  alt="image-femmy"
                   className="w-[60px] h-[59px] object-contain mb-3 mr-4 lg:mr-0"
                   src="/images/tokped-logo.png"
                 />
@@ -57,6 +59,7 @@ const Temukan: NextPage = () => {
             <a className="bg-femmy-white w-[100%] lg:w-[250px] h-[100px] lg:h-[150px] rounded-full lg:rounded-2xl p-4 flex flex-row lg:flex-col justify-center items-center shadow-[7px_10px_18px_rgba(0,0,0,0.25)]">
               <div className="w-[180px] flex flex-row lg:flex-col justify-left items-center">
                 <img
+                  alt="image-femmy"
                   className="w-[60px] h-[59px] object-contain mb-3 mr-4 lg:mr-0"
                   src="/images/lazadaa.png"
                 />
@@ -72,6 +75,7 @@ const Temukan: NextPage = () => {
             <a className="bg-femmy-white w-[100%] lg:w-[250px] h-[100px] lg:h-[150px] rounded-full lg:rounded-2xl p-4 flex flex-row lg:flex-col justify-center items-center shadow-[7px_10px_18px_rgba(0,0,0,0.25)]">
               <div className="w-[180px] flex flex-row lg:flex-col justify-left items-center">
                 <img
+                  alt="image-femmy"
                   className="w-[60px] h-[59px] object-contain mb-3 mr-4 lg:mr-0"
                   src="/images/shopee-logo.png"
                 />
@@ -83,6 +87,7 @@ const Temukan: NextPage = () => {
             <a className="bg-femmy-white w-[100%] lg:w-[250px] h-[100px] lg:h-[150px] rounded-full lg:rounded-2xl p-4 flex flex-row lg:flex-col justify-center items-center shadow-[7px_10px_18px_rgba(0,0,0,0.25)]">
               <div className="w-[180px] flex flex-row lg:flex-col justify-left items-center">
                 <img
+                  alt="image-femmy"
                   className="w-[60px] h-[59px] object-contain mb-3 mr-4 lg:mr-0"
                   src="/images/tiktok-logo.png"
                 />

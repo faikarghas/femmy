@@ -31,7 +31,11 @@ const Nav: React.FC<INav> = ({ page, position }) => {
       ${position == 'header' ? 'px-6 lg:px-12' : 'px-0 lg:px-0 mb-2'}
       ${
         page == 'home'
-          ? `${offset > 100 ?  `${menu ? 'bg-[#601146]': 'bg-white'}` : 'bg-transparent'}`
+          ? `${
+              offset > 100
+                ? `${menu ? 'bg-[#601146]' : 'bg-white'}`
+                : 'bg-transparent'
+            }`
           : `${menu ? 'bg-transparent' : 'bg-white'} `
       }
       ${position == 'header' ? 'fixed z-20' : ''}
@@ -54,11 +58,25 @@ const Nav: React.FC<INav> = ({ page, position }) => {
             </a>
           </Link>
           {position !== 'header' ? (
-            <ul className='text-right block lg:hidden'>
-              <li><Link href='/'><a className='font-sans text-femmy-pdark text-right text-[14px]'>Kebijakan Privasi</a></Link></li>
-              <li><Link href='/'><a className='font-sans text-femmy-pdark text-right text-[14px]'>Syarat & Ketentuan</a></Link></li>
+            <ul className="text-right block lg:hidden">
+              <li>
+                <Link href="/">
+                  <a className="font-sans text-femmy-pdark text-right text-[14px]">
+                    Kebijakan Privasi
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a className="font-sans text-femmy-pdark text-right text-[14px]">
+                    Syarat & Ketentuan
+                  </a>
+                </Link>
+              </li>
             </ul>
-            ) : ''}
+          ) : (
+            ''
+          )}
           {position == 'header' && (
             <div
               id="menu-hamburger"
@@ -117,7 +135,11 @@ const Nav: React.FC<INav> = ({ page, position }) => {
                     <ul className="list-none list rounded-2xl gap-y-2 flex flex-col justify-end bg-white p-4">
                       <li className="">
                         <Link href="https://www.tiktok.com/@femmy.daily">
-                          <a className="flex items-center" target="_blank" rel='noopener'>
+                          <a
+                            className="flex items-center"
+                            target="_blank"
+                            rel="noopener"
+                          >
                             <img
                               className="w-[30px]"
                               src="/images/tiktok.png"
@@ -130,7 +152,11 @@ const Nav: React.FC<INav> = ({ page, position }) => {
                       </li>
                       <li className="">
                         <Link href="https://www.Instagram.com/femmy.daily">
-                          <a className="flex items-center" target="_blank" rel='noopener'>
+                          <a
+                            className="flex items-center"
+                            target="_blank"
+                            rel="noopener"
+                          >
                             <img
                               className="w-[30px]"
                               src="/images/logo-ig.png"
@@ -143,7 +169,11 @@ const Nav: React.FC<INav> = ({ page, position }) => {
                       </li>
                       <li className="">
                         <Link href="https://www.youtube.com/channel/UC7Sg8HkaWJItuMLbvNdKvWQ">
-                          <a className="flex items-center" target="_blank" rel='noopener'>
+                          <a
+                            className="flex items-center"
+                            target="_blank"
+                            rel="noopener"
+                          >
                             <img
                               className="w-[30px]"
                               src="/images/logo-yt.png"
@@ -193,10 +223,28 @@ const Nav: React.FC<INav> = ({ page, position }) => {
             })}
           </ul>
 
-          <ul className='pl-0'>
-            <li className='inline-block mr-2'><Link href='https://www.tiktok.com/@femmy.daily'><a target="_blank" rel='noopener'><img className='w-[40px]' src='/images/tiktok.png'/></a></Link></li>
-            <li className='inline-block mr-2'><Link href='https://www.Instagram.com/femmy.daily'><a target="_blank" rel='noopener'><img className='w-[40px]' src='/images/logo-ig.png'/></a></Link></li>
-            <li className='inline-block mr-2'><Link href='https://www.youtube.com/channel/UC7Sg8HkaWJItuMLbvNdKvWQ'><a target="_blank" rel='noopener'><img className='w-[40px]' src='/images/logo-yt.png'/></a></Link></li>
+          <ul className="pl-0">
+            <li className="inline-block mr-2">
+              <Link href="https://www.tiktok.com/@femmy.daily">
+                <a target="_blank" rel="noopener">
+                  <img className="w-[40px]" src="/images/tiktok.png" />
+                </a>
+              </Link>
+            </li>
+            <li className="inline-block mr-2">
+              <Link href="https://www.Instagram.com/femmy.daily">
+                <a target="_blank" rel="noopener">
+                  <img className="w-[40px]" src="/images/logo-ig.png" />
+                </a>
+              </Link>
+            </li>
+            <li className="inline-block mr-2">
+              <Link href="https://www.youtube.com/channel/UC7Sg8HkaWJItuMLbvNdKvWQ">
+                <a target="_blank" rel="noopener">
+                  <img className="w-[40px]" src="/images/logo-yt.png" />
+                </a>
+              </Link>
+            </li>
           </ul>
         </div>
       ) : (

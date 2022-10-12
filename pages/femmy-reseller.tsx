@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import Link from 'next/link';
 
 // import component
 import Layout from '../components/layouts/index';
@@ -26,7 +25,11 @@ const Reseller: NextPage = () => {
               media="(min-width:750px)"
               srcSet="/images/femmy-reseller2.png"
             />
-            <img src="/images/femmy-reseller-m-2.png" className="mb-20"></img>
+            <img
+              alt="femmy-reseller"
+              src="/images/femmy-reseller-m-2.png"
+              className="mb-20"
+            ></img>
           </picture>
           {/* <img src='/images/femmy-reseller.png' className='mb-12'/> */}
           <h3 className="text-femmy-pdark font-head text-[30px] lg:text-[35px] font-semibold leading-tight text-center mb-12">
@@ -57,7 +60,11 @@ const Reseller: NextPage = () => {
             <FormJoin />
           </div>
           <div className="hidden md:flex basis-[45%] items-center justify-end">
-            <img src="/images/draft.png" className="object-contain w-[345px]" />
+            <img
+              alt="draft"
+              src="/images/draft.png"
+              className="object-contain w-[345px]"
+            />
           </div>
         </div>
       </section>

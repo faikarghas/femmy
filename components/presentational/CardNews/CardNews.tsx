@@ -15,7 +15,7 @@ const CardNews: React.FC<ICardN> = ({
   paragraph,
   height,
   model = false,
-}) =>  {
+}) => {
   return (
     <div
       className={`h-[100%] shadow-[0_0_30px_rgba(0,0,0,0.25)] rounded-2xl  ${
@@ -32,7 +32,10 @@ const CardNews: React.FC<ICardN> = ({
               } lg:h-[192px]`
         } bg-femmy-white rounded-tl-2xl rounded-tr-2xl flex flex-col justify-center items-center overflow-hidden`}
       >
-        <img src={`/images/news/${data.image}`} className="object-cover w-[100%] h-[100%]" />
+        <img
+          src={`/images/news/${data.image}`}
+          className="object-cover w-[100%] h-[100%]"
+        />
       </div>
       <div
         className={`${height} ${
@@ -66,7 +69,6 @@ const CardNews: React.FC<ICardN> = ({
       </div>
     </div>
   );
-}
-
+};
 
 export default CardNews;

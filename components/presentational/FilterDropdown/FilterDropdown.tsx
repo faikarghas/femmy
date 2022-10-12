@@ -25,7 +25,7 @@ const FilterDropdown: React.FC<IFilterDropdown> = ({
         className="cursor-pointer text-femmy-pdark border-b-[1px] border-femmy-pdark pb-2 font-medium flex justify-between"
       >
         <h6 className="tracking-[2px] font-sans">{text}</h6>
-        <span className='font-sans text-femmy-pdark text-[18px]'>+</span>
+        <span className="font-sans text-femmy-pdark text-[18px]">+</span>
       </div>
       <div
         className={`${

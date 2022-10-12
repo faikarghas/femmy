@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { useFormik  } from 'formik';
+import React, { useState } from 'react';
+import { useFormik } from 'formik';
 import * as yup from 'yup';
 
 const FormJoin = () => {
@@ -27,19 +27,19 @@ const FormJoin = () => {
         email: val.email,
         instagram: val.instagram,
         tiktok: val.tiktok,
-      }
+      };
 
-      const JSONdata = JSON.stringify(data)
-      const endpoint = 'https://api-femmy.owlandfoxes.id/reseller'
+      const JSONdata = JSON.stringify(data);
+      const endpoint = 'https://api-femmy.owlandfoxes.id/reseller';
       const options = {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSONdata,
-      }
-      const response = await fetch(endpoint, options)
-      const result = await response.json()
+      };
+      const response = await fetch(endpoint, options);
+      const result = await response.json();
 
       if (result.status == 200) {
         setMessage('Terkirim');
@@ -74,7 +74,7 @@ const FormJoin = () => {
         <input
           className="bg-transparent w-full rounded-lg placeholder:femmy-pdark placeholder:text-[13px] placeholder:font-sans placeholder:font-semibold placeholder:tracking-[2px] pt-1 pb-2 pl-6 border-[1px] border-femmy-pdark"
           placeholder="nama femmy consultant"
-          name='consultantName'
+          name="consultantName"
           value={formik.values.consultantName}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
@@ -84,7 +84,7 @@ const FormJoin = () => {
         <input
           className="bg-transparent w-full rounded-lg placeholder:femmy-pdark placeholder:text-[13px] placeholder:font-sans placeholder:font-semibold placeholder:tracking-[2px] pt-1 pb-2 pl-6 border-[1px] border-femmy-pdark"
           placeholder="pekerjaan"
-          name='occupation'
+          name="occupation"
           value={formik.values.occupation}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
@@ -94,7 +94,7 @@ const FormJoin = () => {
         <input
           className="bg-transparent w-full rounded-lg placeholder:femmy-pdark placeholder:text-[13px] placeholder:font-sans placeholder:font-semibold placeholder:tracking-[2px] pt-1 pb-2 pl-6 border-[1px] border-femmy-pdark"
           placeholder="alamat"
-          name='address'
+          name="address"
           value={formik.values.address}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
@@ -105,8 +105,8 @@ const FormJoin = () => {
           <input
             className="bg-transparent w-full rounded-lg placeholder:femmy-pdark placeholder:text-[13px] placeholder:font-sans placeholder:font-semibold placeholder:tracking-[2px] pt-1 pb-2 pl-6 border-[1px] border-femmy-pdark"
             placeholder="nomor whatsapp"
-            type={"tel"}
-            name='whatsAppNo'
+            type={'tel'}
+            name="whatsAppNo"
             value={formik.values.whatsAppNo}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -116,8 +116,8 @@ const FormJoin = () => {
           <input
             className="bg-transparent w-full rounded-lg placeholder:femmy-pdark placeholder:text-[13px] placeholder:font-sans placeholder:font-semibold placeholder:tracking-[2px] pt-1 pb-2 pl-6 border-[1px] border-femmy-pdark"
             placeholder="e-mail"
-            name='email'
-            type={"email"}
+            name="email"
+            type={'email'}
             value={formik.values.email}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -129,7 +129,7 @@ const FormJoin = () => {
           <input
             className="bg-transparent w-full rounded-lg placeholder:femmy-pdark placeholder:text-[13px] placeholder:font-sans placeholder:font-semibold placeholder:tracking-[2px] pt-1 pb-2 pl-6 border-[1px] border-femmy-pdark"
             placeholder="instagram"
-            name='instagram'
+            name="instagram"
             value={formik.values.instagram}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -139,7 +139,7 @@ const FormJoin = () => {
           <input
             className="bg-transparent w-full rounded-lg placeholder:femmy-pdark placeholder:text-[13px] placeholder:font-sans placeholder:font-semibold placeholder:tracking-[2px] pt-1 pb-2 pl-6 border-[1px] border-femmy-pdark"
             placeholder="tiktok"
-            name='tiktok'
+            name="tiktok"
             value={formik.values.tiktok}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -154,8 +154,7 @@ const FormJoin = () => {
         {message}
       </button>
     </form>
-  )
-
+  );
 };
 
 export default FormJoin;
