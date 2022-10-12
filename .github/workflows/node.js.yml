@@ -31,6 +31,4 @@ jobs:
         script: |
          cd ~/femmy
          git pull origin main
-         npm install --only=prod
-         npm run build && npm run start
-         pm2 restart femmy
+       
