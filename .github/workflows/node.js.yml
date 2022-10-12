@@ -31,7 +31,9 @@ jobs:
         script: |
          cd ~/femmy
          git pull origin main
-         npm install --only=prod
+         export NVM_DIR=~/.nvm
+         source ~/.nvm/nvm.sh
+         npm install
          npm run build 
-         npm run start
          pm2 restart femmy
+       
