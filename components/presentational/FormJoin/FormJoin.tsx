@@ -73,7 +73,7 @@ const FormJoin = () => {
       <div className="relative z-0 mb-4 md:mb-2  w-full group">
         <input
           className="bg-transparent w-full rounded-lg placeholder:femmy-pdark placeholder:text-[13px] placeholder:font-sans placeholder:font-semibold placeholder:tracking-[2px] pt-1 pb-2 pl-6 border-[1px] border-femmy-pdark"
-          placeholder="nama femmy consultant"
+          placeholder="nama femmy reseller"
           name="consultantName"
           value={formik.values.consultantName}
           onChange={formik.handleChange}
