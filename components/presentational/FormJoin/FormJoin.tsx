@@ -45,7 +45,7 @@ const FormJoin = () => {
         setMessage('Terkirim');
         setTimeout(() => {
           setMessage('tanya sekarang!');
-        }, 3000);
+        }, 2000);
         setSubmitted(true);
       }
     },
