@@ -68,7 +68,7 @@ const Temukan: NextPage = () => {
             </a>
           </Link>
           <Link
-            href="https://shopee.co.id/bintangtoedjoe_officialstore?shopCollection=157600359#product_list"
+            href="https://shopee.co.id/universal-link/bintangtoedjoe_officialstore?shopCollection=157600359&deep_and_web=1&utm_campaign=s156508041"
             target="_blank"
             rel="noopener"
           >
