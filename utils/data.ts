@@ -1,7 +1,7 @@
 export const listNav = [
   'tentang femmy',
   'produk',
-  'tips & trik',
+  'news',
   'temukan femmy',
   'femmy reseller',
   'konsultasi',
@@ -130,7 +130,7 @@ export const tips = [
   },
   {
     slug: 'dukung-produktivitas-wanita-indonesia-bintang-toedjoe-luncurkan-suplemen-femmy',
-    judul: 'Dukung Produktivitas Wanita Indonesia, Bintang Toedjoe Luncurkan Suplemen Femmy',
+    judul: 'Bintang Toedjoe Luncurkan Suplemen Femmy',
     shortDesc:
       'Wanita Indonesia sering kali harus tampil sempurna dan produktif dalam kesehariannya. Bahkan, tak jarang para wanita dituntut untuk bisa multitasking, seperti berperan sebagai seorang wanita karier, ibu, dan istri.',
     content:
