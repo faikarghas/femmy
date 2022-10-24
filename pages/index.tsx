@@ -107,7 +107,7 @@ const Home: NextPage = () => {
           <h3 className="text-femmy-pdark text-[35px] xl:text-[40px] font-head font-semibold">
             Tips & Trik
           </h3>
-          <Link href="#">
+          <Link href="/news">
             <a className="text-femmy-pdark text-[12px] font-sans">
               Lihat Semua
             </a>
@@ -132,21 +132,24 @@ const Home: NextPage = () => {
                 </div>
               );
             }
-            return (
-              <div key={i} className="col-span-1">
-                <CardNews
-                  type="small"
-                  height="h-[170px]"
-                  paragraph={false}
-                  data={{
-                    title: val.judul,
-                    short: val.shortDesc,
-                    link: val.slug,
-                    image: val.image,
-                  }}
-                />
-              </div>
-            );
+            if (i <= 4) {
+              return (
+                <div key={i} className="col-span-1">
+                  <CardNews
+                    type="small"
+                    height="h-[170px]"
+                    paragraph={false}
+                    data={{
+                      title: val.judul,
+                      short: val.shortDesc,
+                      link: val.slug,
+                      image: val.image,
+                    }}
+                  />
+                </div>
+              );
+            }
+           
           })}
         </div>
 
