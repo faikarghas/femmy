@@ -107,7 +107,7 @@ const Home: NextPage = () => {
           <h3 className="text-femmy-pdark text-[35px] xl:text-[40px] font-head font-semibold">
             Tips & Trik
           </h3>
-          <Link href="/news">
+          <Link href="/artikel">
             <a className="text-femmy-pdark text-[12px] font-sans">
               Lihat Semua
             </a>
