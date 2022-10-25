@@ -57,7 +57,7 @@ const CardNews: React.FC<ICardN> = ({
             {data.shortDesc}
           </p>
         )}
-        <Link href={`/tips-dan-trik/${data.link}`}>
+        <Link href={`/news/${data.link}`}>
           <a
             className={`${
               type == 'big' ? 'w-[100%] lg:w-[60%]' : 'w-[100%]'
