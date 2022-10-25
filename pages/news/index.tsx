@@ -42,7 +42,7 @@ const Tips: NextPage = () => {
                     <p className="font-sans text-femmy-pdark leading-4 font-medium text-[15px] mb-10 xl:mb-10 line-clamp-4">
                       {val.shortDesc}
                     </p>
-                    <Link href={`/tips-dan-trik/${val.slug}`}>
+                    <Link href={`/news/${val.slug}`}>
                       <a className="py-2.5 px-8 text-white text-center bg-femmy-pdark font-sans rounded-2xl">
                         baca selengkapnya
                       </a>
