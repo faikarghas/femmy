@@ -56,6 +56,25 @@ input::placeholder {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'WorkSans-SemiBold';
+  src: url('/fonts/WorkSans-SemiBold.woff');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'WorkSans-Bold';
+  src: url('/fonts/WorkSans-Bold.woff');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'WorkSans-ExtraBold';
+  src: url('/fonts/WorkSans-ExtraBold.woff');
+  font-style: normal;
+}
+
+
 @media (min-width: 1024px) {
   .text-banner {
     left: unset;
@@ -165,4 +184,100 @@ ol {
 
 .produk_lainnya .slick-slide {
   padding: 0 10px;
+}
+
+.table-manfaat tbody tr {
+  color: #9C1B66;
+}
+.table-manfaat tbody tr:nth-child(1) td {
+  padding-top: 2rem;
+}
+.table-manfaat tbody tr :nth-child(2){
+  border-left: 1px dashed #9C1B66;
+  border-right: 1px dashed #9C1B66;
+  text-align: center;
+}
+.table-manfaat tbody tr :nth-child(3){
+  text-align: center;
+}
+.slider-ceritaKami .slick-track{
+  display: flex;
+}
+.slider-ceritaKami .slick-current img{
+  opacity: 1 !important;
+}
+.slider-ceritaKami .vid-play{
+  display: none !important;
+}
+.slider-ceritaKami .slick-current .vid-play{
+  display: block !important;
+}
+
+.usr:hover .musr{
+  display: block;
+}
+
+.point:hover .mpoint{
+  display: block;
+}
+
+.wishlist-card:nth-child(odd){
+  background-color: #F3E1E9;
+}
+
+.checkout-card:nth-child(even){
+  background-color: #F3E1E9;
+}
+
+.rangkuman-card:nth-child(even){
+  background-color: #F3B7C4;
+}
+
+.keranjang-card:nth-child(even){
+  background-color: #F3E1E9;
+}
+
+
+.cs-input-1::-webkit-outer-spin-button,
+.cs-input-1::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.cs-input-1[type=number] {
+  -moz-appearance: textfield;
+}
+
+input.middle:focus {
+  outline-width: 0;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+input:focus, input.form-control:focus {
+  outline:none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+input {
+  outline:none;
+}
+
+
+[type='number']:focus{
+  box-shadow: none !important;
+  border: none;
 }

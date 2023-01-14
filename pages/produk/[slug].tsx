@@ -137,7 +137,8 @@ const ProdukDetail: NextPage = () => {
               </li>
               {/* <li onClick={() => onShow(2)} className={`${tabId == 2 ? 'border-b-2 border-femmy-pdark':'opacity-50'} py-2 inline-block text-femmy-pdark font-sans font-bold cursor-pointer w-full md:w-[120px] text-center`}>Info Penting</li> */}
             </ul>
-            {/* <span className="text-black font-sans font-semibold  hidden md:flex"><img src='/images/share.png' className='mr-[13px] w-[17px] object-contain'/>Bagikan</span> */}
+            {/* <span className="text-femmy-pdark font-sans font-semibold hidden md:flex"><img src='/images/share.png' className='mr-[13px] w-[17px] object-contain'/>Bagikan</span> */}
+            <span className="text-femmy-pdark font-sans font-semibold hidden md:flex"><img src='/images/share.png' className='mr-[13px] w-[17px] object-contain'/>Bagikan</span>
           </div>
           <div>
             <div className={`${tabId == 1 ? 'flex' : 'hidden'} py-6`}>
@@ -145,33 +146,50 @@ const ProdukDetail: NextPage = () => {
                 {parse(data[0]?.content ? data[0]?.content : '')}
               </div>
               <div className="basis-full lg:basis-2/5 justify-end hidden md:flex">
-                <div className="bg-femmy-pdark py-6 pl-8 pr-6 rounded-2xl w-[260px]">
-                  <h6 className="text-white font-sans text-[24px] lg:text-[18px] text-center mb-4 leading-tight">
-                    Pembelian dari
-                    <br />
-                    Official Store kami
-                  </h6>
-                  <Link href={data[0]?.tokped || ''}>
-                    <a target={'_blank'} rel={'noopener'}>
-                      <img src="/images/to-tokped.png" />
-                    </a>
-                  </Link>
-                  <Link href="https://www.lazada.co.id/bintang-toedjoe-official-store/?spm=a2o4j.8553159.0.0.37a86b15OCW3a8&q=All-Products&shop_category_ids=1092591&from=wangpu&sc=KVUG">
-                    <a target={'_blank'} rel={'noopener'}>
-                      <img src="/images/lazada.png" />
-                    </a>
-                  </Link>
-                  <Link href={data[0]?.shopee || ''}>
-                    <a target={'_blank'} rel={'noopener'}>
-                      <img src="/images/to-shopee.png" />
-                    </a>
-                  </Link>
-                  <Link href={data[0]?.tiktokshop || ''}>
-                    <a target={'_blank'} rel={'noopener'}>
-                      <img src="/images/to-tiktok.png" />
-                    </a>
-                  </Link>
+                {false && 
+                  <div className="bg-femmy-pdark py-6 pl-8 pr-6 rounded-2xl w-[260px]">
+                    <h6 className="text-white font-sans text-[24px] lg:text-[18px] text-center mb-4 leading-tight">
+                      Pembelian dari
+                      <br />
+                      Official Store kami
+                    </h6>
+                    <Link href={data[0]?.tokped || ''}>
+                      <a target={'_blank'} rel={'noopener'}>
+                        <img src="/images/to-tokped.png" />
+                      </a>
+                    </Link>
+                    <Link href="https://www.lazada.co.id/bintang-toedjoe-official-store/?spm=a2o4j.8553159.0.0.37a86b15OCW3a8&q=All-Products&shop_category_ids=1092591&from=wangpu&sc=KVUG">
+                      <a target={'_blank'} rel={'noopener'}>
+                        <img src="/images/lazada.png" />
+                      </a>
+                    </Link>
+                    <Link href={data[0]?.shopee || ''}>
+                      <a target={'_blank'} rel={'noopener'}>
+                        <img src="/images/to-shopee.png" />
+                      </a>
+                    </Link>
+                    <Link href={data[0]?.tiktokshop || ''}>
+                      <a target={'_blank'} rel={'noopener'}>
+                        <img src="/images/to-tiktok.png" />
+                      </a>
+                    </Link>
+                  </div>
+                }
+                {true &&
+                  <div>
+                    <div className='bg-femmy-pdark px-8 pt-6 pb-6 rounded-t-3xl'>
+                        <h3 className='text-white text-[20px] font-sansSemi mb-4 text-center'>Kuantitas</h3>
+                        <div className='flex'>
+                            <div  className='cursor-pointer bg-white w-[35px] flex justify-center items-center rounded-tl-lg rounded-bl-lg'><p className='text-femmy-pmedium font-sansSemi text-[24px]'>-</p></div>
+                            <input className='w-[80px] cs-input-1 text-center bg-white border-none focus:border-none text-femmy-pmedium text-[24px] focus:shadow-none focus:outline-none font-sansBold' type={'number'}/>
+                            <div  className='cursor-pointer bg-white w-[35px] flex justify-center items-center rounded-tr-lg rounded-br-lg'><p className='text-femmy-pmedium font-sansSemi text-[24px]'>+</p></div>
+                      </div>
+                    </div>
+                    <div className='bg-[#FDC8CE] py-3 px-10 rounded-b-3xl'>
+                        <Link href='/keranjang'><a><img className='w-[40px] mx-auto' src='/images/cart-shop.png' alt='icon shop'/></a></Link>
+                    </div>
                 </div>
+                }
               </div>
             </div>
             {/*  tab 2 */}

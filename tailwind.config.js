@@ -24,6 +24,9 @@ module.exports = {
       fontFamily: {
         head: ['Regatto'],
         sans: ['WorkSans-Regular'],
+        sansSemi: ['WorkSans-SemiBold'],
+        sansBold: ['WorkSans-Bold'],
+        sansExtra: ['WorkSans-ExtraBold'],
       },
       screens: {
         '3xl': '1600px',

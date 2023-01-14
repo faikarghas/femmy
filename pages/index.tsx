@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import Slider from 'react-slick';
@@ -6,7 +6,8 @@ import Image from 'next/image';
 
 // import component
 import Layout from '../components/layouts/index';
-import FormJoin from '../components/presentational/FormJoin/FormJoin';
+import FormLogin from '../components/presentational/FormLogin/FormLogin';
+import FormRegister from '../components/presentational/FormRegister/FormRegister';
 import ProdukWrap from '../components/presentational/Produk/Produk';
 import SearchProduct from '../components/presentational/SearchProduct/SearchProduct';
 import CardNews from '../components/presentational/CardNews/CardNews';
@@ -16,6 +17,11 @@ import { withAUth } from '../hoc/withAuth';
 
 //import utils
 import { tips } from '../utils/data';
+
+// import redux
+import { selectModalRegState, selectModalState, setModalState } from "../store/modal";
+import { useDispatch, useSelector } from "react-redux";
+
 
 const settings = {
   dots: false,
@@ -38,6 +44,12 @@ const settings = {
 };
 
 const Home: NextPage = () => {
+  const modalLoginState = useSelector(selectModalState);
+  const modalRegisterState = useSelector(selectModalRegState);
+
+
+  const [loginOpen, setLoginOpen] = useState(false)
+
   const produkSlider = useRef<any>(null);
 
   const nextSlider = () => {
@@ -47,41 +59,22 @@ const Home: NextPage = () => {
   const prevSlider = () => {
     produkSlider.current.slickPrev();
   };
+
+  const openLogin = () => {
+    setLoginOpen(true)
+  }
+
   return (
     <Layout page="home">
-      <section className="flex flex-row relative lg:h-screen">
-        <div className="hidden lg:block object-contain basis-2/4">
-          <img
-            alt="image-femmy"
-            src="/images/jadi_home.jpg"
-            className="h-full w-full object-cover"
-          />
-        </div>
-        <div className="basis-full lg:basis-2/4 bg-femmy-pdark p-8 lg:p-0">
-          <div className="flex items-center py-6 px-6 lg:px-8 relative lg:absolute lg:top-[50%] right-[0] lg:right-[calc(0%+48px)] lg:translate-x-[0%] lg:translate-y-[-50%] bg-femmy-plight h-full lg:h-[calc(100%-96px-35px)] w-[100%] lg:w-[64%] rounded-2xl shadow-[16px_17px_16px_rgba(0, 0, 0, 0.17)]">
-            <div className="w-full">
-              <div className="pb-4 xl:pb-2 mb-4 border-b-[1px] border-femmy-pdark">
-                <h2 className="text-femmy-pdark text-[35px] xl:text-[40px] font-head font-semibold leading-tight">
-                  Jadi Utuh Bersama
-                </h2>
-              </div>
-              <h4 className="mb-6 text-femmy-pdark text-[18px] xl:text-[22px] leading-[22px] xl:leading-[30px] font-head">
-                Bergabung menjadi
-                <br />
-                Femmy Reseller sekarang!
-              </h4>
-              <div className="flex flex-row">
-                <div className="basis-full md:basis-3/5">
-                  <FormJoin />
-                </div>
-                <div className="hidden md:flex basis-2/5 items-center justify-center">
-                  <img
-                    alt="image-femmy"
-                    src="/images/draft.png"
-                    className="object-contain w-[245px]"
-                  />
-                </div>
-              </div>
+
+      <section className='p-8 lg:px-16'>
+        <div className=''>
+          <div className='relative bg-no-repeat bg-cover rounded-2xl' style={{backgroundImage:'url(/images/banner-tukar-point2.png)'}}>
+            {/* <img className='h-full w-full' src='/images/banner-tukar-poin.png' /> */}
+            <div className='w-full h-full py-9 px-16'>
+              <h3 className='text-[#F6C2C6] font-head text-[27px] leading-[30px] mb-2'>Kumpulkan & tukar poin <br/> sebanyak-banyaknya!</h3>
+              <h5 className='text-[#F6C2C6] font-sans text-[18px] mb-6'>dan raih beragam keuntungan <br/> menarik dari Femmy!</h5>
+              <a className='rounded-3xl px-8 py-2 bg-[#F6C2C6] text-[#8F2A64] font-semibold'>tukar poin sekarang</a>
             </div>
           </div>
         </div>
@@ -149,7 +142,6 @@ const Home: NextPage = () => {
                 </div>
               );
             }
-           
           })}
         </div>
 
@@ -192,6 +184,14 @@ const Home: NextPage = () => {
           </button>
         </div>
       </section>
+
+      <div className={`bg-[#BD9BAF] fixed top-0 left-0 w-full h-full z-50 ${modalLoginState ? 'block' : 'hidden'}`}>
+        <FormLogin/>
+      </div>
+
+      <div className={`bg-[#BD9BAF] fixed top-0 left-0 w-full h-full z-50 ${modalRegisterState ? 'block' : 'hidden'}`}>
+        <FormRegister/>
+      </div>
     </Layout>
   );
 };

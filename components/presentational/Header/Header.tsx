@@ -1,9 +1,10 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import Link from 'next/link';
 
-import { selectAuthState, setAuthState } from '../../../store/authSlice';
 import Nav from '../Nav/Nav';
+
+import { selectAuthState, setAuthState } from '../../../store/authSlice';
+import { useSelector, useDispatch } from 'react-redux';
 
 export interface IHeader {
   page: string;

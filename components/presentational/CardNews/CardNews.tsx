@@ -40,7 +40,7 @@ const CardNews: React.FC<ICardN> = ({
       <div
         className={`${height} ${
           model && 'w-[65%] lg:w-full rounded-br-2xl'
-        } bg-femmy-white rounded-tr-2xl lg:rounded-tr-none  lg:rounded-b-2xl flex flex-col justify-center px-6 pt-2 pb-5`}
+        } bg-femmy-white rounded-tr-2xl lg:rounded-tr-none  lg:rounded-b-2xl flex flex-col justify-center px-8 pt-2 pb-5`}
       >
         <span className="font-sans text-[#8B8B8B] text-[13px] mb-1.5">
           23 Juli 2022
@@ -53,8 +53,8 @@ const CardNews: React.FC<ICardN> = ({
           {data.title}
         </h5>
         {paragraph && (
-          <p className="font-sans text-femmy-pdark leading-4 font-medium text-[13px] mb-6 line-clamp-4">
-            {data.shortDesc}
+          <p className="font-sans text-femmy-pdark leading-4 font-medium text-[13px] mb-6 line-clamp-3">
+            {data.short}
           </p>
         )}
         <Link href={`/artikel/${data.link}`}>

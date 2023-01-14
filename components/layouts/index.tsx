@@ -23,7 +23,7 @@ const Layout: React.FC<ILayout> = ({ children, page }) => {
           gtag('config', 'UA-245288693-1');
         `}
       </Script>
-      <Header page={page} />
+      <Header page={page}/>
       <main className={`${page !== 'home' ? 'mt-[85px]' : ''}`}>
         {children}
       </main>

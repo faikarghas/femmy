@@ -33,7 +33,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 A shell script you can run to automatically create a component in the `src/presentational` directory. Example:
 
-`./create_component MyComponent`
+`./create_component.sh MyComponent`
 
 #### `create_component.sh` failed to run: not enough permissions
 

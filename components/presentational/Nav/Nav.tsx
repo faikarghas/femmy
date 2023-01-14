@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+import { selectModalState, setModalState, setModalRegisterState } from "../../../store/modal";
+import { useDispatch, useSelector } from "react-redux";
+
 import { listNav } from '../../../utils/data';
 
 export interface INav {
@@ -9,6 +12,7 @@ export interface INav {
 }
 const Nav: React.FC<INav> = ({ page, position }) => {
   const [menu, setMenu] = useState(false);
+  const dispatch = useDispatch();
 
   const openMenu = () => {
     setMenu((prevState) => !prevState);
@@ -38,7 +42,7 @@ const Nav: React.FC<INav> = ({ page, position }) => {
             }`
           : `${menu ? 'bg-transparent' : 'bg-white'} `
       }
-      ${position == 'header' ? 'fixed z-20' : ''}
+      ${position == 'header' ? 'fixed z-50' : ''}
       w-full top-0 left-0 py-4 transition-all h-[85px]`}
       >
         <div className="flex flex-wrap items-center justify-between mx-auto">
@@ -119,77 +123,76 @@ const Nav: React.FC<INav> = ({ page, position }) => {
                   </li>
                 );
               })}
-              {position == 'header' ? (
+
+              {/* Auth */}
+              {/* {position == 'header' ? (
                 <li className="flex items-center group relative cursor-pointer">
                   <div className="rounded-[56px] md:w-[130px] lg:w-[210px] text-center bg-femmy-pdark text-femmy-white md:py-1.5 lg:py-2.5 md:px-2 lg:px-4 flex items-center justify-center">
-                    {/* <img
-                      className="md:w-[12px] lg:w-[18px] object-contain"
-                      src="/images/mag.png"
-                    />
-                    <span className="px-2">|</span> */}
-                    <span className="font-sans font-semibold block leading-[10px] md:tracking-normal lg:tracking-[2px] md:text-[9px] xl:text-[13px] ">
-                      media sosial kami
+                    <span onClick={()=>dispatch(setModalState(true))} className="font-sans font-semibold block leading-[10px] md:tracking-normal lg:tracking-[2px] md:text-[9px] xl:text-[13px] ">
+                      masuk
                     </span>
-                  </div>
-                  <div className="group-hover:block hidden transition-all  absolute top-full w-full pt-0">
-                    <ul className="list-none list rounded-2xl gap-y-2 flex flex-col justify-end bg-white p-4">
-                      <li className="">
-                        <Link href="https://www.tiktok.com/@femmy.daily">
-                          <a
-                            className="flex items-center"
-                            target="_blank"
-                            rel="noopener"
-                          >
-                            <img
-                              className="w-[30px]"
-                              src="/images/tiktok.png"
-                            />
-                            <span className="ml-4 text-[16px] font-sans text-femmy-pdark">
-                              Tik Tok
-                            </span>
-                          </a>
-                        </Link>
-                      </li>
-                      <li className="">
-                        <Link href="https://www.Instagram.com/femmy.daily">
-                          <a
-                            className="flex items-center"
-                            target="_blank"
-                            rel="noopener"
-                          >
-                            <img
-                              className="w-[30px]"
-                              src="/images/logo-ig.png"
-                            />
-                            <span className="ml-4 text-[16px] font-sans text-femmy-pdark">
-                              Instagram
-                            </span>
-                          </a>
-                        </Link>
-                      </li>
-                      <li className="">
-                        <Link href="https://www.youtube.com/channel/UC7Sg8HkaWJItuMLbvNdKvWQ">
-                          <a
-                            className="flex items-center"
-                            target="_blank"
-                            rel="noopener"
-                          >
-                            <img
-                              className="w-[30px]"
-                              src="/images/logo-yt.png"
-                            />
-                            <span className="ml-4 text-[16px] font-sans text-femmy-pdark">
-                              Youtube
-                            </span>
-                          </a>
-                        </Link>
-                      </li>
-                    </ul>
+                    <span className='text-white px-2'>|</span>
+                    <span onClick={()=>dispatch(setModalRegisterState(true))} className="font-sans font-semibold block leading-[10px] md:tracking-normal lg:tracking-[2px] md:text-[9px] xl:text-[13px] ">
+                      daftar
+                    </span>
                   </div>
                 </li>
               ) : (
                 ''
+              )} */}
+
+              {/* Auth reseller */}
+              {position == 'header' ? (
+                <>
+                  <li className='relative usr'>
+                    <div className='cursor-pointer'><img className='h-[25px]' src='/images/user-icon.png'/></div>
+                    {/* modal user */}
+                    <div className='min-w-[240px] absolute pt-4 left-[50%] translate-x-[-50%] hidden musr'>
+                      <div className='flex bg-femmy-pdark p-4 rounded-tr-[2rem] rounded-tl-[2rem]'>
+                        <img className='w-[60px] object-contain' src='/images/user-avatar.png' />
+                        <div className='pl-4'>
+                          <h6 className='text-white font-sans text-[20px] mb-2'>ID F599999</h6>
+                          <h6 className='text-white font-sans mb-1 text-[16px]'>Hi, reseller,</h6>
+                          <h5 className='text-white font-sans font-bold text-[17px]'>Ruth!</h5>
+                        </div>
+                      </div>
+                      <div className='bg-[#FBEEE5] rounded-br-[2rem] rounded-bl-[2rem] shadow-[3px_4px_6px_rgba(136,37,94,0.25);]'>
+                        <ul className='p-4'>
+                          <li className='mb-3'><Link href='/akun'><a className='font-sans text-femmy-pdark text-[16px]'>akun saya</a></Link></li>
+                          <li><Link href='/akun/riwayat-transaksi'><a className='font-sans text-femmy-pdark text-[16px]'>cek status pesanan</a></Link></li>
+                        </ul>
+
+                        <ul className='p-4 border-t-[1px] border-[#8F2A64]'>
+                          <li><Link href='/'><a className='font-sans text-femmy-pdark text-[16px]'>keluar</a></Link></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li className='relative point'>
+                    <div className='cursor-pointer'><img className='h-[25px]' src='/images/gift-icon.png'/></div>
+                    {/* modal point */}
+                    <div className='min-w-[270px] absolute pt-4 left-[50%] translate-x-[-50%] hidden mpoint'>
+                      <div className='bg-[#FBEEE5] rounded-[2rem] shadow-[3px_4px_6px_rgba(136,37,94,0.25);]'>
+                        <ul className='px-4 py-6'>
+                          <li className='mb-3'><Link href='/cek-poin'><a className='font-sans text-femmy-pdark text-[16px]'>cek poin-mu</a></Link></li>
+                          <li className='mb-3'><Link href='/katalog-hadiah'><a className='font-sans text-femmy-pdark text-[16px]'>tukar poin dengan hadiah</a></Link></li>
+                          <li className='mb-3'><Link href='/tukar-emoney'><a className='font-sans text-femmy-pdark text-[16px]'>tukar poin dengan e-money</a></Link></li>
+                          <li className='mb-3'><Link href='/cek-riwayat-poin'><a className='font-sans text-femmy-pdark text-[16px]'>cek riwayat penukaran poin</a></Link></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <Link href="/wishlist"><a><img className='h-[25px]' src='/images/love-icon.png'/></a></Link>
+                  </li>
+                  <li>
+                    <Link href="/keranjang"><a><img className='h-[25px]' src='/images/cart-icon.png'/></a></Link>
+                  </li>
+                </>
+              ) : (
+                ''
               )}
+
             </ul>
           </div>
         </div>
