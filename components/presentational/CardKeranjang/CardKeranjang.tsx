@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const CardKeranjang = ({}) => {
+const CardKeranjang = () => {
     const [count, setCount] = useState(1)
 
     const maxGuests = 1000

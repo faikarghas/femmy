@@ -6,7 +6,7 @@ export interface INav {
   page: string;
   position: string;
 }
-const MediaSocial: React.FC<INav> = ({  }) => {
+const MediaSocial: React.FC<INav> = () => {
   return (
     <li className="flex items-center group relative cursor-pointer">
         <div className="rounded-[56px] md:w-[130px] lg:w-[210px] text-center bg-femmy-pdark text-femmy-white md:py-1.5 lg:py-2.5 md:px-2 lg:px-4 flex items-center justify-center">

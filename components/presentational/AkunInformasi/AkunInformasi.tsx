@@ -38,9 +38,6 @@ const AkunInformasi: React.FC<IAkunInformasi> = () => {
           };
           const response = await fetch(endpoint, options);
           const result = await response.json();
-    
-          if (result.status == 200) {
-          }
         },
         validationSchema: yup.object({
           fullName: yup.string().trim().required('Name is required'),

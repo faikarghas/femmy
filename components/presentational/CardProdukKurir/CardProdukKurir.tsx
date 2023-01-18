@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const CardProdukKurir = ({}) => {
+const CardProdukKurir = () => {
 
     return (
         <div className=''>

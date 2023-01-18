@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
 
 import { useFormik } from 'formik';
 import * as yup from 'yup';
@@ -35,8 +34,6 @@ const AkunSandi: React.FC<IAkunSandi> = () => {
           const response = await fetch(endpoint, options);
           const result = await response.json();
 
-          if (result.status == 200) {
-          }
         },
         validationSchema: yup.object({
           fullName: yup.string().trim().required('Name is required'),

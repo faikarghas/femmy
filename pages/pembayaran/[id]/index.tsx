@@ -136,7 +136,7 @@ const Pembayaran: NextPage = () => {
 
                     <p className='text-femmy-pdark font-sans mb-4'>atau pesanan Anda otomatis dibatalkan oleh sistem.</p>
 
-                    <p className='text-femmy-pdark font-sans'>Infomasi Virtual Account telah dikirimkan ke email dan SMS Anda. Apabila sudah melakukan pembayaran, Anda bisa cek status pesanan dengan klik tombol "Cek Pesanan" di bawah.</p>
+                    <p className='text-femmy-pdark font-sans'>Infomasi Virtual Account telah dikirimkan ke email dan SMS Anda. Apabila sudah melakukan pembayaran, Anda bisa cek status pesanan dengan klik tombol Cek Pesanan di bawah.</p>
                 </div>
             </div>
         </div>

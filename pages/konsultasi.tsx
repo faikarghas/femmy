@@ -10,7 +10,7 @@ import { withAUth } from '../hoc/withAuth';
 
 const Kontak: NextPage = () => {
   return (
-    <Layout page="tentang-kami">
+    <Layout page="konsultasi">
       <section className="flex flex-row flex-wrap relative lg:h-screen">
         <div className="block object-contain basis-full h-full lg:basis-2/4">
           <picture>
