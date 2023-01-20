@@ -31,10 +31,8 @@ const CardProduct: React.FC<ICardP> = ({ data }) => (
           <Rating count={data.rating} />
         </div>
       </span>
-      <span className="h-[60px] bg-[#CC3F80] rounded-b-2xl rounded-br-2xl flex justify-center items-center">
-        <span className="text-white font-sans tracking-[2px]">
-          + Keranjang
-        </span>
+      <span className="h-[60px] bg-[#CC3F80] rounded-b-2xl rounded-br-2xl flex justify-center items-center hover:bg-[#F6C2C6] text-white hover:text-femmy-pdark font-sans tracking-[2px]">
+       + Keranjang
       </span>
     </a>
   </Link>

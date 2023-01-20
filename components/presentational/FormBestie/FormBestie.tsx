@@ -162,7 +162,7 @@ const FormBestie: React.FC<IFormBestie> = () => {
 
             <button
               type="submit"
-              className="mt-4 w-full text-center text-femmy-white bg-femmy-pdark  focus:ring-4 focus:outline-none tracking-[2px] focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 font-sans"
+              className="mt-4 w-full text-center text-femmy-white bg-femmy-pdark hover:bg-[#F6C2C6] hover:text-femmy-pdark focus:ring-4 focus:outline-none tracking-[2px] focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 font-sans"
             >
               {message}
             </button>
