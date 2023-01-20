@@ -137,8 +137,10 @@ const ProdukDetail: NextPage = () => {
               </li>
               {/* <li onClick={() => onShow(2)} className={`${tabId == 2 ? 'border-b-2 border-femmy-pdark':'opacity-50'} py-2 inline-block text-femmy-pdark font-sans font-bold cursor-pointer w-full md:w-[120px] text-center`}>Info Penting</li> */}
             </ul>
-            {/* <span className="text-femmy-pdark font-sans font-semibold hidden md:flex"><img src='/images/share.png' className='mr-[13px] w-[17px] object-contain'/>Bagikan</span> */}
-            <span className="text-femmy-pdark font-sans font-semibold hidden md:flex"><img src='/images/share.png' className='mr-[13px] w-[17px] object-contain'/>Bagikan</span>
+            <ul className="list-none flex gap-6 w-full justify-end">
+              <li className="text-femmy-pdark font-sans font-semibold hidden md:flex"><img src='/images/wishtlist.png' className='mr-[13px] w-[17px] object-contain'/>Masukan ke Wishlist</li>
+              <li className="text-femmy-pdark font-sans font-semibold hidden md:flex"><img src='/images/share-color.png' className='mr-[13px] w-[17px] object-contain'/>Bagikan</li>
+            </ul>
           </div>
           <div>
             <div className={`${tabId == 1 ? 'flex' : 'hidden'} py-6`}>
@@ -178,10 +180,10 @@ const ProdukDetail: NextPage = () => {
                 {true &&
                   <div>
                     <div className='bg-femmy-pdark px-8 pt-6 pb-6 rounded-t-3xl'>
-                        <h3 className='text-white text-[20px] font-sansSemi mb-4 text-center'>Kuantitas</h3>
+                        <h3 className='text-white text-[20px] font-sansMedium  mb-4 text-center'>Kuantitas</h3>
                         <div className='flex'>
                             <div  className='cursor-pointer bg-white w-[35px] flex justify-center items-center rounded-tl-lg rounded-bl-lg'><p className='text-femmy-pmedium font-sansSemi text-[24px]'>-</p></div>
-                            <input className='w-[80px] cs-input-1 text-center bg-white border-none focus:border-none text-femmy-pmedium text-[24px] focus:shadow-none focus:outline-none font-sansBold' type={'number'}/>
+                            <input className='w-[80px] cs-input-1 text-center bg-white border-none focus:border-none text-femmy-pmedium text-[20px] focus:shadow-none focus:outline-none font-sansSemi' value={8} type={'number'}/>
                             <div  className='cursor-pointer bg-white w-[35px] flex justify-center items-center rounded-tr-lg rounded-br-lg'><p className='text-femmy-pmedium font-sansSemi text-[24px]'>+</p></div>
                       </div>
                     </div>

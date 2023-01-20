@@ -33,7 +33,7 @@ const CardProduct: React.FC<ICardP> = ({ data }) => (
       </span>
       <span className="h-[60px] bg-[#CC3F80] rounded-b-2xl rounded-br-2xl flex justify-center items-center">
         <span className="text-white font-sans tracking-[2px]">
-          Beli Sekarang
+          + Keranjang
         </span>
       </span>
     </a>

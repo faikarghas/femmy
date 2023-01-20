@@ -162,6 +162,16 @@ const Pembayaran: NextPage = () => {
             </div>
         </div>
       </section>
+
+      <div className='modal-gopay fixed top-0 left-0 w-full h-full bg-femmy-pdark z-[60] hidden'>
+            <div className='bg-[#F5E8DF] py-16 px-20 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-3xl text-center'>
+                <div className='absolute top-3 right-3'>
+                    <img src='/images/icon-close.png' width={55} className='mb-8 mx-auto'/>
+                </div>
+                <img src='/images/logo-gojek.png' width={180} className='mb-8 mx-auto'/>
+                <img src='/images/barcode.png' width={280}/>
+            </div>
+      </div>
     </Layout>
   );
 };

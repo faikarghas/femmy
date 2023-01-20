@@ -57,6 +57,13 @@ input::placeholder {
 }
 
 @font-face {
+  font-family: 'WorkSans-Medium';
+  src: url('/fonts/WorkSans-Medium.woff');
+  font-style: normal;
+}
+
+
+@font-face {
   font-family: 'WorkSans-SemiBold';
   src: url('/fonts/WorkSans-SemiBold.woff');
   font-style: normal;

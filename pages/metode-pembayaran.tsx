@@ -98,7 +98,7 @@ const MetodePembayaran: NextPage = () => {
                         </ul>
                         <p className='font-sansSemi text-femmy-pdark mb-12'>Kami akan verifikasi pembayaran Anda max. 1x24 jam setelah<br/>Anda melakukan konfirmasi pembayaran.</p>
                         <div className='mt-6'>
-                            <Link href='/metode-pembayaran'><a className={`font-sansSemi px-16 py-3 text-center rounded-3xl
+                            <Link href='/pilih-kurir'><a className={`font-sansSemi px-16 py-3 text-center rounded-3xl
                                 ${parseInt(radioVal) <= parseInt('3') ? 'text-[#FDC8CE] bg-femmy-pdark' : 'text-femmy-pdark bg-[#FDC8CE]'}
                             `}>lanjut ke pengiriman</a></Link>
                         </div>
