@@ -80,12 +80,12 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className="flex flex-wrap flex-row pb-8 pt-10 lg:pt-16 px-8 lg:px-16 bg-[#FEF7F8]">
+      <section className="flex flex-wrap flex-row pb-28 pt-10 lg:pt-16 px-8 lg:px-16 bg-[#FEF7F8]">
         <div className="basis-full xl:basis-1/4 mb-12">
           <h4 className="font-head text-femmy-pdark text-[35px] font-semibold">
             Produk Femmy
           </h4>
-          <span className="font-sans text-[10px] text-femmy-pdark">
+          <span className="font-sansMedium text-[12px] text-femmy-pdark">
             1-6 dari 6 produk
           </span>
         </div>
@@ -95,7 +95,7 @@ const Home: NextPage = () => {
         <ProdukWrap />
       </section>
 
-      <section className="flex flex-wrap flex-row pb-16 pt-16 lg:pt-16 px-8 lg:px-16 bg-[#F6C2C6]">
+      <section className="flex flex-wrap flex-row pb-28 pt-16 lg:pt-16 px-8 lg:px-16 bg-[#F6C2C6]">
         <div className="flex justify-between items-center w-full mb-8">
           <h3 className="text-femmy-pdark text-[35px] xl:text-[40px] font-head font-semibold">
             Tips & Trik
