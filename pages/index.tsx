@@ -80,7 +80,7 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className="flex flex-wrap flex-row pb-8 pt-10 lg:pt-16 px-8 lg:px-16 bg-[#FEF7F8]">
+      <section className="flex flex-wrap flex-row pb-28 pt-10 lg:pt-16 px-8 lg:px-16 bg-[#FEF7F8]">
         <div className="basis-full xl:basis-1/4 mb-12">
           <h4 className="font-head text-femmy-pdark text-[35px] font-semibold">
             Produk Femmy
