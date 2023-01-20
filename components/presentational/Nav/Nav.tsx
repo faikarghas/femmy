@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router'
 import Link from 'next/link';
 
 import { selectModalState, setModalState, setModalRegisterState } from "../../../store/modal";
@@ -12,7 +13,7 @@ export interface INav {
 }
 const Nav: React.FC<INav> = ({ page, position }) => {
   const [menu, setMenu] = useState(false);
-  const dispatch = useDispatch();
+  const router = useRouter()
 
   const openMenu = () => {
     setMenu((prevState) => !prevState);
@@ -21,6 +22,7 @@ const Nav: React.FC<INav> = ({ page, position }) => {
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
+
     const onScroll = () => setOffset(window.pageYOffset);
     // clean up code
     window.removeEventListener('scroll', onScroll);
@@ -114,7 +116,7 @@ const Nav: React.FC<INav> = ({ page, position }) => {
                       replace={true}
                     >
                       <a
-                        className="font-sans font-semibold md:text-[9px] xl:text-[13px] block py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0 text-femmy-pdark xl:tracking-[2px]"
+                        className={`${txt.split(' ').join('-') === router.pathname.replace(/\//g, "") ? 'text-[#EA92A7]' : 'text-femmy-pdark'} font-sansSemi md:text-[9px] xl:text-[13px] block py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0 xl:tracking-[2px]`}
                         aria-current="page"
                       >
                         {txt}

@@ -11,8 +11,6 @@ export interface IHeader {
 }
 
 const Header: React.FC<IHeader> = ({ page }) => {
-  const { authState } = useSelector(selectAuthState);
-  const dispatch = useDispatch();
 
   if (page == 'home') {
     return (
@@ -50,7 +48,7 @@ const Header: React.FC<IHeader> = ({ page }) => {
       </header>
     );
   } else {
-    return <Nav position="header" page="nh" />;
+    return <Nav position="header" page={page} />;
   }
 };
 

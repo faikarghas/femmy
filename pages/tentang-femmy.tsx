@@ -9,7 +9,7 @@ import { withAUth } from '../hoc/withAuth';
 
 const Tentang: NextPage = () => {
   return (
-    <Layout page="tentang-kami">
+    <Layout page="tentang-femmy">
       <section className="flex flex-col lg:flex-row relative bg-femmy-plight pt-0 lg:pt-4 pb-12 px-8 lg:px-16">
         <div className="basis-full lg:basis-2/5 order-last lg:order-first">
           <div className="lg:w-[430px] lg:pt-14">
