@@ -189,7 +189,7 @@ const Reseller: NextPage = () => {
             <img className='w-[100px] mb-4' src='/images/gopay.png' alt='logo gopay' />
             <p className='text-femmy-pdark font-sans text-[12px] w-[70%] mb-8'>Suspendisse posuere pharetra lorem nec finibus. Aenean gravida, ligula sed maximus sollicitudin, massa nibh consectetur felis, facilisis pharetra neque neque.</p>
           
-            <Link href="/"><a className='text-white bg-femmy-pdark px-16 py-2 rounded-xl inline-block'>tukar poinmu sekarang!</a></Link>
+            <Link href="/"><a className='text-[#F9EFE6] bg-femmy-pdark px-16 py-2 rounded-xl inline-block font-sans'>tukar poinmu sekarang!</a></Link>
           </div>
       </section>
     </Layout>

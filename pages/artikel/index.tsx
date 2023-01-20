@@ -14,10 +14,8 @@ import { tips } from '../../utils/data';
 const Tips: NextPage = () => {
   return (
     <Layout page="tentang-kami">
-      <section className="relative bg-femmy-plight py-8 px-8 lg:px-16">
-        <h2 className="font-head text-femmy-pdark text-[40px] mb-10 font-semibold">
-          Tips & Trik
-        </h2>
+      <section className="relative bg-femmy-plight pt-20 pb-28 px-8 lg:px-16">
+        <h2 className="font-head text-femmy-pdark text-[40px] mb-10">Tips & Trik</h2>
         {tips.map((val, i) => {
           if (i === 0) {
             return (
