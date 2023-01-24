@@ -13,7 +13,7 @@ export interface IFormLogin {
 const FormLogin: React.FC<IFormLogin> = () => {
   const dispatch = useDispatch();
 
-  const [message, setMessage] = useState('tanya sekarang!'); // This will be used to show a message if the submission is successful
+  const [message, setMessage] = useState('masuk'); // This will be used to show a message if the submission is successful
   const [submitted, setSubmitted] = useState(false);
 
   const formik = useFormik({
@@ -41,7 +41,7 @@ const FormLogin: React.FC<IFormLogin> = () => {
       if (result.status == 200) {
         setMessage('Terkirim');
         setTimeout(() => {
-          setMessage('tanya sekarang!');
+          setMessage('masuk');
         }, 3000);
         setSubmitted(true);
       }
