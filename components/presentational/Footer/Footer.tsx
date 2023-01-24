@@ -48,7 +48,7 @@ const Footer = () => (
       </div>
       <div className="flex justify-between items-end w-full pt-4">
         <span className="font-sans text-femmy-pdark text-[14px] font-medium">
-          &copy; 2022 femmy all rights reserved
+          &copy; 2023 femmy all rights reserved
         </span>
         <div className="hidden xl:block">
           <ul className="list-none list flex items-center gap-2 justify-end">

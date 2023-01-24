@@ -41,7 +41,7 @@ const CekPoin: NextPage = () => {
 
                 <div className='absolute top-[50%] translate-y-[-50%] left-0 w-full z-30 text-center'>
                   <h3 className='font-head text-femmy-pdark text-[33px] mb-6'>Cash Reward</h3>
-                  <Link href=''><a className='font-sans text-[#FDC8CE] bg-femmy-pdark py-2 px-20 rounded-lg '>tukar poin dengan e-money</a></Link>
+                  <Link href='/tukar-emoney'><a className='font-sans text-[#FDC8CE] bg-femmy-pdark py-2 px-20 rounded-lg '>tukar poin dengan e-money</a></Link>
                 </div>
                 <div className='absolute bottom-8 left-0 w-full z-30 text-center'>
                   <img className='w-[220px] object-contain mx-auto' src='/images/pay.png' />

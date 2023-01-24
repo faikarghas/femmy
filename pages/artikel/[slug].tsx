@@ -76,22 +76,24 @@ const TipsDetail: NextPage = () => {
                 Rekomendasi Artikel
               </h6>
               {tipsLain().map((val, i) => {
-                return (
-                  <div key={i} className="mb-8">
-                    <CardNews
-                      type="small"
-                      height="h-[200px] lg:h-[180px]"
-                      paragraph={false}
-                      model={true}
-                      data={{
-                        title: val.judul,
-                        short: val.shortDesc,
-                        link: val.slug,
-                        image: val.image,
-                      }}
-                    />
-                  </div>
-                );
+                if (i < 3) {
+                    return (
+                    <div key={i} className="mb-8">
+                      <CardNews
+                        type="small"
+                        height="h-[200px] lg:h-[180px]"
+                        paragraph={false}
+                        model={true}
+                        data={{
+                          title: val.judul,
+                          short: val.shortDesc,
+                          link: val.slug,
+                          image: val.image,
+                        }}
+                      />
+                    </div>
+                  );
+                }
               })}
             </div>
           </div>

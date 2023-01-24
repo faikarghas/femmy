@@ -160,12 +160,12 @@ const Nav: React.FC<INav> = ({ page, position }) => {
                       </div>
                       <div className='bg-[#FBEEE5] rounded-br-[2rem] rounded-bl-[2rem] shadow-[3px_4px_6px_rgba(136,37,94,0.25);]'>
                         <ul className='p-4'>
-                          <li className='mb-3'><Link href='/akun'><a className='font-sans text-femmy-pdark text-[16px]'>akun saya</a></Link></li>
-                          <li><Link href='/akun/riwayat-transaksi'><a className='font-sans text-femmy-pdark text-[16px]'>cek status pesanan</a></Link></li>
+                          <li className='mb-3'><Link href='/akun'><a className='font-sansMedium text-femmy-pdark text-[16px]'>akun saya</a></Link></li>
+                          <li><Link href='/akun/riwayat-transaksi'><a className='font-sansMedium text-femmy-pdark text-[16px]'>cek status pesanan</a></Link></li>
                         </ul>
 
                         <ul className='p-4 border-t-[1px] border-[#8F2A64]'>
-                          <li><Link href='/'><a className='font-sans text-femmy-pdark text-[16px]'>keluar</a></Link></li>
+                          <li><Link href='/'><a className='font-sansMedium text-femmy-pdark text-[16px]'>keluar</a></Link></li>
                         </ul>
                       </div>
                     </div>
@@ -173,13 +173,13 @@ const Nav: React.FC<INav> = ({ page, position }) => {
                   <li className='relative point'>
                     <div className='cursor-pointer'><img className='h-[25px]' src='/images/gift-icon.png'/></div>
                     {/* modal point */}
-                    <div className='min-w-[270px] absolute pt-4 left-[50%] translate-x-[-50%] hidden mpoint'>
+                    <div className='min-w-[300px] absolute pt-4 left-[50%] translate-x-[-50%] hidden mpoint'>
                       <div className='bg-[#FBEEE5] rounded-[2rem] shadow-[3px_4px_6px_rgba(136,37,94,0.25);]'>
-                        <ul className='px-4 py-6'>
-                          <li className='mb-3'><Link href='/cek-poin'><a className='font-sans text-femmy-pdark text-[16px]'>cek poin-mu</a></Link></li>
-                          <li className='mb-3'><Link href='/katalog-hadiah'><a className='font-sans text-femmy-pdark text-[16px]'>tukar poin dengan hadiah</a></Link></li>
-                          <li className='mb-3'><Link href='/tukar-emoney'><a className='font-sans text-femmy-pdark text-[16px]'>tukar poin dengan e-money</a></Link></li>
-                          <li className='mb-3'><Link href='/cek-riwayat-poin'><a className='font-sans text-femmy-pdark text-[16px]'>cek riwayat penukaran poin</a></Link></li>
+                        <ul className='px-7 py-7'>
+                          <li className='mb-3'><Link href='/cek-poin'><a className='font-sansMedium text-femmy-pdark text-[16px]'>cek poin-mu</a></Link></li>
+                          <li className='mb-3'><Link href='/katalog-hadiah'><a className='font-sansMedium text-femmy-pdark text-[16px]'>tukar poin dengan hadiah</a></Link></li>
+                          <li className='mb-3'><Link href='/tukar-emoney'><a className='font-sansMedium text-femmy-pdark text-[16px]'>tukar poin dengan e-money</a></Link></li>
+                          <li className='mb-3'><Link href='/cek-riwayat-poin'><a className='font-sansMedium text-femmy-pdark text-[16px]'>cek riwayat penukaran poin</a></Link></li>
                         </ul>
                       </div>
                     </div>
