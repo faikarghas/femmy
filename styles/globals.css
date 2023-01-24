@@ -89,7 +89,7 @@ input::placeholder {
 }
 
 p,ul,li,h1,h2,h3,h4,h5,h6,a,span,b{
-  letter-spacing: 1px !important;
+  letter-spacing: 0.5px !important;
 }
 
 /* hamburger menu */

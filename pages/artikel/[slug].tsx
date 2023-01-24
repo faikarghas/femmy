@@ -67,7 +67,7 @@ const TipsDetail: NextPage = () => {
               <h5 className="leading-tight font-head text-femmy-pdark mb-8 text-[24px] font-semibold">
                 {data[0]?.judul}
               </h5>
-              <div className="tips font-sans text-femmy-pdark font-medium text-[15px] mb-20 leading-normal">
+              <div className="tips font-sansMedium text-femmy-pdark font-medium text-[15px] mb-20 leading-normal">
                 {parse(data[0]?.content ? data[0]?.content : '')}
               </div>
             </div>

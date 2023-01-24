@@ -97,7 +97,7 @@ const ProdukDetail: NextPage = () => {
             Produk Femmy
           </h4>
         </div>
-        <div className="basis-full xl:basis-3/4 mb-12 flex items-center w-full">
+        <div className="basis-full xl:basis-3/4 mb-12 flex items-center w-full pr-10">
           <SearchProduct />
         </div>
 
@@ -109,7 +109,7 @@ const ProdukDetail: NextPage = () => {
             />
           </div>
         </div>
-        <div className="basis-full lg:basis-[70%]">
+        <div className="basis-full lg:basis-[70%] pr-10">
           <h5 className="font-head text-femmy-pdark text-[30px] mb-3 font-semibold text-center md:text-left">
             {data[0]?.judul}
           </h5>
@@ -144,7 +144,7 @@ const ProdukDetail: NextPage = () => {
           </div>
           <div>
             <div className={`${tabId == 1 ? 'flex' : 'hidden'} py-6`}>
-              <div className="basis-full lg:basis-3/5">
+              <div className="basis-full lg:basis-3/5 font-sansMedium">
                 {parse(data[0]?.content ? data[0]?.content : '')}
               </div>
               <div className="basis-full lg:basis-2/5 justify-end hidden md:flex">
@@ -178,13 +178,13 @@ const ProdukDetail: NextPage = () => {
                   </div>
                 }
                 {true &&
-                  <div>
+                  <div className='w-[75%]'>
                     <div className='bg-femmy-pdark px-8 pt-6 pb-6 rounded-t-3xl'>
-                        <h3 className='text-white text-[20px] font-sansMedium  mb-4 text-center'>Kuantitas</h3>
-                        <div className='flex'>
-                            <div  className='cursor-pointer bg-white w-[35px] flex justify-center items-center rounded-tl-lg rounded-bl-lg'><p className='text-femmy-pmedium font-sansSemi text-[24px]'>-</p></div>
-                            <input className='w-[80px] cs-input-1 text-center bg-white border-none focus:border-none text-femmy-pmedium text-[20px] focus:shadow-none focus:outline-none font-sansSemi' value={8} type={'number'}/>
-                            <div  className='cursor-pointer bg-white w-[35px] flex justify-center items-center rounded-tr-lg rounded-br-lg'><p className='text-femmy-pmedium font-sansSemi text-[24px]'>+</p></div>
+                        <h3 className='text-white text-[16px] font-sansMedium  mb-3 text-center'>Kuantitas</h3>
+                        <div className='flex justify-center'>
+                            <div  className='cursor-pointer bg-white w-[50px] flex justify-center items-center rounded-tl-lg rounded-bl-lg'><p className='text-femmy-pmedium font-sansSemi text-[24px]'>-</p></div>
+                            <input className='w-[95px] cs-input-1 text-center bg-white border-none focus:border-none text-femmy-pmedium text-[20px] focus:shadow-none focus:outline-none font-sans' value={8} type={'number'}/>
+                            <div  className='cursor-pointer bg-white w-[50px] flex justify-center items-center rounded-tr-lg rounded-br-lg'><p className='text-femmy-pmedium font-sansSemi text-[24px]'>+</p></div>
                       </div>
                     </div>
                     <div className='bg-[#FDC8CE] py-3 px-10 rounded-b-3xl'>
