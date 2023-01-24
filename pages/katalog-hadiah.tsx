@@ -12,7 +12,7 @@ import { withAUth } from '../hoc/withAuth';
 
 const KatalogHadiah: NextPage = () => {
   return (
-    <Layout page="tentang-kami">    
+    <Layout page="tentang-kami">
       <section className="flex flex-wrap flex-row pb-8 pt-10 lg:pt-16 px-8 lg:px-16 bg-[#FEF7F8]">
         <nav className="flex mb-12 basis-full" aria-label="Breadcrumb">
                 <ol className="inline-flex items-center space-x-1 md:space-x-3 list-none">

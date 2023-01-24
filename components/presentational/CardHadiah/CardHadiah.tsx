@@ -83,8 +83,8 @@ const CardHadiah: React.FC<ICardK> = ({ data }) =>{
               <li className='font-sans text-femmy-pdark'>total poinmu</li>
               <li className='font-sansBold text-femmy-pdark'>20.000 poin</li>
             </ul>
-            <ul className='flex justify-between mb-6'>
-              <li className='font-sans text-femmy-pdark'>total poinmu</li>
+            <ul className='flex justify-between mb-6 border-b-[1px] border-femmy-pdark pb-4'>
+              <li className='font-sans text-femmy-pdark'>poin hadiah</li>
               <li className='font-sansBold text-femmy-pdark'>15.000 poin</li>
             </ul>
             <ul className='flex justify-between'>
