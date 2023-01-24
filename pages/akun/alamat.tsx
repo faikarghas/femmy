@@ -57,17 +57,17 @@ const AkunAlamat: NextPage = () => {
                         <ul className='w-full flex flex-wrap border-t-[1px] border-b-[1px] bg-[#FDC8CE] border-femmy-pdark rounded-tr-[2rem]'>
                             <li className={`basis-1/3 cursor-pointer text-center font-sans font-bold`}>
                                 <Link href="/akun">
-                                    <a className={`rounded-tr-[2rem] p-4 block font-sans bg-[#951B66] text-[#FDC8CE] border-r-[1px] border-[#FDC8CE]`}>Akun</a>
+                                    <a className={`rounded-tr-[2rem] p-4 block font-sansBold bg-[#951B66] text-[#FDC8CE] border-r-[1px] border-[#FDC8CE]`}>Akun</a>
                                 </Link>
                             </li>
                             <li className={`basis-1/3 cursor-pointer text-center font-sans font-bold bg-[#951B66]`}>
                                 <Link href="/akun/alamat" className={`rounded-tr-[2rem] p-4`}>
-                                    <a className={`rounded-tr-[2rem] p-4 block font-sans bg-[#FDC8CE] text-femmy-pdark border-r-[1px] border-femmy-pdark`}>Alamat</a>
+                                    <a className={`rounded-tr-[2rem] p-4 block font-sansBold bg-[#FDC8CE] text-femmy-pdark border-r-[1px] border-femmy-pdark`}>Alamat</a>
                                 </Link>
                             </li>
                             <li className={`basis-1/3 cursor-pointer text-center font-sans font-bold rounded-tr-[2rem] }`}>
                                 <Link href="/akun/riwayat-transaksi" className={`rounded-tr-[2rem] p-4 `}>
-                                    <a className={`rounded-tr-[2rem] p-4 block font-sans bg-[#951B66] text-[#FDC8CE] border-r-[1px] border-[#FDC8CE]`}>Riwayat Transaksi</a>
+                                    <a className={`rounded-tr-[2rem] p-4 block font-sansBold bg-[#951B66] text-[#FDC8CE] border-r-[1px] border-[#FDC8CE]`}>Riwayat Transaksi</a>
                                 </Link>
                             </li>
                         </ul>

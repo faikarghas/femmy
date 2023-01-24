@@ -43,7 +43,7 @@ const TipsDetail: NextPage = () => {
   return (
     <Layout page="tentang-kami">
       <section className="relative bg-[#FCF4EE] pt-0 lg:pt-8 lg:pb-8 px-0 md:px-16">
-        <h2 className="hidden md:block font-head text-femmy-pdark text-[40px] mb-10 font-semibold">
+        <h2 className="hidden md:block font-head text-femmy-pdark text-[40px] mb-10">
           Tips & Trik
         </h2>
 

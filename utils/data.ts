@@ -4,7 +4,7 @@ export const listNav = [
   'artikel',
   'temukan femmy',
   'konsultasi',
-  'femmy reseller',
+  'bergabung bersama',
 ];
 // sementara
 export const produk = [

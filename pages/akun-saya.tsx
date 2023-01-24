@@ -55,16 +55,16 @@ const AkunSaya: NextPage = () => {
                     </div>
                     <div className='w-full basis-[75%] bg-[#FDC8CE] rounded-tr-[40px] rounded-br-[40px]'>
                         <ul className='w-full flex flex-wrap border-t-[1px] border-b-[1px]  border-femmy-pdark rounded-tr-[2rem]'>
-                            <li onClick={() => tabHandler(1)} className={`basis-1/3 cursor-pointer text-center font-sans font-bold ${activeTab === 1  ?  ' text-femmy-pdark  border-femmy-pdark' : 'text-[#FDC8CE] bg-[#FDC8CE]' }`}>
+                            <li onClick={() => tabHandler(1)} className={`basis-1/3 cursor-pointer text-center font-sansBold  ${activeTab === 1  ?  ' text-femmy-pdark  border-femmy-pdark' : 'text-[#FDC8CE] bg-[#FDC8CE]' }`}>
                                 <div className={`rounded-tr-[2rem] p-4 ${activeTab === 1 ?  'bg-[#FDC8CE] border-tr-[1px] border-femmy-pdark' : 'bg-femmy-pdark' } `}>
                                     Akun
                                 </div>
                             </li>
-                            <li onClick={() => tabHandler(2)} className={`basis-1/3 cursor-pointer text-center font-sans font-bold ${activeTab === 2  ?  ' text-femmy-pdark  border-femmy-pdark' : 'text-[#FDC8CE] bg-[#FDC8CE]' }`}>
+                            <li onClick={() => tabHandler(2)} className={`basis-1/3 cursor-pointer text-center font-sansBold  ${activeTab === 2  ?  ' text-femmy-pdark  border-femmy-pdark' : 'text-[#FDC8CE] bg-[#FDC8CE]' }`}>
                                 <div className={`rounded-tr-[2rem] p-4 ${activeTab === 2 ?  'bg-[#FDC8CE] border-tr-[1px] border-femmy-pdark' : 'bg-femmy-pdark' } `}>
                                     Alamat
                                 </div>
-                            </li><li onClick={() => tabHandler(3)} className={`basis-1/3 cursor-pointer text-center font-sans font-bold rounded-tr-[2rem] ${activeTab === 3  ?  ' text-femmy-pdark  border-femmy-pdark' : 'text-[#FDC8CE] bg-[#FDC8CE]' }`}>
+                            </li><li onClick={() => tabHandler(3)} className={`basis-1/3 cursor-pointer text-center font-sansBold  rounded-tr-[2rem] ${activeTab === 3  ?  ' text-femmy-pdark  border-femmy-pdark' : 'text-[#FDC8CE] bg-[#FDC8CE]' }`}>
                                 <div className={`rounded-tr-[2rem] p-4 ${activeTab === 3 ?  'bg-[#FDC8CE] border-tr-[1px] border-femmy-pdark' : 'bg-femmy-pdark' } `}>
                                     Riwayat Transaksi
                                 </div>
