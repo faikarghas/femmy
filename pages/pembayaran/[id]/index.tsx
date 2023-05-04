@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Accordion } from "flowbite-react";
 
 import { verifyJwt } from '../../../utils/verifyJwt';
-import {wrapper} from '.,/../../store/store';
+import {wrapper} from '../../../store/store';
 
 // import component
 import Layout from '../../../components/layouts/index';

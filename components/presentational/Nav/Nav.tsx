@@ -63,7 +63,8 @@ const Nav: React.FC<INav> = ({ page, position, auth }) => {
         const result = await response.json();
         setUser(result)
       } catch (error) {
-
+        console.log(error);
+        
       }
     }
 
@@ -366,7 +367,7 @@ const Nav: React.FC<INav> = ({ page, position, auth }) => {
 
       <div className={`${pop === true ? 'flex' : 'hidden'} fixed z-[100] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full h-full bg-black bg-opacity-50 justify-center items-center`}>
       <div className='text-[20px] text-white absolute top-5 right-5 cursor-pointer' onClick={closePop}>X</div>  
-      <a href='https://docs.google.com/forms/d/e/1FAIpQLSdW7f6SLrZwTH0N9D8m7BUkGW6mX61yCGUlhlp16kufw_swdA/viewform' target='_blank' rel='noopener'>
+      <a href='https://docs.google.com/forms/d/e/1FAIpQLSdW7f6SLrZwTH0N9D8m7BUkGW6mX61yCGUlhlp16kufw_swdA/viewform' target='_blank' rel='noreferrer'>
         <picture>
           <source media="(min-width:650px)" srcSet="/images/femmy_giveaway.jpg" />
           <img src="/images/femmy_giveaway-m.jpg" alt="Flowers" className='m-auto object-contain' width={'80%'} height={'80%'}/>
