@@ -10,11 +10,9 @@ const Breadcrumb: React.FC<IBread> = ({ page, detail }) => (
   <nav className="flex mb-14" aria-label="Breadcrumb">
     <ul className="inline-flex items-center space-x-1">
       <li className="inline-flex items-center">
-        <Link href="">
-          <a className="inline-flex items-center text-sm font-sans text-femmy-pdark ">
+        <Link href="" className="inline-flex items-center text-sm font-sans text-femmy-pdark">
             {' '}
             Beranda
-          </a>
         </Link>
       </li>
       <li>
@@ -31,10 +29,8 @@ const Breadcrumb: React.FC<IBread> = ({ page, detail }) => (
               clipRule="evenodd"
             ></path>
           </svg>
-          <Link href="/produk">
-            <a className="ml-1 text-sm font-sans text-femmy-pdark  md:ml-1 ">
+          <Link href="/produk" className="ml-1 text-sm font-sans text-femmy-pdark  md:ml-1 ">
               {page}
-            </a>
           </Link>
         </div>
       </li>

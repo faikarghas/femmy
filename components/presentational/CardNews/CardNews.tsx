@@ -57,14 +57,12 @@ const CardNews: React.FC<ICardN> = ({
             {data.short}
           </p>
         )}
-        <Link href={`/artikel/${data.link}`}>
-          <a
-            className={`${
-              type == 'big' ? 'w-[100%] lg:w-[60%]' : 'w-[100%]'
-            } py-2 text-white text-center bg-femmy-pdark font-sans rounded-3xl text-[13px] lg:tracking-[2px]`}
+        <Link href={`/artikel/${data.link}`}
+         className={`${
+          type == 'big' ? 'w-[100%] lg:w-[60%]' : 'w-[100%]'
+        } py-2 text-white text-center bg-femmy-pdark font-sans rounded-3xl text-[13px] lg:tracking-[2px]`}
           >
             baca selengkapnya
-          </a>
         </Link>
       </div>
     </div>

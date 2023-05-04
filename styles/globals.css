@@ -292,3 +292,34 @@ input {
   box-shadow: none !important;
   border: none;
 }
+.custom-file-input {
+  color: transparent;
+  width: 100%;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  text-align: center;
+  content: 'Ambil dari komputer / handphone';
+  color: #FDC8CE;
+  font-family: 'WorkSans-Regular';
+  padding: 0.5rem 5rem;
+  background: #9C1B66;
+  display: block;
+  border-radius: 0.5rem;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active {
+  outline: 0;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+}

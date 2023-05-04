@@ -2,17 +2,12 @@ import { useState, useEffect } from 'react';
 import type { NextPage } from 'next';
 import Link from 'next/link';
 
-// import component
-
-// import hoc
-import { withAUth } from '../hoc/withAuth';
-
 const TukarEmoney: NextPage = () => {
   return (
     <div className='bg-[#6A1445] w-full h-screen'>
         <div className='bg-[#F5E8DF] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[65%] rounded-3xl py-12 px-20'>
             <div className='absolute top-5 right-5'>
-                <Link href="/katalog-hadiah"><a><img className='w-[50px] object-contain' src='/images/icon-close.png' /></a></Link>
+                <Link href="/katalog-hadiah"><img className='w-[50px] object-contain' src='/images/icon-close.png' /></Link>
             </div>
             <h5 className='text-femmy-pdark font-sansBold text-[20px] mb-4'>Poin Rewards-mu : 20.000</h5>
             <ul className='flex mb-10'>
@@ -49,7 +44,7 @@ const TukarEmoney: NextPage = () => {
                             placeholder=""
                         />
                         <ul className='flex flex-wrap justify-between'>
-                            <li className='basis-[48%]'><Link href="/"><a className='bg-femmy-pdark py-2 px-10 font-sans text-[#FDC8CE] block rounded-lg text-center'>Kembali</a></Link></li>
+                            <li className='basis-[48%]'><Link href="/" className='bg-femmy-pdark py-2 px-10 font-sans text-[#FDC8CE] block rounded-lg text-center'>Kembali</Link></li>
                             <li className='basis-[48%] bg-femmy-pdark py-2 px-10 font-sans text-[#FDC8CE] cursor-pointer rounded-lg text-center'>Kirim</li>
                         </ul>
                     </div>
@@ -60,5 +55,6 @@ const TukarEmoney: NextPage = () => {
     </div>
   );
 };
+
 
 export default TukarEmoney;

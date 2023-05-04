@@ -17,12 +17,11 @@ const MediaSocial: React.FC<INav> = () => {
         <div className="group-hover:block hidden transition-all  absolute top-full w-full pt-0">
         <ul className="list-none list rounded-2xl gap-y-2 flex flex-col justify-end bg-white p-4">
             <li className="">
-            <Link href="https://www.tiktok.com/@femmy.daily">
-                <a
-                className="flex items-center"
-                target="_blank"
-                rel="noopener"
-                >
+            <Link href="https://www.tiktok.com/@femmy.daily"
+             className="flex items-center"
+             target="_blank"
+             rel="noopener"
+            >
                 <img
                     className="w-[30px]"
                     src="/images/tiktok.png"
@@ -30,16 +29,14 @@ const MediaSocial: React.FC<INav> = () => {
                 <span className="ml-4 text-[16px] font-sans text-femmy-pdark">
                     Tik Tok
                 </span>
-                </a>
             </Link>
             </li>
             <li className="">
-            <Link href="https://www.Instagram.com/femmy.daily">
-                <a
-                className="flex items-center"
-                target="_blank"
-                rel="noopener"
-                >
+            <Link href="https://www.Instagram.com/femmy.daily"
+            className="flex items-center"
+            target="_blank"
+            rel="noopener"
+            >
                 <img
                     className="w-[30px]"
                     src="/images/logo-ig.png"
@@ -47,16 +44,14 @@ const MediaSocial: React.FC<INav> = () => {
                 <span className="ml-4 text-[16px] font-sans text-femmy-pdark">
                     Instagram
                 </span>
-                </a>
             </Link>
             </li>
             <li className="">
-            <Link href="https://www.youtube.com/channel/UC7Sg8HkaWJItuMLbvNdKvWQ">
-                <a
-                className="flex items-center"
-                target="_blank"
-                rel="noopener"
-                >
+            <Link href="https://www.youtube.com/channel/UC7Sg8HkaWJItuMLbvNdKvWQ"
+            className="flex items-center"
+            target="_blank"
+            rel="noopener"
+            >
                 <img
                     className="w-[30px]"
                     src="/images/logo-yt.png"
@@ -64,7 +59,6 @@ const MediaSocial: React.FC<INav> = () => {
                 <span className="ml-4 text-[16px] font-sans text-femmy-pdark">
                     Youtube
                 </span>
-                </a>
             </Link>
             </li>
         </ul>

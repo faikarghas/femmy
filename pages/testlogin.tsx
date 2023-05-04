@@ -74,7 +74,7 @@ const Home: NextPage = () => {
             <div className='w-full h-full py-9 px-16'>
               <h3 className='text-[#F6C2C6] font-head text-[27px] leading-[30px] mb-2'>Kumpulkan & tukar poin <br/> sebanyak-banyaknya!</h3>
               <h5 className='text-[#F6C2C6] font-sans text-[18px] mb-6'>dan raih beragam keuntungan <br/> menarik dari Femmy!</h5>
-              <a className='rounded-3xl px-8 py-2 bg-[#F6C2C6] text-[#8F2A64] font-semibold'>tukar poin sekarang</a>
+              <Link href="" className='rounded-3xl px-8 py-2 bg-[#F6C2C6] text-[#8F2A64] font-semibold'>tukar poin sekarang</Link>
             </div>
           </div>
         </div>
@@ -100,10 +100,8 @@ const Home: NextPage = () => {
           <h3 className="text-femmy-pdark text-[35px] xl:text-[40px] font-head font-semibold">
             Tips & Trik
           </h3>
-          <Link href="/artikel">
-            <a className="text-femmy-pdark text-[12px] font-sans">
+          <Link href="/artikel" className="text-femmy-pdark text-[12px] font-sans">
               Lihat Semua
-            </a>
           </Link>
         </div>
         <div className="hidden lg:grid  lg:grid-rows-2 grid-cols-4 grid-flow-col gap-4 w-full">
@@ -150,7 +148,7 @@ const Home: NextPage = () => {
             className="absolute top-[30%] left-[-20px] translate-y-[-50%] z-5"
             onClick={prevSlider}
           >
-            <Image src="/images/prev-button.png" width={40} height={40} />
+            <Image src="/images/prev-button.png" width={40} height={40} alt=""/>
           </button>
 
           <Slider
@@ -180,7 +178,7 @@ const Home: NextPage = () => {
             className="absolute top-[30%] right-[-20px] translate-y-[-50%] z-5"
             onClick={nextSlider}
           >
-            <Image src="/images/next-button.png" width={40} height={40} />
+            <Image src="/images/next-button.png" width={40} height={40} alt=""/>
           </button>
         </div>
       </section>

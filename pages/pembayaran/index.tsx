@@ -1,45 +1,45 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
 
+import { verifyJwt } from '../../utils/verifyJwt';
+import {wrapper} from '../../store/store';
+
 // import component
 import Layout from '../../components/layouts/index';
 import CardKeranjang from '../../components/presentational/CardKeranjang/CardKeranjang';
 import FormKontak from '../../components/presentational/FormKontak/FormKontak';
 
-// import hoc
-import { withAUth } from '../../hoc/withAuth';
-
-const Pembayaran: NextPage = () => {
+const Pembayaran: NextPage = ({auth}:any) => {
   return (
-    <Layout page="tentang-kami">
+    <Layout page="tentang-kami" auth={auth}>
       <section className="pb-8 pt-10 lg:pt-16 px-8 lg:px-16 bg-[#FEF7F8]">
         <nav className="flex mb-12 basis-full" aria-label="Breadcrumb">
             <ol className="inline-flex items-center space-x-1 md:space-x-3 list-none">
                 <li className="inline-flex items-center">
-                    <Link href="/"><a className="inline-flex items-center text-sm font-medium font-sans text-femmy-pdark">Beranda</a></Link>
+                    <Link href="/" className="inline-flex items-center text-sm font-medium font-sans text-femmy-pdark">Beranda</Link>
                 </li>
                 <li>
                     <div className="flex items-center">
                         <svg aria-hidden="true" className="w-6 h-6 text-femmy-pdark" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path></svg>
-                        <Link href="/keranjang"><a className="ml-1 text-sm font-medium font-sans text-femmy-pdark">Keranjang</a></Link>
+                        <Link href="/keranjang" className="ml-1 text-sm font-medium font-sans text-femmy-pdark">Keranjang</Link>
                     </div>
                 </li>
                 <li>
                     <div className="flex items-center">
                         <svg aria-hidden="true" className="w-6 h-6 text-femmy-pdark" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path></svg>
-                        <Link href="/metode-pembayaran"><a className="ml-1 text-sm font-medium font-sans text-femmy-pdark">Pilih Metode Pembayaran</a></Link>
+                        <Link href="/metode-pembayaran" className="ml-1 text-sm font-medium font-sans text-femmy-pdark">Pilih Metode Pembayaran</Link>
                     </div>
                 </li>
                 <li>
                     <div className="flex items-center">
                         <svg aria-hidden="true" className="w-6 h-6 text-femmy-pdark" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path></svg>
-                        <Link href="/pilih-kurir" ><a className="ml-1 text-sm font-medium font-sans text-femmy-pdark">Pilihan Pengiriman</a></Link>
+                        <Link href="/pilih-kurir" className="ml-1 text-sm font-medium font-sans text-femmy-pdark">Pilihan Pengiriman</Link>
                     </div>
                 </li>
                 <li>
                     <div className="flex items-center">
                         <svg aria-hidden="true" className="w-6 h-6 text-femmy-pdark" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path></svg>
-                        <Link href="#" ><a className="ml-1 text-sm font-bold font-sans text-femmy-pdark">Pembayaran</a></Link>
+                        <Link href="#" className="ml-1 text-sm font-bold font-sans text-femmy-pdark">Pembayaran</Link>
                     </div>
                 </li>
             </ol>
@@ -59,7 +59,7 @@ const Pembayaran: NextPage = () => {
                     <div className='mb-6 lg:w-[300px]'>
                         <p className='text-femmy-pdark leading-tight font-sans'>Jl. Layar Permai 8B No.1 A,  Jakarta Utara, Penjaringan, DKI Jakarta 14410</p>
                     </div>
-                    <Link href='/akun/alamat'><a className='font-sans text-[#FDC8CE] bg-femmy-pdark py-2 px-14 rounded-xl inline-block'>pilih alamat lain</a></Link>
+                    <Link href='/akun/alamat' className='font-sans text-[#FDC8CE] bg-femmy-pdark py-2 px-14 rounded-xl inline-block'>pilih alamat lain</Link>
                 </div>
 
                 <h6 className='text-femmy-pdark font-sans text-[20px] border-b-[1px] border-t-[1px] border-femmy-pdark py-4 pl-6 mb-4'>produk (15)</h6>
@@ -157,7 +157,7 @@ const Pembayaran: NextPage = () => {
                 </div>
 
                 <div className='mt-6'>
-                    <Link href='/pembayaran/0015'><a className='font-sansSemi text-white bg-femmy-pdark w-full block py-3 text-center rounded-3xl'>pesan</a></Link>
+                    <Link href='/pembayaran/0015' className='font-sansSemi text-white bg-femmy-pdark w-full block py-3 text-center rounded-3xl'>pesan</Link>
                 </div>
             </div>
         </div>
@@ -175,5 +175,30 @@ const Pembayaran: NextPage = () => {
     </Layout>
   );
 };
+
+export const getServerSideProps =  wrapper.getServerSideProps( store => async ({req, res}:any) => {
+
+    let token = await verifyJwt(req.cookies.refreshToken)
+    let user = []
+    let auth = false
+  
+    if(token){
+        const fetchData = await fetch(`${process.env.NEXT_PUBLIC_API}/api/users/${token.id}`,{
+            method:"GET",
+            headers:{
+                'Authorization': 'Bearer ' + req.cookies.refreshToken,
+            }
+        })
+        user = await fetchData.json()
+        auth = true
+    }
+  
+    return {
+      props: {
+        user,
+        auth : auth
+      },
+    }
+})
 
 export default Pembayaran;

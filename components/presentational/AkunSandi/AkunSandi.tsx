@@ -1,32 +1,47 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from 'next/router'
 
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+
+import { setAuthState, selectAuthState } from "../../../store/authSlice";
+import { removeCookie } from '../../../utils/cookie';
+import { getCookie } from '../../../utils/cookie'
+import InfoNotif from '../Modal/InfoNotif'
 
 export interface IAkunSandi {
 }
 
 const AkunSandi: React.FC<IAkunSandi> = () => {
-    const [message, setMessage] = useState('simpan'); // This will be used to show a message if the submission is successful
+    const [message, setMessage] = useState('simpan');
+    const [modal, setModal] = useState(false);
+    const [counter, setCounter] = useState(4);
+
+    const dispatch = useDispatch();
+    const router = useRouter()
 
     const formik = useFormik({
         initialValues: {
-          oldPassword: '',
-          newPassword: '',
-          confPassword: '',
+          currentPassword: '',
+          password: '',
+          passwordConfirmation: '',
         },
         onSubmit: async (val) => {
+          setMessage('Loading...')
           const data = {
-            oldPassword: val.oldPassword,
-            newPassword: val.newPassword,
-            confPassword: val.confPassword
+            currentPassword: val.currentPassword,
+            password: val.password,
+            passwordConfirmation: val.passwordConfirmation
           };
 
+          const token = getCookie('refreshToken',{})
           const JSONdata = JSON.stringify(data);
-          const endpoint = 'https://api-femmy.owlandfoxes.id/reseller';
+          const endpoint = 'http://localhost:1337/api/auth/change-password';
           const options = {
             method: 'POST',
             headers: {
+              'Authorization': 'Bearer ' + token,
               'Content-Type': 'application/json',
             },
             body: JSONdata,
@@ -34,25 +49,48 @@ const AkunSandi: React.FC<IAkunSandi> = () => {
           const response = await fetch(endpoint, options);
           const result = await response.json();
 
+          console.log(result,'result');
+          setMessage('simpan')
+
+          if (result.jwt) {
+            setMessage('simpan')
+            dispatch(setAuthState(false))
+            setModal(true)
+
+            let count = 4
+            setInterval(()=>{
+              count--
+              setCounter(count)
+            },1000)
+
+            setTimeout(() => {
+              removeCookie('refreshToken')
+              router.push('/login')
+            }, 3000);
+
+          } else {
+            setMessage('gagal ubah kata sandi')
+            setTimeout(() => {
+              setMessage('simpan');
+            }, 2000);
+          }
+
         },
         validationSchema: yup.object({
-          fullName: yup.string().trim().required('Name is required'),
-          email: yup
-            .string()
-            .email('Must be a valid email')
-            .required('Email is required'),
+          passwordConfirmation: yup.string().oneOf([yup.ref("password"), null])
         }),
     });
 
     return (
+      <>
         <form className='mb-4' onSubmit={formik.handleSubmit}>
             <div className="grid md:grid-cols-1">
                 <div className="relative z-0 mb-4 md:mb-3  w-full group">
                     <input
                     className="bg-transparent w-full rounded-lg placeholder:text-femmy-pdark placeholder:text-[13px] placeholder:font-semibold placeholder:tracking-[2px] py-1.5  pl-6 border-[1px] border-femmy-pdark text-femmy-pdark"
-                    placeholder="password saat ini"
-                    name="oldPassword"
-                    value={formik.values.oldPassword}
+                    placeholder="kata sandi lama"
+                    name="currentPassword"
+                    value={formik.values.currentPassword}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     type="password"
@@ -61,9 +99,9 @@ const AkunSandi: React.FC<IAkunSandi> = () => {
                 <div className="relative z-0 mb-4 md:mb-3  w-full group">
                     <input
                     className="bg-transparent w-full rounded-lg placeholder:text-femmy-pdark placeholder:text-[13px] placeholder:font-semibold placeholder:tracking-[2px] py-1.5  pl-6 border-[1px] border-femmy-pdark text-femmy-pdark"
-                    placeholder="password baru"
-                    name="newPassword"
-                    value={formik.values.newPassword}
+                    placeholder="masukkan kata sandi baru"
+                    name="password"
+                    value={formik.values.password}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     type="password"
@@ -72,9 +110,9 @@ const AkunSandi: React.FC<IAkunSandi> = () => {
                 <div className="relative z-0 mb-4 md:mb-3  w-full group">
                     <input
                     className="bg-transparent w-full rounded-lg placeholder:text-femmy-pdark placeholder:text-[13px] placeholder:font-semibold placeholder:tracking-[2px] py-1.5  pl-6 border-[1px] border-femmy-pdark text-femmy-pdark"
-                    placeholder="konfirmasi password baru"
-                    name="confPassword"
-                    value={formik.values.confPassword}
+                    placeholder="konfirmasi kata sandi baru"
+                    name="passwordConfirmation"
+                    value={formik.values.passwordConfirmation}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     type="password"
@@ -89,6 +127,8 @@ const AkunSandi: React.FC<IAkunSandi> = () => {
                 </button>
             </div>
         </form>
+        <InfoNotif modal={modal} text="silahkan login kembali" counter={counter}/>
+      </>
     )
 }
 

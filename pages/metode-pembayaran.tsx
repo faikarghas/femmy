@@ -2,15 +2,16 @@ import type { NextPage } from 'next';
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link';
 
+import { verifyJwt } from '../utils/verifyJwt';
+import {wrapper} from '../store/store';
+
 // import component
 import Layout from '../components/layouts/index';
 import CardKeranjang from '../components/presentational/CardKeranjang/CardKeranjang';
 import FormKontak from '../components/presentational/FormKontak/FormKontak';
 
-// import hoc
-import { withAUth } from '../hoc/withAuth';
 
-const MetodePembayaran: NextPage = () => {
+const MetodePembayaran: NextPage = ({auth}:any) => {
 
     const [radioVal, setRadioVal] = useState('')
 
@@ -23,23 +24,23 @@ const MetodePembayaran: NextPage = () => {
     }, [radioVal])
 
     return (
-        <Layout page="tentang-kami">
+        <Layout page="tentang-kami" auth={auth}>
         <section className="pb-8 pt-10 lg:pt-16 px-8 lg:px-16 bg-[#FEF7F8]">
             <nav className="flex mb-12 basis-full" aria-label="Breadcrumb">
                 <ol className="inline-flex items-center space-x-1 md:space-x-3 list-none">
                     <li className="inline-flex items-center">
-                        <Link href="/"><a className="inline-flex items-center text-sm font-medium font-sans text-femmy-pdark">Beranda</a></Link>
+                        <Link href="/" className="inline-flex items-center text-sm font-medium font-sans text-femmy-pdark">Beranda</Link>
                     </li>
                     <li>
                         <div className="flex items-center">
                             <svg aria-hidden="true" className="w-6 h-6 text-femmy-pdark" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path></svg>
-                            <Link href="/keranjang"><a className="ml-1 text-sm font-medium font-sans text-femmy-pdark">Keranjang</a></Link>
+                            <Link href="/keranjang" className="ml-1 text-sm font-medium font-sans text-femmy-pdark">Keranjang</Link>
                         </div>
                     </li>
                     <li>
                         <div className="flex items-center">
                             <svg aria-hidden="true" className="w-6 h-6 text-femmy-pdark" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path></svg>
-                            <Link href="/metode-pembayaran"><a className="ml-1 text-sm font-medium font-sans text-femmy-pdark">Pilih Metode Pembayaran</a></Link>
+                            <Link href="/metode-pembayaran" className="ml-1 text-sm font-medium font-sans text-femmy-pdark">Pilih Metode Pembayaran</Link>
                         </div>
                     </li>
                 </ol>
@@ -98,9 +99,9 @@ const MetodePembayaran: NextPage = () => {
                         </ul>
                         <p className='font-sansSemi text-femmy-pdark mb-12'>Kami akan verifikasi pembayaran Anda max. 1x24 jam setelah<br/>Anda melakukan konfirmasi pembayaran.</p>
                         <div className='mt-6'>
-                            <Link href='/pilih-kurir'><a className={`font-sansSemi px-16 py-3 text-center rounded-3xl
+                            <Link href='/pilih-kurir' className={`font-sansSemi px-16 py-3 text-center rounded-3xl
                                 ${parseInt(radioVal) <= parseInt('3') ? 'text-[#FDC8CE] bg-femmy-pdark' : 'text-femmy-pdark bg-[#FDC8CE]'}
-                            `}>lanjut ke pengiriman</a></Link>
+                            `}>lanjut ke pengiriman</Link>
                         </div>
                     </div>
                 </div>
@@ -175,9 +176,9 @@ const MetodePembayaran: NextPage = () => {
                         </ul>
                         <p className='font-sansSemi text-femmy-pdark mb-12'>Kami akan verifikasi pembayaran Anda max. 1x24 jam setelah<br/>Anda melakukan konfirmasi pembayaran.</p>
                         <div className='mt-6'>
-                            <Link href='/pilih-kurir'><a className={`font-sansSemi px-16 py-3 text-center rounded-3xl
+                            <Link href='/pilih-kurir' className={`font-sansSemi px-16 py-3 text-center rounded-3xl
                                 ${parseInt(radioVal) <= parseInt('8') && parseInt(radioVal) >= parseInt('4') ? 'text-[#FDC8CE] bg-femmy-pdark' : 'text-femmy-pdark bg-[#FDC8CE]'}
-                            `}>lanjut ke pengiriman</a></Link>
+                            `}>lanjut ke pengiriman</Link>
                         </div>
                     </div>
                 </div>
@@ -204,9 +205,9 @@ const MetodePembayaran: NextPage = () => {
                             </li>
                         </ul>
                         <div className='mt-6'>
-                            <Link href='/metode-pembayaran'><a className={`font-sansSemi px-16 py-3 text-center rounded-3xl
+                            <Link href='/metode-pembayaran' className={`font-sansSemi px-16 py-3 text-center rounded-3xl
                                 ${parseInt(radioVal) <= parseInt('9') && parseInt(radioVal) >= parseInt('8') ? 'text-[#FDC8CE] bg-femmy-pdark' : 'text-femmy-pdark bg-[#FDC8CE]'}
-                            `}>COD (Kurir B7)</a></Link>
+                            `}>COD (Kurir B7)</Link>
                         </div>
                     </div>
                 </div>
@@ -215,5 +216,21 @@ const MetodePembayaran: NextPage = () => {
         </Layout>
     );
 };
+
+export const getServerSideProps =  wrapper.getServerSideProps( store => async ({req, res}:any) => {
+
+    let token = await verifyJwt(req.cookies.refreshToken)
+    let auth = false
+  
+    if(token){
+        auth = true
+    }
+  
+    return {
+      props: {
+        auth : auth
+      },
+    }
+})
 
 export default MetodePembayaran;

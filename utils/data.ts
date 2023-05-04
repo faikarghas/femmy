@@ -3,8 +3,9 @@ export const listNav = [
   'produk',
   'artikel',
   'temukan femmy',
+  'femmy reseller',
   'konsultasi',
-  'bergabung bersama',
+  // 'bergabung bersama',
 ];
 // sementara
 export const produk = [

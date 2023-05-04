@@ -7,6 +7,9 @@ import { useRouter } from 'next/router';
 import parse from 'html-react-parser';
 import { Link as LinkTo } from 'react-scroll';
 
+import { verifyJwt } from '../../utils/verifyJwt';
+import {wrapper} from '../../store/store';
+
 // import component
 import Layout from '../../components/layouts/index';
 import FilterDropdown from '../../components/presentational/FilterDropdown/FilterDropdown';
@@ -14,8 +17,6 @@ import CardProduct from '../../components/presentational/CardProduct/CardProduct
 import SearchProduct from '../../components/presentational/SearchProduct/SearchProduct';
 import Breadcrumb from '../../components/presentational/Breadcrumb/Breadcrumb';
 
-// import hoc
-import { withAUth } from '../../hoc/withAuth';
 
 // import utils
 import { produk } from '../../utils/data';
@@ -52,7 +53,7 @@ type DataTypes = {
   tiktokshop: string;
 };
 
-const ProdukDetail: NextPage = () => {
+const ProdukDetail: NextPage = ({auth}:any) => {
   const [tabId, setTabId] = useState(1);
   const [data, setData] = useState<DataTypes[]>([]);
 
@@ -87,7 +88,7 @@ const ProdukDetail: NextPage = () => {
   }, [router.isReady, router.query.slug]);
 
   return (
-    <Layout page="tentang-kami">
+    <Layout page="produk" auth={auth}>
       <section className="flex flex-wrap flex-row pb-8 pt-10 lg:pt-10 px-8 lg:px-16 bg-[#FEF7F8]">
         <div className="basis-full">
           <Breadcrumb page="produk" detail="Femmy Look Slim" />
@@ -148,36 +149,28 @@ const ProdukDetail: NextPage = () => {
                 {parse(data[0]?.content ? data[0]?.content : '')}
               </div>
               <div className="basis-full lg:basis-2/5 justify-end hidden md:flex">
-                {false && 
+                {true && 
                   <div className="bg-femmy-pdark py-6 pl-8 pr-6 rounded-2xl w-[260px]">
                     <h6 className="text-white font-sans text-[24px] lg:text-[18px] text-center mb-4 leading-tight">
                       Pembelian dari
                       <br />
                       Official Store kami
                     </h6>
-                    <Link href={data[0]?.tokped || ''}>
-                      <a target={'_blank'} rel={'noopener'}>
+                    <Link href={data[0]?.tokped || ''} target={'_blank'} rel={'noopener'}>
                         <img src="/images/to-tokped.png" />
-                      </a>
                     </Link>
-                    <Link href="https://www.lazada.co.id/bintang-toedjoe-official-store/?spm=a2o4j.8553159.0.0.37a86b15OCW3a8&q=All-Products&shop_category_ids=1092591&from=wangpu&sc=KVUG">
-                      <a target={'_blank'} rel={'noopener'}>
+                    <Link href="https://www.lazada.co.id/bintang-toedjoe-official-store/?spm=a2o4j.8553159.0.0.37a86b15OCW3a8&q=All-Products&shop_category_ids=1092591&from=wangpu&sc=KVUG" target={'_blank'} rel={'noopener'}>
                         <img src="/images/lazada.png" />
-                      </a>
                     </Link>
-                    <Link href={data[0]?.shopee || ''}>
-                      <a target={'_blank'} rel={'noopener'}>
+                    <Link href={data[0]?.shopee || ''} target={'_blank'} rel={'noopener'}>
                         <img src="/images/to-shopee.png" />
-                      </a>
                     </Link>
-                    <Link href={data[0]?.tiktokshop || ''}>
-                      <a target={'_blank'} rel={'noopener'}>
+                    <Link href={data[0]?.tiktokshop || ''} target={'_blank'} rel={'noopener'}>
                         <img src="/images/to-tiktok.png" />
-                      </a>
                     </Link>
                   </div>
                 }
-                {true &&
+                {false &&
                   <div className='w-[75%]'>
                     <div className='bg-femmy-pdark px-8 pt-6 pb-6 rounded-t-3xl'>
                         <h3 className='text-white text-[16px] font-sansMedium  mb-3 text-center'>Kuantitas</h3>
@@ -188,7 +181,7 @@ const ProdukDetail: NextPage = () => {
                       </div>
                     </div>
                     <div className='bg-[#FDC8CE] py-3 px-10 rounded-b-3xl'>
-                        <Link href='/keranjang'><a><img className='w-[40px] mx-auto' src='/images/cart-shop.png' alt='icon shop'/></a></Link>
+                        <Link href='/keranjang'><img className='w-[40px] mx-auto' src='/images/cart-shop.png' alt='icon shop'/></Link>
                     </div>
                 </div>
                 }
@@ -208,25 +201,17 @@ const ProdukDetail: NextPage = () => {
             <br />
             Official Store kami
           </h6>
-          <Link href={data[0]?.tokped || ''}>
-            <a target={'_blank'} rel={'noopener'}>
+          <Link href={data[0]?.tokped || ''} target={'_blank'} rel={'noopener'}>
               <img src="/images/to-tokped.png" />
-            </a>
           </Link>
-          <Link href="https://www.lazada.co.id/bintang-toedjoe-official-store/?spm=a2o4j.8553159.0.0.37a86b15OCW3a8&q=All-Products&shop_category_ids=1092591&from=wangpu&sc=KVUG">
-            <a target={'_blank'} rel={'noopener'}>
+          <Link href="https://www.lazada.co.id/bintang-toedjoe-official-store/?spm=a2o4j.8553159.0.0.37a86b15OCW3a8&q=All-Products&shop_category_ids=1092591&from=wangpu&sc=KVUG" target={'_blank'} rel={'noopener'}>
               <img src="/images/lazada.png" />
-            </a>
           </Link>
-          <Link href={data[0]?.shopee || ''}>
-            <a target={'_blank'} rel={'noopener'}>
+          <Link href={data[0]?.shopee || ''} target={'_blank'} rel={'noopener'}>
               <img src="/images/to-shopee.png" />
-            </a>
           </Link>
-          <Link href={data[0]?.tiktokshop || ''}>
-            <a target={'_blank'} rel={'noopener'}>
+          <Link href={data[0]?.tiktokshop || ''} target={'_blank'} rel={'noopener'}>
               <img src="/images/to-tiktok.png" />
-            </a>
           </Link>
         </div>
       </div>
@@ -241,7 +226,7 @@ const ProdukDetail: NextPage = () => {
             className="absolute top-[50%] left-[-20px] translate-y-[-50%] z-10"
             onClick={prevSlider}
           >
-            <Image src="/images/prev-button.png" width={40} height={40} />
+            <Image src="/images/prev-button.png" width={40} height={40} alt=""/>
           </button>
 
           <Slider
@@ -265,12 +250,37 @@ const ProdukDetail: NextPage = () => {
             className="absolute top-[50%] right-[-20px] translate-y-[-50%] z-10"
             onClick={nextSlider}
           >
-            <Image src="/images/next-button.png" width={40} height={40} />
+            <Image src="/images/next-button.png" width={40} height={40} alt=""/>
           </button>
         </div>
       </section>
     </Layout>
   );
 };
+
+export const getServerSideProps =  wrapper.getServerSideProps( store => async ({req, res}:any) => {
+
+  let token = await verifyJwt(req.cookies.refreshToken)
+  let user = []
+  let auth = false
+
+  if(token){
+      const fetchData = await fetch(`${process.env.NEXT_PUBLIC_API}/api/users/${token.id}`,{
+          method:"GET",
+          headers:{
+              'Authorization': 'Bearer ' + req.cookies.refreshToken,
+          }
+      })
+      user = await fetchData.json()
+      auth = true
+  }
+
+  return {
+    props: {
+      user,
+      auth : auth
+    },
+  }
+})
 
 export default ProdukDetail;

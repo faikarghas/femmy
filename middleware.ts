@@ -1,27 +1,41 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-// import axios from 'axios'
+import { verifyJwt } from "./utils/verifyJwt";
 
-const FINGERPRINT_COOKIE_MAX_AGE = 60 * 60 * 8; // 8 hours
-// This function can be marked `async` if using `await` inside
 export async function middleware(request: NextRequest) {
-  // const response = NextResponse.next()
-  // const getData = await fetch(`http://localhost:2611/auth/sales`,{
-  //     method:"GET"
-  //   })
-  // const result = await getData.json()
-  // if (result){
-  //     response.cookies.set('yplrm', '1209389018391787',{
-  //         httpOnly:true,
-  //         maxAge: FINGERPRINT_COOKIE_MAX_AGE,
-  //         secure: true
-  //     })
+  // var accessToken = request.cookies.get('accessToken')?.value
+  var refreshToken = request.cookies.get('refreshToken')?.value
+  const response = NextResponse.next()
+
+  let verify = await verifyJwt(refreshToken)
+
+
+  // if (!verify) {
+  //   return  NextResponse.redirect('http://localhost:3000')
   // }
-  // const token = response.cookies.get('yplrm');
-  // if (!token) return NextResponse.redirect(new URL('/login', request.url))
-  // return response
+
+  if (verify) {
+      // const getData = await fetch(`${process.env.NEXT_PUBLIC_API}/api/users/${2}`,{
+      //   method:"GET",
+      //   headers:{
+      //       'Authorization': 'Bearer ' + refreshToken,
+      //   }
+      // })
+
+      // const result = await getData.json()
+
+      // if (result.jwt) {
+      //   response.cookies.set('role', result.type)
+      //   return response
+      // } else {
+      //   response.cookies.delete('accessToken')
+      //   response.cookies.delete('refreshToken')
+      //   return response
+      // }
+    }
+
 }
 // See "Matching Paths" below to learn more
 export const config = {
-  matcher: ['/', '/about'],
+  matcher: ['/', '/tentang-femmy'],
 };

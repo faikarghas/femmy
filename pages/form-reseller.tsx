@@ -4,8 +4,6 @@ import type { NextPage } from 'next';
 import Layout from '../components/layouts/index';
 import FormResell from '../components/presentational/FormReseller/FormReseller';
 
-// import hoc
-import { withAUth } from '../hoc/withAuth';
 
 const FormReseller: NextPage = () => {
   return (

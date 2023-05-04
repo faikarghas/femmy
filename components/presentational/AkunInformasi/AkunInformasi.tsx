@@ -1,51 +1,57 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
 
 import { useFormik } from 'formik';
+import {getCookie} from '../../../utils/cookie'
 import * as yup from 'yup';
 
 export interface IAkunInformasi {
+    userData:any
 }
 
-const AkunInformasi: React.FC<IAkunInformasi> = () => {
+const AkunInformasi: React.FC<IAkunInformasi> = ({userData}) => {
     const [message, setMessage] = useState('simpan'); // This will be used to show a message if the submission is successful
+    const [submitted, setSubmitted] = useState(false);
 
     const formik = useFormik({
         initialValues: {
-          fullName: '',
-          address: '',
-          whatsAppNo: '',
-          email: '',
-          instagram: '',
+            fullname: userData.fullname ?  userData.fullname : '',
+            address: userData.address ?  userData.address : '',
+            phoneNumber: userData.phoneNumber ?  userData.phoneNumber : '',
+            email: userData.email ?  userData.email : '',
+            instagram: userData.instagram ?  userData.instagram : '',
+            birthday: userData.birthday ?  userData.birthday : ''
         },
         onSubmit: async (val) => {
-          const data = {
-            fullName: val.fullName,
+        setMessage('Loading...');
+        setSubmitted(true)
+
+        const data = {
+            fullname: val.fullname,
             address: val.address,
-            whatsAppNo: val.whatsAppNo,
+            phoneNumber: val.phoneNumber,
             email: val.email,
             instagram: val.instagram,
-          };
-    
-          const JSONdata = JSON.stringify(data);
-          const endpoint = 'https://api-femmy.owlandfoxes.id/reseller';
-          const options = {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
+            ttl:val.birthday
+        };
+
+        const token = getCookie('refreshToken',{})
+        const JSONdata = JSON.stringify(data);
+        const endpoint = `http://localhost:1337/api/users/${userData.id}`;
+        const options = {
+            method: 'PUT',
+            headers:{
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json',
             },
             body: JSONdata,
-          };
-          const response = await fetch(endpoint, options);
-          const result = await response.json();
+        };
+        const response = await fetch(endpoint, options);
+        const result = await response.json();
+
+        setMessage('Terkirim');
+
         },
-        validationSchema: yup.object({
-          fullName: yup.string().trim().required('Name is required'),
-          email: yup
-            .string()
-            .email('Must be a valid email')
-            .required('Email is required'),
-        }),
+
     });
 
     return (
@@ -55,8 +61,8 @@ const AkunInformasi: React.FC<IAkunInformasi> = () => {
                     <input
                     className="bg-transparent w-full rounded-lg placeholder:text-femmy-pdark placeholder:text-[13px] placeholder:font-semibold placeholder:tracking-[2px] py-1.5 pl-6 border-[1px] border-femmy-pdark text-femmy-pdark"
                     placeholder="nama lengkap"
-                    name="fullName"
-                    value={formik.values.fullName}
+                    name="fullname"
+                    value={formik.values.fullname}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     />
@@ -75,8 +81,8 @@ const AkunInformasi: React.FC<IAkunInformasi> = () => {
                     <input
                     className="bg-transparent w-full rounded-lg placeholder:text-femmy-pdark placeholder:text-[13px] placeholder:font-semibold placeholder:tracking-[2px] py-1.5 pl-6 border-[1px] border-femmy-pdark text-femmy-pdark"
                     placeholder="tanggal lahir"
-                    name="email"
-                    value={formik.values.email}
+                    name="birthday"
+                    value={formik.values.birthday}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     />
@@ -85,8 +91,8 @@ const AkunInformasi: React.FC<IAkunInformasi> = () => {
                     <input
                     className="bg-transparent w-full rounded-lg placeholder:text-femmy-pdark placeholder:text-[13px] placeholder:font-semibold placeholder:tracking-[2px] py-1.5 pl-6 border-[1px] border-femmy-pdark text-femmy-pdark"
                     placeholder="nomor telepon"
-                    name="whatsAppNo"
-                    value={formik.values.whatsAppNo}
+                    name="phoneNumber"
+                    value={formik.values.phoneNumber}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     />

@@ -7,7 +7,13 @@ import CardHadiah from '../CardHadiah/CardHadiah';
 // import utils
 import { produk } from '../../../utils/data';
 
-export interface IKatalog {}
+export interface IKatalog {
+  rewardProduct: any;
+  point: number;
+  fullname: string;
+  address: string;
+  userId: number;
+}
 
 type DataTypes = {
   judul: string;
@@ -19,7 +25,8 @@ type DataTypes = {
   content: string;
 };
 
-const KatalogWrap: React.FC<IKatalog> = () => {
+
+const KatalogWrap: React.FC<IKatalog> = ({rewardProduct,userId,fullname,point,address}:any) => {
   const [data, setData] = useState<DataTypes[]>(produk);
   const [sort, setSort] = useState('');
 
@@ -49,15 +56,24 @@ const KatalogWrap: React.FC<IKatalog> = () => {
       </div>
       <div className="basis-full lg:basis-3/4">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-10">
-          {produk.map((val, i) => (
-            <CardHadiah
-              key={i}
-              data={{
-                judul: val.judul,
-                image: val.image,
-              }}
-            />
-          ))}
+          {rewardProduct.data.map((val:any, i:number) => {
+            return (
+              <CardHadiah
+                key={i}
+                dataReward={{
+                  rewardId: val.id,
+                  judul: val.attributes.name,
+                  image: val.attributes.images.data[0].attributes.url,
+                  rewardPoint: val.attributes.point,
+                  description: val.attributes.Description,
+                  fullname: fullname,
+                  point: point,
+                  address,
+                  userId
+                }}
+              />
+            )
+          } )}
         </div>
       </div>
     </>

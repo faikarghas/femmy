@@ -14,7 +14,6 @@ export interface ICardP {
 
 const CardProduct: React.FC<ICardP> = ({ data }) => (
   <Link href={`/produk/${toSlug(data.judul)}`}>
-    <a>
       <span className="h-[430px] lg:h-[340px] bg-femmy-white rounded-t-2xl rounded-r-2xl flex flex-col justify-center items-center">
         <img
           src={data.image}
@@ -34,7 +33,6 @@ const CardProduct: React.FC<ICardP> = ({ data }) => (
       <span className="h-[60px] bg-[#CC3F80] rounded-b-2xl rounded-br-2xl flex justify-center items-center hover:bg-[#F6C2C6] text-white hover:text-femmy-pdark font-sans tracking-[2px]">
        + Keranjang
       </span>
-    </a>
   </Link>
 );
 

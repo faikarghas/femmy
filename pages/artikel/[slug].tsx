@@ -4,12 +4,13 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import parse from 'html-react-parser';
 
+import { verifyJwt } from '../../utils/verifyJwt';
+import {wrapper} from '../../store/store';
+
 // import component
 import Layout from '../../components/layouts/index';
 import CardNews from '../../components/presentational/CardNews/CardNews';
 
-// import hoc
-import { withAUth } from '../../hoc/withAuth';
 
 //import utils
 import { tips } from '../../utils/data';
@@ -22,7 +23,7 @@ type DataTypes = {
   image: string;
 };
 
-const TipsDetail: NextPage = () => {
+const TipsDetail: NextPage = ({auth}:any) => {
   const [data, setData] = useState<DataTypes[]>([]);
   const router = useRouter();
 
@@ -41,7 +42,7 @@ const TipsDetail: NextPage = () => {
   }, [router.isReady, router.query.slug]);
 
   return (
-    <Layout page="tentang-kami">
+    <Layout page="tentang-kami" auth={auth}>
       <section className="relative bg-[#FCF4EE] pt-0 lg:pt-8 lg:pb-8 px-0 md:px-16">
         <h2 className="hidden md:block font-head text-femmy-pdark text-[40px] mb-10">
           Tips & Trik
@@ -102,5 +103,31 @@ const TipsDetail: NextPage = () => {
     </Layout>
   );
 };
+
+
+export const getServerSideProps =  wrapper.getServerSideProps( store => async ({req, res}:any) => {
+
+  let token = await verifyJwt(req.cookies.refreshToken)
+  let user = []
+  let auth = false
+
+  if(token){
+      const fetchData = await fetch(`${process.env.NEXT_PUBLIC_API}/api/users/${token.id}`,{
+          method:"GET",
+          headers:{
+              'Authorization': 'Bearer ' + req.cookies.refreshToken,
+          }
+      })
+      user = await fetchData.json()
+      auth = true
+  }
+
+  return {
+    props: {
+      user,
+      auth : auth
+    },
+  }
+})
 
 export default TipsDetail;

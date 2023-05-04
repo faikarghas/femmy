@@ -1,15 +1,16 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
 
+import { verifyJwt } from '../utils/verifyJwt';
+import {wrapper} from '../store/store';
+
 // import component
 import Layout from '../components/layouts/index';
 
-// import hoc
-import { withAUth } from '../hoc/withAuth';
 
-const Tentang: NextPage = () => {
+const Tentang: NextPage = ({auth}:any) => {
   return (
-    <Layout page="tentang-femmy">
+    <Layout page="tentang-femmy" auth={auth}>
       <section className="flex flex-col lg:flex-row relative bg-femmy-plight pt-0 lg:pt-4 pb-12 px-8 lg:px-16">
         <div className="basis-full lg:basis-2/5 order-last lg:order-first">
           <div className="lg:w-[430px] lg:pt-14">
@@ -72,16 +73,30 @@ const Tentang: NextPage = () => {
             banyak keuntungan seperti poin reward, potongan harga, dan masih
             banyak lagi!
           </p>
-          <Link href="/femmy-reseller">
-            <a className="block bg-femmy-pdark rounded-[56px] text-femmy-white text-[12px] py-[12px] px-4 leading-[10px] lg:w-[330px] text-center tracking-[2px]">
+          <Link href="/femmy-reseller" className="block bg-femmy-pdark rounded-[56px] text-femmy-white text-[12px] py-[12px] px-4 leading-[10px] lg:w-[330px] text-center tracking-[2px]">
               Bergabung menjadi{' '}
               <span className="font-semibold">Femmy Reseller</span>
-            </a>
           </Link>
         </div>
       </section>
     </Layout>
   );
 };
+
+export const getServerSideProps =  wrapper.getServerSideProps( store => async ({req, res}:any) => {
+
+  let token = await verifyJwt(req.cookies.refreshToken)
+  let auth = false
+
+  if(token){
+      auth = true
+  }
+
+  return {
+    props: {
+      auth : auth
+    },
+  }
+})
 
 export default Tentang;

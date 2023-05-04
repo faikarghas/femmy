@@ -2,9 +2,12 @@ import React,{useState} from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Link from 'next/link';
+import { useDispatch } from "react-redux";
+import { useRouter } from 'next/router'
 
 import { setModalState } from "../../../store/modal";
-import { useDispatch } from "react-redux";
+import { setCookie } from "../../../utils/cookie";
+
 
 export interface IFormLogin {
 
@@ -12,6 +15,7 @@ export interface IFormLogin {
 
 const FormLogin: React.FC<IFormLogin> = () => {
   const dispatch = useDispatch();
+  const router = useRouter()
 
   const [message, setMessage] = useState('masuk'); // This will be used to show a message if the submission is successful
   const [submitted, setSubmitted] = useState(false);
@@ -22,13 +26,16 @@ const FormLogin: React.FC<IFormLogin> = () => {
       password: '',
     },
     onSubmit: async (val) => {
+      setMessage('Loading...');
+      setSubmitted(true)
+
       const data = {
+        identifier: val.email,
         password: val.password,
-        email: val.email,
       };
 
       const JSONdata = JSON.stringify(data);
-      const endpoint = 'https://api-femmy.owlandfoxes.id/question';
+      const endpoint = 'http://localhost:1337/api/auth/local';
       const options = {
         method: 'POST',
         headers: {
@@ -38,12 +45,23 @@ const FormLogin: React.FC<IFormLogin> = () => {
       };
       const response = await fetch(endpoint, options);
       const result = await response.json();
-      if (result.status == 200) {
+
+      if (result.jwt) {
+
+        setCookie('refreshToken', result.jwt,{
+          expires: 360,
+          secure:false
+        });
+
         setMessage('Terkirim');
+        router.push('/')
+
+      } else {
+        setMessage(result.error.message);
         setTimeout(() => {
           setMessage('masuk');
-        }, 3000);
-        setSubmitted(true);
+        }, 2000);
+        setSubmitted(false);
       }
     },
     validationSchema: yup.object({
@@ -57,12 +75,13 @@ const FormLogin: React.FC<IFormLogin> = () => {
 
 
   return (
-    <div className='absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] bg-[#F5E8DF] p-16 rounded-3xl w-[550px] flex flex-col items-center justify-center'>
-        <div onClick={()=>dispatch(setModalState(false))} className='bg-[#951B66] w-[40px] h-[40px] absolute right-5 top-5 rounded-full flex justify-center items-center cursor-pointer'>
+    <div className='w-[80%] md:w-[550px] absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] bg-[#F5E8DF] p-8 lg:p-16 rounded-3xl flex flex-col items-center justify-center'>
+        <Link href="/" className='bg-[#951B66] w-[40px] h-[40px] absolute right-5 top-5 rounded-full flex justify-center items-center cursor-pointer'>
           <img className='object-contain w-[15px]' src='/images/xclose.png' />
-        </div>
+        </Link>
         <img className='w-[200px] mb-3' src="images/login-icon.png" />
         <h2 className='text-[30px] font-head text-femmy-pdark mb-4'>Masuk</h2>
+
         <form className='w-full mb-4' onSubmit={formik.handleSubmit}>
           <div className="relative z-0 mb-4 md:mb-4 w-full group">
             <input
@@ -87,6 +106,7 @@ const FormLogin: React.FC<IFormLogin> = () => {
           </div>
           <button
             type="submit"
+            disabled={submitted?true:false}
             className="mt-0 md:mt-4 w-full text-center rounded-2xl text-femmy-white bg-femmy-pdark tracking-[2px] hover:bg-[#F6C2C6] hover:text-femmy-pdark focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 font-sans"
           >
             {message}
@@ -94,8 +114,8 @@ const FormLogin: React.FC<IFormLogin> = () => {
 
         </form>
 
-        <Link href={"/"}><a className='text-femmy-pdark font-sans mb-3 underline'>lupa password?</a></Link>
-        <p className='text-femmy-pdark font-sans'>belum punya akun? <Link href={"/"}><a className='text-femmy-pdark font-semibold mb-4 underline'>daftar disini </a></Link></p>
+        <Link href={"/lupa-kata-sandi"} className='text-femmy-pdark font-sans mb-3 underline'>lupa kata sandi?</Link>
+        <p className='text-femmy-pdark font-sans'>belum punya akun? <Link href={"/daftar"} className='text-femmy-pdark font-semibold mb-4 underline'>daftar disini</Link></p>
     </div>
   )
 }
