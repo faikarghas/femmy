@@ -1,12 +1,39 @@
+import React, { useState, useEffect } from 'react';
 import Header from '../presentational/Header/Header';
 import Footer from '../presentational/Footer/Footer';
 import Script from 'next/script'
 export interface ILayout {
   children: React.ReactNode;
   page: string;
+  auth: boolean;
 }
 
-const Layout: React.FC<ILayout> = ({ children, page }) => {
+import { useDispatch } from "react-redux";
+import { setAuthState, setAuthId } from "../../store/authSlice";
+import { getCookie } from '../../utils/cookie';
+import { verifyJwt } from '../../utils/verifyJwt';
+
+const Layout: React.FC<ILayout> = ({ children, page, auth }) => {
+  const dispatch = useDispatch();
+
+  const setAuth = async () => {
+    let refreshToken = getCookie('refreshToken',{})
+
+    if (refreshToken) {
+      verifyJwt(refreshToken).then(async(res:any)=>{
+        dispatch(setAuthState(true))
+        dispatch(setAuthId(res.id))
+      })
+    } else {
+      dispatch(setAuthState(false))
+    }
+  }
+
+  useEffect(() => {
+    setAuth()
+  }, [])
+
+
   return (
     <>
      {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
@@ -23,7 +50,7 @@ const Layout: React.FC<ILayout> = ({ children, page }) => {
           gtag('config', 'UA-245288693-1');
         `}
       </Script>
-      <Header page={page} />
+      <Header page={page} auth={auth}/>
       <main className={`${page !== 'home' ? 'mt-[85px]' : ''}`}>
         {children}
       </main>

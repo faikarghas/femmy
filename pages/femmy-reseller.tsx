@@ -4,12 +4,9 @@ import type { NextPage } from 'next';
 import Layout from '../components/layouts/index';
 import FormJoin from '../components/presentational/FormJoin/FormJoin';
 
-// import hoc
-import { withAUth } from '../hoc/withAuth';
-
 const Reseller: NextPage = () => {
   return (
-    <Layout page="tentang-kami">
+    <Layout page="tentang-kami" auth={false}>
       <section className="bg-[#F9EFE6] py-16 px-8 md:px-60">
         <div className="flex justify-center items-center flex-col mb-12">
           <h1 className="text-femmy-pdark font-head text-[35px] lg:text-[40px] text-center font-semibold leading-tight mb-4">

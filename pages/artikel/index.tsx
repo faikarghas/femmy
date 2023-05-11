@@ -1,23 +1,21 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
 
+import { verifyJwt } from '../../utils/verifyJwt';
+import {wrapper} from '../../store/store';
+
 // import component
 import Layout from '../../components/layouts/index';
 import CardNews from '../../components/presentational/CardNews/CardNews';
 
-// import hoc
-import { withAUth } from '../../hoc/withAuth';
-
 //import utils
 import { tips } from '../../utils/data';
 
-const Tips: NextPage = () => {
+const Tips: NextPage = ({auth}:any) => {
   return (
-    <Layout page="tentang-kami">
-      <section className="relative bg-femmy-plight py-8 px-8 lg:px-16">
-        <h2 className="font-head text-femmy-pdark text-[40px] mb-10 font-semibold">
-          Tips & Trik
-        </h2>
+    <Layout page="tentang-kami" auth={auth}>
+      <section className="relative bg-femmy-plight pt-20 pb-28 px-8 lg:px-16">
+        <h2 className="font-head text-femmy-pdark text-[40px] mb-10">Tips & Trik</h2>
         {tips.map((val, i) => {
           if (i === 0) {
             return (
@@ -42,10 +40,8 @@ const Tips: NextPage = () => {
                     <p className="font-sans text-femmy-pdark leading-4 font-medium text-[15px] mb-10 xl:mb-10 line-clamp-4">
                       {val.shortDesc}
                     </p>
-                    <Link href={`/artikel/${val.slug}`}>
-                      <a className="py-2.5 px-8 text-white text-center bg-femmy-pdark font-sans rounded-2xl">
+                    <Link href={`/artikel/${val.slug}`} className="py-2.5 px-8 text-white text-center bg-femmy-pdark font-sans rounded-2xl">
                         baca selengkapnya
-                      </a>
                     </Link>
                   </div>
                 </div>
@@ -80,5 +76,30 @@ const Tips: NextPage = () => {
     </Layout>
   );
 };
+
+export const getServerSideProps =  wrapper.getServerSideProps( store => async ({req, res}:any) => {
+
+  let token = await verifyJwt(req.cookies.refreshToken)
+  let user = []
+  let auth = false
+
+  if(token){
+      const fetchData = await fetch(`${process.env.NEXT_PUBLIC_API}/api/users/${token.id}`,{
+          method:"GET",
+          headers:{
+              'Authorization': 'Bearer ' + req.cookies.refreshToken,
+          }
+      })
+      user = await fetchData.json()
+      auth = true
+  }
+
+  return {
+    props: {
+      user,
+      auth : auth
+    },
+  }
+})
 
 export default Tips;

@@ -4,12 +4,13 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import parse from 'html-react-parser';
 
+import { verifyJwt } from '../../utils/verifyJwt';
+import {wrapper} from '../../store/store';
+
 // import component
 import Layout from '../../components/layouts/index';
 import CardNews from '../../components/presentational/CardNews/CardNews';
 
-// import hoc
-import { withAUth } from '../../hoc/withAuth';
 
 //import utils
 import { tips } from '../../utils/data';
@@ -22,7 +23,7 @@ type DataTypes = {
   image: string;
 };
 
-const TipsDetail: NextPage = () => {
+const TipsDetail: NextPage = ({auth}:any) => {
   const [data, setData] = useState<DataTypes[]>([]);
   const router = useRouter();
 
@@ -41,9 +42,9 @@ const TipsDetail: NextPage = () => {
   }, [router.isReady, router.query.slug]);
 
   return (
-    <Layout page="tentang-kami">
+    <Layout page="tentang-kami" auth={auth}>
       <section className="relative bg-[#FCF4EE] pt-0 lg:pt-8 lg:pb-8 px-0 md:px-16">
-        <h2 className="hidden md:block font-head text-femmy-pdark text-[40px] mb-10 font-semibold">
+        <h2 className="hidden md:block font-head text-femmy-pdark text-[40px] mb-10">
           Tips & Trik
         </h2>
 
@@ -67,7 +68,7 @@ const TipsDetail: NextPage = () => {
               <h5 className="leading-tight font-head text-femmy-pdark mb-8 text-[24px] font-semibold">
                 {data[0]?.judul}
               </h5>
-              <div className="tips font-sans text-femmy-pdark font-medium text-[15px] mb-20 leading-normal">
+              <div className="tips font-sansMedium text-femmy-pdark font-medium text-[15px] mb-20 leading-normal">
                 {parse(data[0]?.content ? data[0]?.content : '')}
               </div>
             </div>
@@ -76,22 +77,24 @@ const TipsDetail: NextPage = () => {
                 Rekomendasi Artikel
               </h6>
               {tipsLain().map((val, i) => {
-                return (
-                  <div key={i} className="mb-8">
-                    <CardNews
-                      type="small"
-                      height="h-[200px] lg:h-[180px]"
-                      paragraph={false}
-                      model={true}
-                      data={{
-                        title: val.judul,
-                        short: val.shortDesc,
-                        link: val.slug,
-                        image: val.image,
-                      }}
-                    />
-                  </div>
-                );
+                if (i < 3) {
+                    return (
+                    <div key={i} className="mb-8">
+                      <CardNews
+                        type="small"
+                        height="h-[200px] lg:h-[180px]"
+                        paragraph={false}
+                        model={true}
+                        data={{
+                          title: val.judul,
+                          short: val.shortDesc,
+                          link: val.slug,
+                          image: val.image,
+                        }}
+                      />
+                    </div>
+                  );
+                }
               })}
             </div>
           </div>
@@ -100,5 +103,31 @@ const TipsDetail: NextPage = () => {
     </Layout>
   );
 };
+
+
+export const getServerSideProps =  wrapper.getServerSideProps( store => async ({req, res}:any) => {
+
+  let token = await verifyJwt(req.cookies.refreshToken)
+  let user = []
+  let auth = false
+
+  if(token){
+      const fetchData = await fetch(`${process.env.NEXT_PUBLIC_API}/api/users/${token.id}`,{
+          method:"GET",
+          headers:{
+              'Authorization': 'Bearer ' + req.cookies.refreshToken,
+          }
+      })
+      user = await fetchData.json()
+      auth = true
+  }
+
+  return {
+    props: {
+      user,
+      auth : auth
+    },
+  }
+})
 
 export default TipsDetail;

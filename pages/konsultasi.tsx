@@ -1,16 +1,16 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
 
+import { verifyJwt } from '../utils/verifyJwt';
+import {wrapper} from '../store/store';
+
 // import component
 import Layout from '../components/layouts/index';
 import FormKontak from '../components/presentational/FormKontak/FormKontak';
 
-// import hoc
-import { withAUth } from '../hoc/withAuth';
-
-const Kontak: NextPage = () => {
+const Kontak: NextPage = ({auth}:any) => {
   return (
-    <Layout page="tentang-kami">
+    <Layout page="konsultasi" auth={auth}>
       <section className="flex flex-row flex-wrap relative lg:h-screen">
         <div className="block object-contain basis-full h-full lg:basis-2/4">
           <picture>
@@ -29,7 +29,7 @@ const Kontak: NextPage = () => {
           <div className="flex items-center mb-14 lg:mb-0 pt-8 px-8 lg:px-10 relative lg:absolute lg:top-[50%] right-[0] lg:right-[calc(0%+48px)] lg:translate-x-[0%] lg:translate-y-[-50%] bg-[#FCF4EE] lg:bg-femmy-plight h-full lg:h-[calc(100%-96px-35px)] w-[100%] lg:w-[64%] rounded-2xl shadow-[16px_17px_16px_rgba(0, 0, 0, 0.17)]">
             <div className="w-full">
               <div className="mb-4 pb-2 xl:pb-2 border-b-[1px] text-center lg:text-left lg:border-femmy-pdark">
-                <h2 className="text-femmy-pdark text-[35px] xl:text-[40px] font-head font-semibold">
+                <h2 className="text-femmy-pdark text-[35px] xl:text-[40px] font-head">
                   Tanya Kami
                 </h2>
               </div>
@@ -62,12 +62,10 @@ const Kontak: NextPage = () => {
           </p>
         </div>
         <div className="flex flex-wrap flex-row px-8 lg:px-32 gap-4 justify-between pb-16">
-          <Link href="https://wa.me/6281383125950">
-            <a
+          <Link href="https://wa.me/6281383125950"
               target="blank"
               rel="noopener"
-              className="basis-full lg:basis-[32%] border-[1px] border-femmy-pdark rounded-2xl h-[200px] flex flex-col text-center items-center py-10"
-            >
+              className="basis-full lg:basis-[32%] border-[1px] border-femmy-pdark rounded-2xl h-[200px] flex flex-col text-center items-center py-10">
               <img
                 alt="image-femmy"
                 src="/images/cs3.png"
@@ -78,10 +76,9 @@ const Kontak: NextPage = () => {
                 <br />
                 (15:00 - 16:00 WIB)
               </span>
-            </a>
           </Link>
-          <Link href={'/temukan-femmy'}>
-            <a className="basis-full lg:basis-[32%] border-[1px] border-femmy-pdark rounded-2xl h-[200px] flex flex-col text-center items-center py-10">
+          <Link href={'/temukan-femmy'}
+            className="basis-full lg:basis-[32%] border-[1px] border-femmy-pdark rounded-2xl h-[200px] flex flex-col text-center items-center py-10">
               <img
                 alt="image-femmy"
                 src="/images/marketplc.png"
@@ -90,7 +87,6 @@ const Kontak: NextPage = () => {
               <span className="text-femmy-pdark font-sans font-semibold">
                 Marketplace
               </span>
-            </a>
           </Link>
           <div className="relative group basis-full lg:basis-[32%] border-[1px] border-femmy-pdark rounded-2xl h-[200px] flex flex-col text-center items-center py-10">
             <img
@@ -104,8 +100,7 @@ const Kontak: NextPage = () => {
             <div className="absolute top-0 left-0 w-full h-full rounded-2xl">
               <ul className="group-hover:flex hidden transition-all list-none list rounded-2xl gap-y-2 flex-col justify-center items-center h-full bg-[#FBEEE5] p-4">
                 <li className="w-[120px]">
-                  <Link href="https://www.tiktok.com/@femmy.daily">
-                    <a
+                  <Link href="https://www.tiktok.com/@femmy.daily"
                       target="_blank"
                       rel="noopener"
                       className="flex items-center"
@@ -118,12 +113,10 @@ const Kontak: NextPage = () => {
                       <span className="ml-4 text-[16px] font-sans text-femmy-pdark">
                         Tik Tok
                       </span>
-                    </a>
                   </Link>
                 </li>
                 <li className="w-[120px]">
-                  <Link href="https://www.Instagram.com/femmy.daily">
-                    <a
+                  <Link href="https://www.Instagram.com/femmy.daily"
                       target="_blank"
                       rel="noopener"
                       className="flex items-center"
@@ -136,7 +129,6 @@ const Kontak: NextPage = () => {
                       <span className="ml-4 text-[16px] font-sans text-femmy-pdark">
                         Instagram
                       </span>
-                    </a>
                   </Link>
                 </li>
                 {/* <li className="w-[120px]">
@@ -148,8 +140,7 @@ const Kontak: NextPage = () => {
                             </Link>
                             </li> */}
                 <li className="w-[120px]">
-                  <Link href="https://www.youtube.com/channel/UC7Sg8HkaWJItuMLbvNdKvWQ">
-                    <a
+                  <Link href="https://www.youtube.com/channel/UC7Sg8HkaWJItuMLbvNdKvWQ"
                       target="_blank"
                       rel="noopener"
                       className="flex items-center"
@@ -162,7 +153,6 @@ const Kontak: NextPage = () => {
                       <span className="ml-4 text-[16px] font-sans text-femmy-pdark">
                         Youtube
                       </span>
-                    </a>
                   </Link>
                 </li>
               </ul>
@@ -173,5 +163,21 @@ const Kontak: NextPage = () => {
     </Layout>
   );
 };
+
+export const getServerSideProps =  wrapper.getServerSideProps( store => async ({req, res}:any) => {
+
+  let token = await verifyJwt(req.cookies.refreshToken)
+  let auth = false
+
+  if(token){
+      auth = true
+  }
+
+  return {
+    props: {
+      auth : auth
+    },
+  }
+})
 
 export default Kontak;

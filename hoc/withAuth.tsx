@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Component, useEffect } from 'react'
 
-export function withAUth(Component: any) {
-  return () => {
-    console.log('hoc');
 
-    return <Component />;
-  };
-}
+const WithAuth = (WrappedComponent:any) => {
+
+  return (props:any) => (
+    <div >
+        <WrappedComponent {...props}/>
+    </div>
+  );
+};
+
+export default WithAuth;

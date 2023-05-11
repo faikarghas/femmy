@@ -24,6 +24,10 @@ module.exports = {
       fontFamily: {
         head: ['Regatto'],
         sans: ['WorkSans-Regular'],
+        sansMedium: ['WorkSans-Medium'],
+        sansSemi: ['WorkSans-SemiBold'],
+        sansBold: ['WorkSans-Bold'],
+        sansExtra: ['WorkSans-ExtraBold'],
       },
       screens: {
         '3xl': '1600px',
