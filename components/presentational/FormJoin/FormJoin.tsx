@@ -30,7 +30,7 @@ const FormJoin = () => {
       };
 
       const JSONdata = JSON.stringify(data);
-      const endpoint = 'https://api-femmy.owlandfoxes.id/reseller';
+      const endpoint = 'https://api-femmy.owlandfoxes.co.id/reseller';
       const options = {
         method: 'POST',
         headers: {
