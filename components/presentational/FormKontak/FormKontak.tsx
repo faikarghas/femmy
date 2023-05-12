@@ -24,7 +24,7 @@ const FormKontak: React.FC<IFormKontak> = () => {
       };
 
       const JSONdata = JSON.stringify(data);
-      const endpoint = 'https://api-femmy.owlandfoxes.id/question';
+      const endpoint = 'https://api-femmy.owlandfoxes.co.id/question';
       const options = {
         method: 'POST',
         headers: {
