@@ -167,7 +167,9 @@ const Nav: React.FC<INav> = ({ page, position, auth }) => {
                 );
               })}
               {position == 'header' ? (
-              <li className='flex items-center text-femmy-pdark font-sansSemi md:text-[9px] xl:text-[13px] py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0 xl:tracking-[2px] cursor-pointer' onClick={openPop}>giveaway</li>
+              <li className='flex items-center text-femmy-pdark font-sansSemi md:text-[9px] xl:text-[13px] py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0 xl:tracking-[2px] cursor-pointer'>
+                <Link href={'/giveaway'}>giveaway</Link>
+              </li>
               ):''}
 
               {/* media social */}
@@ -330,7 +332,7 @@ const Nav: React.FC<INav> = ({ page, position, auth }) => {
               );
             })}
 
-            <li className='flex items-center font-sans text-[16px] py-2 px-0 mb-4 rounded md:bg-transparent md:p-0 text-femmy-white' onClick={openPop}>giveaway</li>
+            <li className='flex items-center font-sans text-[16px] py-2 px-0 mb-4 rounded md:bg-transparent md:p-0 text-femmy-white'><Link href={'/giveaway'}>giveaway</Link></li>
           </ul>
 
           {/* Auth */}
