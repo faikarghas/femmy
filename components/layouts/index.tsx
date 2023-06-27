@@ -13,6 +13,11 @@ import { setAuthState, setAuthId } from "../../store/authSlice";
 import { getCookie } from '../../utils/cookie';
 import { verifyJwt } from '../../utils/verifyJwt';
 
+import TagManager from 'react-gtm-module'
+ 
+const tagManagerArgs = {
+    gtmId: 'GTM-MXWML3M'
+}
 const Layout: React.FC<ILayout> = ({ children, page, auth }) => {
   const dispatch = useDispatch();
 
@@ -31,6 +36,8 @@ const Layout: React.FC<ILayout> = ({ children, page, auth }) => {
 
   useEffect(() => {
     setAuth()
+
+    TagManager.initialize(tagManagerArgs)
   }, [])
 
 
