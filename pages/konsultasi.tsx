@@ -62,7 +62,7 @@ const Kontak: NextPage = ({auth}:any) => {
           </p>
         </div>
         <div className="flex flex-wrap flex-row px-8 lg:px-32 gap-4 justify-between pb-16">
-          <Link href="https://wa.me/6281383125950"
+          <Link href="https://wa.me/6282310273126"
               target="blank"
               rel="noopener"
               className="basis-full lg:basis-[32%] border-[1px] border-femmy-pdark rounded-2xl h-[200px] flex flex-col text-center items-center py-10">
