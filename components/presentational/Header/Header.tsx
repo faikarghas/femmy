@@ -20,10 +20,10 @@ const Header: React.FC<IHeader> = ({ page, auth }) => {
         <picture>
           <source
             media="(min-width:750px)"
-            srcSet="/images/HOMEBANNER-DESKTOP-3840x2171.jpg"
+            srcSet="/images/femmy_banner_banner1(1).jpg"
           />
           <img
-            src="/images/HOMEBANNER-MOBILE-622x1133.jpg"
+            src="/images/femmy_banner_mobile2m.jpg"
             className="w-full h-full object-contain lg:object-cover"
           ></img>
         </picture>
